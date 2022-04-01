@@ -27,7 +27,7 @@ export default class UsersControllers {
           }
         });
       } else {
-        throw new Err.ArgumentoInvalido("Email já cadastrado");
+        throw new Err.InvalidArgument("Email já cadastrado");
       }
     } catch (err) {
       if (err instanceof InvalidArgument) {
