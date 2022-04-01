@@ -1,3 +1,5 @@
+import Err from "../err/index.js";
+import InvalidArgument from "../err/InvalidArgument.js";
 import User from "../models/User.js";
 import ValidateUser from "../class/ValidateUser.js";
 
@@ -11,7 +13,7 @@ export default class UsersControllers {
     });
   };
 
-  static registerUser = async (req, res) => {
+  static createUser = async (req, res) => {
     try {
       const data = await ValidateUser.validate(req.body);
       const verif = await ValidateUser.checkRegistration(data.email);
@@ -25,10 +27,14 @@ export default class UsersControllers {
           }
         });
       } else {
-        throw new Err();
+        throw new Err.ArgumentoInvalido("Email já cadastrado");
       }
     } catch (err) {
-      res.status(500).json(err.message);
+      if (err instanceof InvalidArgument) {
+        res.status(406).json(err.message);
+      } else {
+        res.status(500).json(err.message);
+      }
     }
   };
 }
