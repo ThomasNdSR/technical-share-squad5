@@ -1,0 +1,6 @@
+{
+  "databaseConfig": {
+    "host": "mongo-technical_share",
+    "database": "technical_share"
+  }
+}
