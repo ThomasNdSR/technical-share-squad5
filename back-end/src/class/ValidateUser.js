@@ -24,7 +24,7 @@ class ValidateUser {
     return bcrypt.compare(password, data.password);
   }
 
-  static async checkRegistration(email) {
+  static async checkData(email) {
     const user = await User.findOne({ email: email });
     return user;
   }

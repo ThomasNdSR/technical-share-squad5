@@ -1,3 +1,4 @@
+import AdmToken from "../token/index.js";
 import Err from "../err/index.js";
 import InvalidArgument from "../err/InvalidArgument.js";
 import User from "../models/User.js";
@@ -16,7 +17,7 @@ export default class UsersControllers {
   static createUser = async (req, res) => {
     try {
       const data = await ValidateUser.validate(req.body);
-      const verif = await ValidateUser.checkRegistration(data.email);
+      const verif = await ValidateUser.checkData(data.email);
       if (!verif) {
         const user = await new User(data);
         user.save((err) => {
@@ -32,6 +33,36 @@ export default class UsersControllers {
     } catch (err) {
       if (err instanceof InvalidArgument) {
         res.status(406).json(err.message);
+      } else {
+        res.status(500).json(err.message);
+      }
+    }
+  };
+
+  static authenticateUser = async (req, res) => {
+    try {
+      const data = req.body;
+      const user = await ValidateUser.checkData(data.email);
+      if (user) {
+        const verify = await ValidateUser.authenticate(data.password, user);
+        if (verify) {
+          const token = AdmToken.generateToken({
+            email: data.email,
+            senha: data.password,
+          });
+          res
+            .status(200)
+            .set("Authorization", token)
+            .json({ name: user.name, email: user.email });
+        } else {
+          throw new Err.InvalidArgument("senha invalida");
+        }
+      } else {
+        throw new Err.InvalidArgument("Usuario não cadastrado");
+      }
+    } catch (err) {
+      if (err instanceof InvalidArgument) {
+        res.status(401).json(err.message);
       } else {
         res.status(500).json(err.message);
       }
