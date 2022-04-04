@@ -6,12 +6,30 @@ import ValidateUser from "../class/ValidateUser.js";
 
 export default class UsersControllers {
   static userRegistered = (__, res) => {
-    User.find((err, item) => {
-      if (err) {
-        res.status(500).json(err.message);
-      }
-      res.status(200).json(item);
-    });
+    User.find()
+      .select({
+        name:1,
+        location:1,
+        skill:1
+      })
+      .populate("skill")
+      .exec((err, item) => {
+        if (err) {
+          res.status(500).json(err.message);
+        }
+        res.status(200).json(item);
+      });
+  };
+  static userProfile = (req, res) => {
+    const id = req.params.id;
+    User.findById(id)
+      .populate("skill")
+      .exec((err, item) => {
+        if (err) {
+          res.status(500).json(err.message);
+        }
+        res.status(200).json(item);
+      });
   };
 
   static createUser = async (req, res) => {
@@ -39,6 +57,20 @@ export default class UsersControllers {
     }
   };
 
+  static updateSkillUser = async (req, res) => {
+    const id = req.params.id;
+    const skillUpdate = req.body;
+
+    const user = await User.findOne({ _id: id });
+    user.skill = skillUpdate
+    await user.save((err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(200).send({ message: "Atualizado com sucesso" });
+      }
+    });
+  };
   static authenticateUser = async (req, res) => {
     try {
       const data = req.body;
