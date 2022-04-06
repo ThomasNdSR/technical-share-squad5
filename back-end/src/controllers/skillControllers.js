@@ -1,8 +1,8 @@
-import skills from "../models/Skill.js";
+import Skill from "../models/Skill.js";
 
-export default class SkillController {
+export default class SkillsControllers {
   static listRegister = (__, res) => {
-    skills.find((err, item) => {
+    Skill.find((err, item) => {
       if (err) {
         res.status(500).json(err.message);
       } else {
@@ -11,7 +11,7 @@ export default class SkillController {
     });
   };
   static register = (req, res) => {
-    const data = new skills(req.body);
+    const data = new Skill(req.body);
     data.save((err) => {
       if (err) {
         res.status(500).json(err.message);
@@ -23,7 +23,7 @@ export default class SkillController {
   static updateRegistry = (req, res) => {
     const id = req.params.id;
 
-    skills.findByIdAndUpdate(id, { $set: req.body }, (err) => {
+    Skill.findByIdAndUpdate(id, { $set: req.body }, (err) => {
       if (err) {
         res.status(500).send({ message: err.message });
       } else {
@@ -34,7 +34,7 @@ export default class SkillController {
   static deleteRegistry = (req, res) => {
     const id = req.params.id;
 
-    skills.findByIdAndDelete(id, (err) => {
+    Skill.findByIdAndDelete(id, (err) => {
       if (err) {
         res.status(500).send({ message: err.message });
       } else {

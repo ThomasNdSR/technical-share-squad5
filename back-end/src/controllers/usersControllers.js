@@ -8,11 +8,15 @@ export default class UsersControllers {
   static userRegistered = (__, res) => {
     User.find()
       .select({
-        name:1,
-        location:1,
-        skill:1
+        name: 1,
+        imgId: 1,
+        skill: 1,
+        profile: 1,
       })
-      .populate("skill")
+      .populate({
+        path: "imgId profile skill",
+        options: { _recursed: true },
+      }).populate('profile.$*.skill')
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -23,7 +27,9 @@ export default class UsersControllers {
   static userProfile = (req, res) => {
     const id = req.params.id;
     User.findById(id)
-      .populate("skill")
+      .populate("profile")
+      .populate("imgId")
+      .populate("appointment")
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -62,7 +68,7 @@ export default class UsersControllers {
     const skillUpdate = req.body;
 
     const user = await User.findOne({ _id: id });
-    user.skill = skillUpdate
+    user.skill = skillUpdate;
     await user.save((err) => {
       if (err) {
         res.status(500).json(err.message);

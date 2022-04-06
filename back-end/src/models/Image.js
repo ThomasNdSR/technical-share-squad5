@@ -1,15 +1,16 @@
 import mongoose from "mongoose";
 
-const profileSchema = new mongoose.Schema({
-  talkAboutYou: { type: String },
-  weekday: [
-    {
-      day: { type: Number },
-      time: [{ type: String }],
-    },
-  ],
+const imageSchema = new mongoose.Schema({
+  originalname: {
+    type: String,
+    required: true,
+  },
+  path: {
+    type: String,
+    required: true,
+  }
 });
 
-const profiles = mongoose.model("profiles", profileSchema);
+const images = mongoose.model("images", imageSchema);
 
-export default profiles;
+export default images;
