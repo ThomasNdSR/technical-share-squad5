@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "0d1a443d-60df-4058-852e-22b7a3ee51b0",
+		"name": "API Technical Share",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar usuários registrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna único usuário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/6249b8cba67eb0bc26ca4ed8",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"6249b8cba67eb0bc26ca4ed8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validação de acesso do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"alan@123.com\",\n    \"password\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação do perfil de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Walter\",\n    \"email\":\"walter@123.com\",\n    \"password\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar skills do usuário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"6249b931a67eb0bc26ca4ee1\",\n    \"6249b93fa67eb0bc26ca4ee3\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/624a312751251cafcd27a41d",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624a312751251cafcd27a41d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar skills registradas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/skill",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar nova skill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/skill",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar skill registrada",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"teste2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/skill/6249b93fa67eb0bc26ca4ee3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill",
+						"6249b93fa67eb0bc26ca4ee3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover skill registrada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/skill/624a333ceee3f443d820db99",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill",
+						"624a333ceee3f443d820db99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir foto do perfil do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile-image",
+							"contentType": "",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/image/6249b8cba67eb0bc26ca4ed8",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"image",
+						"6249b8cba67eb0bc26ca4ed8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de profile do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"talkAboutYou\":\"testando texto\",\n    \"weekday\":[\n        {\n            \"day\":1,\n            \"time\":[\"15\",\"45\"]\n        },\n        {\n            \"day\":3,\n            \"time\":[\"15\"]\n        },\n        {\n            \"day\":6,\n            \"time\":[\"15\",\"45\",\"60\"]\n        }\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/profile/624cad18512c99f3760e739c",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						"624cad18512c99f3760e739c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
