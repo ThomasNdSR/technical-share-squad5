@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const imageSchema = new mongoose.Schema({
-  originalname: {
+  originalName: {
     type: String,
     required: true,
   },

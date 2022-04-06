@@ -29,7 +29,6 @@ export default class UsersControllers {
     User.findById(id)
       .populate("profile")
       .populate("imgId")
-      .populate("appointment")
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);

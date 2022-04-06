@@ -6,13 +6,13 @@ export default class ImageController {
     const id = req.params.id;
     if (req.file) {
       new Image({
-        originalname: req.file.originalname,
+        originalName: req.file.originalname,
         path: req.file.path,
       })
         .save()
         .then(async (item) => {
           const user = await User.findOne({ _id: id });
-          user.imgId = item._id;
+          user.img = item._id;
           await user.save((err) => {
             if (err) {
               res.status(500).json(err.message);

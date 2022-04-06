@@ -16,7 +16,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  imgId: {
+  role: {
+    type: String,
+  },
+  img: {
     type: schema.Types.ObjectId,
     ref: "images",
   },
@@ -26,6 +29,9 @@ const userSchema = new mongoose.Schema({
       ref: "skills",
     },
   ],
+  mentor:{
+    type:Boolean,
+  },
   profile: {
     type: schema.Types.ObjectId,
     ref: "profiles",
