@@ -16,8 +16,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  location: { type: String },
-  talkAboutYou: { type: String },
   imgId: {
     type: schema.Types.ObjectId,
     ref: "images",
@@ -27,7 +25,11 @@ const userSchema = new mongoose.Schema({
       type: schema.Types.ObjectId,
       ref: "skills",
     },
-  ]
+  ],
+  profile: {
+    type: schema.Types.ObjectId,
+    ref: "profiles",
+  },
 });
 
 const users = mongoose.model("users", userSchema);

@@ -18,6 +18,7 @@ services:
     tty: true
     volumes:
       - ../back-end/src:/home/node/api/src
+      - ../back-end/public:/home/node/api/public
       - ../back-end/package-lock.json:/home/node/api/package-lock.json
       - ../back-end/package.json:/home/node/api/package.json
     depends_on:
