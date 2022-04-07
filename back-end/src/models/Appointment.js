@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const schema = mongoose.Schema;
 
 const appointmentSchema = new mongoose.Schema({
+  user: {
+    type: schema.Types.ObjectId,
+    ref: "users",
+  },
   date: {
     type: Date,
     required: true,
@@ -15,20 +19,10 @@ const appointmentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  ref: [
-    {
-      user: {
-        type: schema.Types.ObjectId,
-        ref: "users",
-      },
-    },
-    {
-      mentor: {
-        type: schema.Types.ObjectId,
-        ref: "users",
-      },
-    },
-  ],
+  mentor: {
+    type: schema.Types.ObjectId,
+    ref: "users",
+  },
   status: { type: Boolean },
   createdAt: {
     type: Date,

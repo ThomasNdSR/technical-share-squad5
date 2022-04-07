@@ -9,7 +9,7 @@ export default class UsersControllers {
     User.find()
       .select({
         name: 1,
-        imgId: 1,
+        img: 1,
         skill: 1,
         profile: 1,
       })
