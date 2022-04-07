@@ -29,13 +29,19 @@ const userSchema = new mongoose.Schema({
       ref: "skills",
     },
   ],
-  mentor:{
-    type:Boolean,
+  mentor: {
+    type: Boolean,
   },
   profile: {
     type: schema.Types.ObjectId,
     ref: "profiles",
   },
+  favorite: [
+    {
+      type: schema.Types.ObjectId,
+      ref: "users",
+    },
+  ],
 });
 
 const users = mongoose.model("users", userSchema);

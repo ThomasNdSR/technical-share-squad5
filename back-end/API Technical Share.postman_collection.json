@@ -6,6 +6,24 @@
 	},
 	"item": [
 		{
+			"name": "Popular o banco de dados com os seeders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/seed",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Listar usuários registrados",
 			"request": {
 				"method": "GET",
@@ -105,7 +123,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    \"6249b931a67eb0bc26ca4ee1\",\n    \"6249b93fa67eb0bc26ca4ee3\"\n]",
+					"raw": "[\n    \"624ee1e60dd05b30360ab29f\"\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -113,14 +131,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/user/624a312751251cafcd27a41d",
+					"raw": "localhost:8000/user/skill/624e68c11d614c9ffe74afa6",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"user",
-						"624a312751251cafcd27a41d"
+						"skill",
+						"624e68c11d614c9ffe74afa6"
 					]
 				}
 			},
@@ -272,6 +291,105 @@
 						"user",
 						"profile",
 						"624cad18512c99f3760e739c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação do agendamento do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":\"624e68c11d614c9ffe74afa6\",\n    \"date\":\"2022/05/10\",\n    \"time\":\"13:00\",\n    \"place\":\"local\",\n    \"mentor\":\"624ee1d00dd05b30360ab29a\",\n    \"status\":\"1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/appointment/624e68c11d614c9ffe74afa6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624e68c11d614c9ffe74afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar os agendamentos do usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/appointment/624e68c11d614c9ffe74afa6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624e68c11d614c9ffe74afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover um agendamento do usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/appointment/624eed7084bb7d55608e45ae",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624eed7084bb7d55608e45ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir novo favorito no perfil do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/up/624f24cdd07fa608ca7e8a71",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624f2477d07fa608ca7e8a68",
+						"up",
+						"624f24cdd07fa608ca7e8a71"
 					]
 				}
 			},

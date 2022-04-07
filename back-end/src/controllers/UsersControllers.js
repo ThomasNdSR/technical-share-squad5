@@ -27,10 +27,18 @@ export default class UsersControllers {
   static userProfile = (req, res) => {
     const id = req.params.id;
     User.findById(id)
-    .populate({
-      path: "img profile",
-      options: { _recursed: true },
-    })
+      .select({
+        name: 1,
+        img: 1,
+        skill: 1,
+        email: 1,
+        favorite:1
+      })
+      .populate({
+        path: "img profile",
+        options: { _recursed: true },
+      })
+      .populate("favorite", "name img skill profile")
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -106,5 +114,29 @@ export default class UsersControllers {
         res.status(500).json(err.message);
       }
     }
+  };
+  static includeFavorite = async (req, res) => {
+    const newFavorite = req.params.idFavorite;
+    const user = await User.findOne({ _id: req.params.id });
+    user.favorite.push(newFavorite);
+    user.save((err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(201).json({ message: "favorito incluso com sucesso" });
+      }
+    });
+  };
+  static removeFavorite = async (req, res) => {
+    const disfavor = req.params.idFavorite;
+    const user = await User.findOne({ _id: req.params.id });
+    user.favorite.splice(user.favorite.indexOf(disfavor), 1);
+    user.save((err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(201).json({ message: "favorito removido com sucesso" });
+      }
+    });
   };
 }
