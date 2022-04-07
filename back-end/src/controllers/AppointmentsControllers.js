@@ -23,4 +23,15 @@ export default class AppointmentsControllers {
       }
     });
   }
+  static deleteRegistry = (req, res) => {
+    const id = req.params.id;
+
+    Appointment.findByIdAndDelete(id, (err) => {
+      if (err) {
+        res.status(500).send({ message: err.message });
+      } else {
+        res.status(200).send({ message: "Removido com sucesso" });
+      }
+    });
+  };
 }
