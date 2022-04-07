@@ -13,14 +13,14 @@ const storage = multer.diskStorage({
 export default (multer({
   storage: storage,
   
-  // fileFilter: (req, file, cb) => {
-  //   const mimeType = ["image/png", "image/jpg", "image/jpeg"].find(
-  //     (valid) => valid == file.mimetype
-  //   );
-  //   if (mimeType) {
-  //     return cb(null, true);
-  //   } else {
-  //     return cb(null, false);
-  //   }
-  // },
+  fileFilter: (req, file, cb) => {
+    const mimeType = ["image/png", "image/jpg", "image/jpeg"].find(
+      (valid) => valid == file.mimetype
+    );
+    if (mimeType) {
+      return cb(null, true);
+    } else {
+      return cb(null, false);
+    }
+  },
 }));
