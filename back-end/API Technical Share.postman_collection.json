@@ -47,14 +47,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8000/user/6249b8cba67eb0bc26ca4ed8",
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"user",
-						"6249b8cba67eb0bc26ca4ed8"
+						"624f2477d07fa608ca7e8a68"
 					]
 				}
 			},
@@ -380,7 +380,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/up/624f24cdd07fa608ca7e8a71",
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/favorite/624f2562d07fa608ca7e8a86",
 					"host": [
 						"localhost"
 					],
@@ -388,8 +388,29 @@
 					"path": [
 						"user",
 						"624f2477d07fa608ca7e8a68",
-						"up",
-						"624f24cdd07fa608ca7e8a71"
+						"favorite",
+						"624f2562d07fa608ca7e8a86"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover favorito do perfil do usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/favorite/624f24e6d07fa608ca7e8a74",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624f2477d07fa608ca7e8a68",
+						"favorite",
+						"624f24e6d07fa608ca7e8a74"
 					]
 				}
 			},

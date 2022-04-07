@@ -7,8 +7,8 @@ router
   .get("/user/:id",UsersControllers.userProfile)
   .post("/user", UsersControllers.authenticateUser)
   .post("/user/create", UsersControllers.createUser)
-  .post("/user/:id/up/:idFavorite", UsersControllers.includeFavorite)
-  .post("/user/:id/down/:idFavorite", UsersControllers.removeFavorite)
+  .post("/user/:id/favorite/:idFavorite", UsersControllers.includeFavorite)
   .put("/user/skill/:id",UsersControllers.updateSkillUser)
+  .delete("/user/:id/favorite/:idFavorite", UsersControllers.removeFavorite)
 
 export default router;
