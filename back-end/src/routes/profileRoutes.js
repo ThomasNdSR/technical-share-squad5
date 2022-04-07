@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProfileControllers from "../controllers/profileControllers.js";
+import ProfileControllers from "../controllers/ProfileControllers.js";
 
 const router = Router();
 router

@@ -16,7 +16,7 @@ export default class UsersControllers {
       .populate({
         path: "img profile skill",
         options: { _recursed: true },
-      }).populate('profile.$*.skill')
+      })
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -27,8 +27,10 @@ export default class UsersControllers {
   static userProfile = (req, res) => {
     const id = req.params.id;
     User.findById(id)
-      .populate("profile")
-      .populate("img")
+    .populate({
+      path: "img profile",
+      options: { _recursed: true },
+    })
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
