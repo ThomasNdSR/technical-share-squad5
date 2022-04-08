@@ -1,9 +1,9 @@
-import Profile from "../models/Profile.js";
+import Available from "../models/Available.js";
 import User from "../models/User.js"
 
-export default class ProfileControllers {
+export default class AvailableControllers {
   static listRegister = (__, res) => {
-    Profile.find((err, item) => {
+    Available.find((err, item) => {
       if (err) {
         res.status(500).json(err.message);
       } else {
@@ -13,10 +13,10 @@ export default class ProfileControllers {
   };
   static register = async (req, res) => {
     const id = req.params.id
-    const data = new Profile(req.body);
+    const data = new Available(req.body);
 
     const user = await User.findOne({ _id: id });
-    user.profile = data
+    user.Available = data
     data.save()
     user.save((err) => {
       if (err) {

@@ -139,4 +139,8 @@ export default class UsersControllers {
       }
     });
   };
+  static filterSearch = async (req,res) =>{
+    const filter = req.query.filter
+
+  }
 }
