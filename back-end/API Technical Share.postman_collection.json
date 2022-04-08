@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "0d1a443d-60df-4058-852e-22b7a3ee51b0",
+		"name": "API Technical Share",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Popular o banco de dados com os seeders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/seed",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuários registrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna único usuário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624f2477d07fa608ca7e8a68"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validação de acesso do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"alan@123.com\",\n    \"password\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação do perfil de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Walter\",\n    \"email\":\"walter@123.com\",\n    \"password\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar skills do usuário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"624ee1e60dd05b30360ab29f\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/skill/624e68c11d614c9ffe74afa6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"skill",
+						"624e68c11d614c9ffe74afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar skills registradas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/skill",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar nova skill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/skill",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar skill registrada",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"teste2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/skill/6249b93fa67eb0bc26ca4ee3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill",
+						"6249b93fa67eb0bc26ca4ee3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover skill registrada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/skill/624a333ceee3f443d820db99",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"skill",
+						"624a333ceee3f443d820db99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir foto do perfil do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile-image",
+							"contentType": "",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/image/6249b8cba67eb0bc26ca4ed8",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"image",
+						"6249b8cba67eb0bc26ca4ed8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de profile do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"talkAboutYou\":\"testando texto\",\n    \"weekday\":[\n        {\n            \"day\":1,\n            \"time\":[\"15\",\"45\"]\n        },\n        {\n            \"day\":3,\n            \"time\":[\"15\"]\n        },\n        {\n            \"day\":6,\n            \"time\":[\"15\",\"45\",\"60\"]\n        }\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/profile/624cad18512c99f3760e739c",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						"624cad18512c99f3760e739c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação do agendamento do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":\"624e68c11d614c9ffe74afa6\",\n    \"date\":\"2022/05/10\",\n    \"time\":\"13:00\",\n    \"place\":\"local\",\n    \"mentor\":\"624ee1d00dd05b30360ab29a\",\n    \"status\":\"1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/appointment/624e68c11d614c9ffe74afa6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624e68c11d614c9ffe74afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar os agendamentos do usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/appointment/624e68c11d614c9ffe74afa6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624e68c11d614c9ffe74afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover um agendamento do usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/appointment/624eed7084bb7d55608e45ae",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"appointment",
+						"624eed7084bb7d55608e45ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir novo favorito no perfil do usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/favorite/624f2562d07fa608ca7e8a86",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624f2477d07fa608ca7e8a68",
+						"favorite",
+						"624f2562d07fa608ca7e8a86"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover favorito do perfil do usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/624f2477d07fa608ca7e8a68/favorite/624f24e6d07fa608ca7e8a74",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"624f2477d07fa608ca7e8a68",
+						"favorite",
+						"624f24e6d07fa608ca7e8a74"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
