@@ -49,6 +49,7 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: var(--body-weight);
   font-size: var(--body-font-size);
+  background-color: #ffffff;
 }
 
 h1 {
