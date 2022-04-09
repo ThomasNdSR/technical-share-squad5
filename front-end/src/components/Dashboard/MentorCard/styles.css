@@ -14,6 +14,11 @@
   margin-left: auto;
 }
 
+.heart-button {
+  border: none;
+  background-color: #ffffff;
+}
+
 .image-box {
   width: 152px;
   height: 152px;

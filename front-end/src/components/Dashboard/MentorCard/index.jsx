@@ -1,11 +1,24 @@
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useState } from "react";
 import "./styles.css";
 
 export const MentorCard = () => {
+  const [favorite, setFavorite] = useState(false);
+
+  const addToFavorites = () => {
+    setFavorite((prevState) => !prevState);
+  };
+
   return (
     <div className="box">
       <div className="heart-icon-box">
-        <AiOutlineHeart size={30} color="var(--primary-03)" />
+        <button onClick={addToFavorites} className="heart-button">
+          {favorite === false ? (
+            <AiOutlineHeart size={30} color="var(--primary-03)" />
+          ) : (
+            <AiFillHeart size={30} color="var(--primary-03)" />
+          )}
+        </button>
       </div>
       <div className="image-box">
         <img
