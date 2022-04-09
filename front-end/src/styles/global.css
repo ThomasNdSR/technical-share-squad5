@@ -49,6 +49,7 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: var(--body-weight);
   font-size: var(--body-font-size);
+  background-color: #e5e5e5;
 }
 
 h1 {
@@ -84,4 +85,5 @@ h6 {
 button {
   font-size: var(--button-font-size);
   font-weight: var(--button-weight);
+  cursor: pointer;
 }
