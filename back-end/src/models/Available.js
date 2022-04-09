@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
 const availableSchema = new mongoose.Schema({
-  weekday: [
+  week: [
     {
-      day: { type: Number },
-      time: [{ type: String }],
+      weekday: { type: Number },
+      timeHour: [{ type: Number }],
     },
   ],
 });
 
-const available = mongoose.model("available", availableSchema);
+const availables = mongoose.model("availables", availableSchema);
 
-export default available;
+export default availables;

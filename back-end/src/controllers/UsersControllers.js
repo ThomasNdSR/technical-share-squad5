@@ -11,10 +11,10 @@ export default class UsersControllers {
         name: 1,
         img: 1,
         skill: 1,
-        profile: 1,
+        available: 1,
       })
       .populate({
-        path: "img profile skill",
+        path: "img skill",
         options: { _recursed: true },
       })
       .exec((err, item) => {
@@ -32,13 +32,14 @@ export default class UsersControllers {
         img: 1,
         skill: 1,
         email: 1,
-        favorite:1
+        favorite:1,
+        available:1
       })
       .populate({
-        path: "img profile",
+        path: "img",
         options: { _recursed: true },
       })
-      .populate("favorite", "name img skill profile")
+      .populate("favorite", "name img skill")
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -140,7 +141,17 @@ export default class UsersControllers {
     });
   };
   static filterSearch = async (req,res) =>{
-    const filter = req.query.filter
+    const skill = req.query.skill
+    const weekdayNow = new Date().getDay()
+    const hourNow = new Date().getHours()
+    const date = new Date()
+
+    User.find({'skill':skill},{},(err, users)=>{
+      console.log(date)
+      console.log(weekdayNow)
+      console.log(hourNow)
+      res.status(200).send(users)
+    })
 
   }
 }

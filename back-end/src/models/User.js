@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import availables from "./Available.js";
 
 const schema = mongoose.Schema;
 
@@ -29,13 +30,7 @@ const userSchema = new mongoose.Schema({
       ref: "skills",
     },
   ],
-  mentor: {
-    type: Boolean,
-  },
-  profile: {
-    type: schema.Types.ObjectId,
-    ref: "profiles",
-  },
+  available: [availables.schema],
   favorite: [
     {
       type: schema.Types.ObjectId,
