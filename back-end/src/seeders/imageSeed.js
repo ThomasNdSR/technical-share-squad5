@@ -81,6 +81,16 @@ const images = [
     originalName: "modelo01.png",
     path: "public/img/1649530484761-modelo01.png",
   }),
+  new Image({
+    _id: "6251dddd5567722dd80d0348",
+    originalName: "modelo08.png",
+    path: "public/img/1649532381148-modelo08.png",
+  }),
+  new Image({
+    _id: "6251de82f473ea6170b0c633",
+    originalName: "modelo03.png",
+    path: "public/img/1649532546597-modelo03.png",
+  }),
 ];
 
 export default images;
