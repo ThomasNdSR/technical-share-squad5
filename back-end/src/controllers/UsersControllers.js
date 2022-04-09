@@ -32,8 +32,8 @@ export default class UsersControllers {
         img: 1,
         skill: 1,
         email: 1,
-        favorite:1,
-        available:1
+        favorite: 1,
+        available: 1,
       })
       .populate({
         path: "img",
@@ -140,18 +140,25 @@ export default class UsersControllers {
       }
     });
   };
-  static filterSearch = async (req,res) =>{
-    const skill = req.query.skill
-    const weekdayNow = new Date().getDay()
-    const hourNow = new Date().getHours()
-    const date = new Date()
+  static filterSearch = async (req, res) => {
+    const skill = req.query.skill;
+    // const weekdayNow = new Date().getDay()
+    const weekdayNow = 6;
+    const hourNow = new Date().getHours();
 
-    User.find({'skill':skill},{},(err, users)=>{
-      console.log(date)
-      console.log(weekdayNow)
-      console.log(hourNow)
-      res.status(200).send(users)
-    })
-
-  }
+    User.find({ skill: skill, "available.week.weekday": weekdayNow })
+      .select({
+        name: 1,
+        img: 1,
+        skill: 1,
+        available: 1,
+      })
+      .populate({
+        path: "img skill",
+        options: { _recursed: true },
+      })
+      .exec((err, users) => {
+        res.status(200).send(users);
+      });
+  };
 }
