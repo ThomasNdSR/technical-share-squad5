@@ -2,6 +2,15 @@ import Image from "../models/Image.js";
 import User from "../models/User.js";
 
 export default class ImageController {
+  static listRegister = (__, res) => {
+    Image.find((err, item) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(200).json(item);
+      }
+    });
+  };
   static registerImage = async (req, res) => {
     const id = req.params.id;
     if (req.file) {

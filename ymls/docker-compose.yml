@@ -1,32 +1,32 @@
 version: "3.9"
 services:
-  frontEnd:
-    build:
-      dockerfile: dockerfile
-      context: ../front-end/
-    image: front-end-technical_share:1.0
-    container_name: front-technical_share
-    restart: unless-stopped
-    working_dir: /home/node/app/projeto
-    networks:
-      - frontend
-    ports:
-      - "3030:3030"
-      - "8080:8080"
-    stdin_open: true
-    tty: true
-    volumes:
-      - ../front-end/:/home/node/app/projeto
-      - ../front-end/package-lock.json:/home/node/app/package-lock.json
-      - ../front-end/package.json:/home/node/app/package.json
-    environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
-      - CHOKIDAR_INTERVAL=100
+  # frontEnd:
+  #   build:
+  #     dockerfile: dockerfile
+  #     context: ../front-end/
+  #   image: front-end-technical_share:1.0
+  #   container_name: front-technical_share
+  #   restart: unless-stopped
+  #   working_dir: /home/node/app/projeto
+  #   networks:
+  #     - frontend
+  #   ports:
+  #     - "3030:3030"
+  #     - "8080:8080"
+  #   stdin_open: true
+  #   tty: true
+  #   volumes:
+  #     - ../front-end/:/home/node/app/projeto
+  #     - ../front-end/package-lock.json:/home/node/app/package-lock.json
+  #     - ../front-end/package.json:/home/node/app/package.json
+  #   environment:
+  #     - NODE_ENV=development
+  #     - CHOKIDAR_USEPOLLING=true
+  #     - CHOKIDAR_INTERVAL=100
 
-    depends_on:
-      - "backEnd"
-      - "mongodb"
+  #   depends_on:
+  #     - "backEnd"
+  #     - "mongodb"
   backEnd:
     build:
       dockerfile: dockerfile
