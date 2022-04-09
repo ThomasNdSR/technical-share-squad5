@@ -1,0 +1,87 @@
+:root {
+  /* colors */
+  --primary-01: #fe4400;
+  --primary-02: #febba2;
+  --primary-03: #b93200;
+
+  --neutral-01: #efefff;
+  --neutral-02: #01001d;
+  --neutral-03: #fefdfc;
+
+  --secondary-01: #36357e;
+  --secondary-02: #2a2962;
+  --secondary-03: #6263ab;
+
+  /* font-sizes */
+  --heading-1-size: 3.5rem;
+  --heading-2-size: 3rem;
+  --heading-3-size: 2.5rem;
+  --heading-4-size: 2rem;
+  --heading-5-size: 1.5rem;
+  --heading-6-size: 1.25rem;
+
+  --body-font-size: 1rem;
+
+  --subtitle-font-size: 1rem;
+
+  --button-font-size: 1rem;
+
+  --caption-font-size: 0.875rem;
+
+  /* font-weights */
+  --heading-1-weight: 700;
+  --heading-2-weight: 700;
+  --heading-3-weight: 700;
+  --heading-4-weight: 500;
+  --heading-5-weight: 400;
+  --heading-6-weight: 400;
+
+  --body-weight: 400;
+
+  --subtitle-weight: 500;
+
+  --button-weight: 700;
+
+  --caption-weight: 400;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--body-weight);
+  font-size: var(--body-font-size);
+}
+
+h1 {
+  font-size: var(--heading-1-size);
+  font-weight: var(--heading-1-weight);
+}
+
+h2 {
+  font-size: var(--heading-2-size);
+  font-weight: var(--heading-2-weight);
+}
+
+h3 {
+  font-size: var(--heading-3-size);
+  font-weight: var(--heading-3-weight);
+}
+
+h4 {
+  font-size: var(--heading-4-size);
+  font-weight: var(--heading-4-weight);
+}
+
+h5 {
+  font-size: var(--heading-5-size);
+  font-weight: var(--heading-5-weight);
+}
+
+h6 {
+  font-size: var(--heading-6-size);
+  font-weight: var(--heading-6-weight);
+}
+
+button {
+  font-size: var(--button-font-size);
+  font-weight: var(--button-weight);
+}
