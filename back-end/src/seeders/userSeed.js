@@ -3,15 +3,20 @@ import User from "../models/User.js";
 const users = [
   new User({
     _id: "624f2477d07fa608ca7e8a68",
-    name: "Luiz",
-    email: "luiz@technicalShare.com",
-    password: "$2b$12$PO65ix.PB1rqu.MCewAgGuYPVq.FA3fHasn8NrgzkXW8xl8AFiBnK",
+    name: "João",
+    email: "joao@fcamara.com",
+    password: "$2b$12$nZdUfXZVZyfgh7rvP4j0W.d3MQl8pC5MahTn0o8A3C/Lvx7zCVZru",
+    role:"Ux/UI Designer",
+    skill:["624f2e515a8df8256170adc9"]
+
   }),
   new User({
     _id: "624f249ed07fa608ca7e8a6b",
-    name: "Jasmina",
-    email: "jasmina@technicalShare.com",
-    password: "$2b$12$.STplidbQmVlXIVhzXfvxuHkZ6lQoAmXdYZYGy/fSg3MRULBCfSo.",
+    name: "Ana Julia",
+    email: "ana.julia@fcamara.com",
+    password: "$2b$12$HmHA5KNxNtiwpcOvtBY1v.mZetuRjx94o6KKypgomFz3oUGsNN52W",
+    role:"Ux/UI Designer",
+    skill:["624f2e515a8df8256170adc9","624f2e515a8df8256170adca","624f2e515a8df8256170adcc"]
   }),
   new User({
     _id: "624f24b4d07fa608ca7e8a6e",
