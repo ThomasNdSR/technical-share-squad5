@@ -1,0 +1,38 @@
+.box-favorite-mentor {
+    display: flex;
+    width: 335px;
+    height: 488px;
+    background-image: url(https://brasilnft.art.br/pytsycky/2021/10/CryptoPunk-95-mi-PNG.png); 
+    background-size: 335px 488px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.heart-icon-box-favorite {
+   position: absolute;
+   top: 18px; right: 29px;
+}
+
+.favorite-mentor-name{
+    position: absolute;
+    width: 108px;
+    height: 32px;
+    line-height: 32px;
+    left: 23px;
+    top: 404px;
+    color: var(--neutral-03);
+    font-weight: var(--heading-3-weight);
+    white-space: nowrap;
+}
+
+.favorite-mentor-area{
+    position: absolute;
+    width: 118px;
+    height: 24px;
+    line-height: 24px;
+    left: 23px;
+    top: 436px;
+    color: var(--neutral-03);
+    font-weight:var(--subtitle-weight);
+    white-space: nowrap;
+}
