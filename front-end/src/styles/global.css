@@ -12,13 +12,16 @@
   --secondary-02: #2a2962;
   --secondary-03: #6263ab;
 
+  /* font-color */
+  --color-standard:#01001D;
+
   /* font-sizes */
   --heading-1-size: 3.5rem;
   --heading-2-size: 3rem;
   --heading-3-size: 2.5rem;
   --heading-4-size: 2rem;
   --heading-5-size: 1.5rem;
-  --heading-6-size: 1.25rem;
+  --heading-6-size: 1rem;
 
   --body-font-size: 1rem;
 
@@ -50,6 +53,11 @@ body {
   font-weight: var(--body-weight);
   font-size: var(--body-font-size);
   background-color: #ffffff;
+}
+
+.page {
+  margin: 0px 100px;
+  padding: 0px;
 }
 
 h1 {

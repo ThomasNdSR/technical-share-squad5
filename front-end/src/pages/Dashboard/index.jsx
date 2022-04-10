@@ -7,7 +7,7 @@ import "./styles.css";
 
 export const Dashboard = () => {
   return (
-    <div>
+    <div className="page">
       <Header />
       <SearchContainer />
       {/* <Favorites /> */}

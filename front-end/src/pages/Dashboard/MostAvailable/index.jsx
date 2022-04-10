@@ -4,7 +4,8 @@ import "./styles.css";
 
 export const MostAvailable = () => {
   return (
-    <div className="discover-quick-professionals-box">
+    <section className="discover-quick-professionals-box">
+      <div className="discover-container">
       <h3 className="discover-professionals-heading">
         Profissionais com horários mais próximos
       </h3>
@@ -12,12 +13,13 @@ export const MostAvailable = () => {
         <MdNavigateBefore size={39} color="var(--primary-01)" />
         <MdNavigateNext size={39} color="var(--primary-01)" />
       </div>
-      <div className="discover-professionals-list">
-        <MentorCard />
-        <MentorCard />
-        <MentorCard />
-        <MentorCard />
       </div>
-    </div>
+      <article className="discover-professionals-list">
+        <MentorCard />
+        <MentorCard />
+        <MentorCard />
+        <MentorCard />
+      </article>
+    </section>
   );
 };

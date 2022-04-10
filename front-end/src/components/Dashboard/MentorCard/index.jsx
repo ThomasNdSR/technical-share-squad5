@@ -10,26 +10,26 @@ export const MentorCard = () => {
   };
 
   return (
-    <div className="mentor-box">
-      <div className="heart-icon-box">
-        <button onClick={addToFavorites} className="heart-button">
+    <section className="card">
+        <button onClick={addToFavorites} className="card__heart--button">
           {favorite === false ? (
             <AiOutlineHeart size={30} color="var(--primary-03)" />
           ) : (
             <AiFillHeart size={30} color="var(--primary-03)" />
           )}
         </button>
-      </div>
-      <div className="image-box">
+      <figure className="card__image">
         <img
-          className="mentor-image"
+          className="card__image--src"
           src="http://localhost:8000/img/1649526761408-modelo13.png"
           alt=""
         />
-      </div>
-      <h4 className="mentor-name">John Doe</h4>
-      <caption className="mentor-area">UX/UI Designer</caption>
-      <button className="mentor-button">Ver perfil</button>
-    </div>
+      </figure>
+      <article className="card__descriptions">
+      <h6 className="card__descriptions--name">John Doe</h6>
+      <caption className="card__descriptions--area">UX/UI Designer</caption>
+      <button className="card__descriptions--button">Ver perfil</button>
+      </article>
+    </section>
   );
 };

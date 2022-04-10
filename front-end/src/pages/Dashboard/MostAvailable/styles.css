@@ -1,10 +1,11 @@
 .discover-quick-professionals-box {
-  width: 80%;
-  margin: 0 auto 120px;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
 }
-
+.discover-container{
+  display: flex
+}
 .previous-next {
   display: flex;
   margin-left: auto;

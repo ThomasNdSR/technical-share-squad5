@@ -1,55 +1,60 @@
-.mentor-box {
-  width: 334px;
-  height: 371px;
-  border: 2px solid var(--primary-03);
-  border-radius: 30px;
+.card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  margin-top: 40px;
+  background-color: none;
+  border: 2px solid var(--primary-03);
+  border-radius: 1rem;
+  color:var(--color-standard);
+  flex-direction: column;
+  height: 230px;
+  margin: 2rem 0;
+  padding: 0.8rem;
+  position: relative;
+  justify-content: center;
+  width: 193px;
 }
-
-.heart-icon-box {
-  margin-top: 13px;
-  margin-right: 13px;
-  margin-left: auto;
-}
-
-.heart-button {
+.card__heart--button {
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
+  position: absolute;
+  top:0.3rem;
+  right: 0.3rem;
 }
 
-.image-box {
-  border-radius: 50%;
-  box-shadow: 0px 6px 10px -2px #7B7B7B;
-  height: 152px;
+.card__image {
+  border-radius: 100%;
+  height: 110px;
+  margin-bottom: .5rem;
   overflow:hidden;
-  width: 152px;
+  width: 110px;
 }
 
-.mentor-image {
+.card__image--src {
   width: 100%;;
 }
-
-.mentor-name {
-  margin-top: 15px;
+.card__descriptions{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5rem;
+  width: 100%;
+}
+.card__descriptions--name {
   font-weight: bold;
 }
 
-.mentor-area {
-  margin-top: 10px;
-  opacity: 50%;
+.card__descriptions--area {
+  font-size: 0.7rem;
 }
 
-.mentor-button {
-  margin-top: 15px;
-  width: 70%;
-  height: 50px;
-  border: none;
-  text-transform: uppercase;
-  color: var(--neutral-03);
-  border-radius: 10px;
+.card__descriptions--button {
   background-color: var(--secondary-02);
+  border: none;
+  border-radius: 0.625rem;
+  color: var(--neutral-03);
+  font-size: 0.8rem;;
+  height: 2rem;
+  text-transform: uppercase;
+  width: 90%;
 }
