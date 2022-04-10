@@ -23,7 +23,7 @@ export const MentorCard = () => {
       <div className="image-box">
         <img
           className="mentor-image"
-          src="https://brasilnft.art.br/pytsycky/2021/10/CryptoPunk-95-mi-PNG.png"
+          src="http://localhost:8000/img/1649526761408-modelo13.png"
           alt=""
         />
       </div>
