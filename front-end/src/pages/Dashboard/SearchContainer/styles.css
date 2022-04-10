@@ -1,0 +1,46 @@
+.search-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 563px;
+}
+
+#img1 {
+  margin-right: auto;
+}
+
+#img2 {
+  margin-left: auto;
+}
+
+#find-mentors-heading {
+  color: var(--neutral-02);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.search {
+  display: flex;
+  width: 33%;
+  height: 43px;
+  border: 2px solid var(--primary-03);
+  border-radius: 0.875rem;
+}
+
+#search-input {
+  border: none;
+  margin-left: 15px;
+  width: 90%;
+  font-size: 1rem;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
+#search-icon {
+  color: var(--primary-01);
+  opacity: 50%;
+  transform: translate(10px, 6px);
+}

@@ -1,4 +1,4 @@
-.box {
+.mentor-box {
   width: 334px;
   height: 371px;
   border: 2px solid var(--primary-03);
@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #ffffff;
+  margin-top: 40px;
 }
 
 .heart-icon-box {
@@ -41,7 +43,7 @@
 
 .mentor-button {
   margin-top: 15px;
-  width: 232px;
+  width: 70%;
   height: 50px;
   border: none;
   text-transform: uppercase;
