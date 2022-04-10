@@ -2,7 +2,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import "./styles.css";
 
-export const MentorCard = () => {
+export const MentorCard = ({ name, role, image }) => {
   const [favorite, setFavorite] = useState(false);
 
   const addToFavorites = () => {
@@ -23,12 +23,12 @@ export const MentorCard = () => {
       <div className="image-box">
         <img
           className="mentor-image"
-          src="http://localhost:8000/img/1649526761408-modelo13.png"
-          alt=""
+          src={image}
+          alt={name}
         />
       </div>
-      <h4 className="mentor-name">John Doe</h4>
-      <caption className="mentor-area">UX/UI Designer</caption>
+      <h4 className="mentor-name">{name}</h4>
+      <caption className="mentor-area">{role}</caption>
       <button className="mentor-button">Ver perfil</button>
     </div>
   );

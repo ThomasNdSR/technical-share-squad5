@@ -23,14 +23,12 @@
 
 .image-box {
   border-radius: 50%;
-  box-shadow: 0px 6px 10px -2px #7B7B7B;
   height: 152px;
-  overflow:hidden;
   width: 152px;
 }
 
 .mentor-image {
-  width: 100%;;
+  width: 100%;
 }
 
 .mentor-name {
