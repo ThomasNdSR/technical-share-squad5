@@ -1,12 +1,18 @@
+import { Header } from "../../components/Header";
+import { SearchContainer } from "./SearchContainer";
+import { Favorites } from "./Favorites";
+import { MostAvailable } from "./MostAvailable";
+import { FindMentors } from "./FindMentors";
+import "./styles.css";
+
 export const Dashboard = () => {
   return (
-    <>
-      <h1>Dashboard</h1>
-      <h2>Dashboard</h2>
-      <h3>Dashboard</h3>
-      <h4>Dashboard</h4>
-      <h5>Dashboard</h5>
-      <h6>Dashboard</h6>
-    </>
+    <div>
+      <Header />
+      <SearchContainer />
+      {/* <Favorites /> */}
+      <MostAvailable />
+      <FindMentors />
+    </div>
   );
 };

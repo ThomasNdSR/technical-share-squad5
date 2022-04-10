@@ -1,0 +1,26 @@
+.discover-professionals-box {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.discover-professionals-heading {
+  color: var(--neutral-02);
+  padding-left: 10px;
+}
+
+.discover-professionals-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.slider {
+  display: flex;
+  margin-left: auto;
+  padding-right: 10px;
+}
