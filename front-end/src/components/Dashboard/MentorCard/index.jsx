@@ -10,7 +10,7 @@ export const MentorCard = () => {
   };
 
   return (
-    <div className="box">
+    <div className="mentor-box">
       <div className="heart-icon-box">
         <button onClick={addToFavorites} className="heart-button">
           {favorite === false ? (
