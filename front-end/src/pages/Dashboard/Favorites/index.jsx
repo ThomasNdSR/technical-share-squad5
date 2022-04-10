@@ -1,5 +1,4 @@
 import { BiSlider } from "react-icons/bi";
-// import { FavoriteCard } from "../../../components/Dashboard/FavoriteCard";
 import "./styles.css";
 
 export const Favorites = () => {
@@ -12,9 +11,7 @@ export const Favorites = () => {
         </div>
       </div>
       <div className="orange-box">
-        <div className="favorite-professionals-box">
-          {/* <FavoriteCard /> */}
-        </div>
+        <div className="favorite-professionals-box"></div>
       </div>
     </div>
   );

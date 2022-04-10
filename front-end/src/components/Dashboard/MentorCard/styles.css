@@ -22,6 +22,9 @@
 }
 
 .image-box {
+  border-radius: 50%;
+  height: 152px;
+  overflow:hidden;
   width: 152px;
   height: 152px;
 }
