@@ -25,10 +25,12 @@
   border-radius: 50%;
   height: 152px;
   width: 152px;
+  overflow: hidden;
 }
 
 .mentor-image {
   width: 100%;
+  height: auto;
 }
 
 .mentor-name {
