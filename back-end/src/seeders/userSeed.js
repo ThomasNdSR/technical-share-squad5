@@ -8,6 +8,7 @@ const users = [
     password: "$2b$12$nZdUfXZVZyfgh7rvP4j0W.d3MQl8pC5MahTn0o8A3C/Lvx7zCVZru",
     role: "Ux/UI Designer",
     skill: ["624f2e515a8df8256170adc9"],
+    project:["Laranja Mecânica BOT","Anjaro","LasTech","Programa de formação"],
   }),
   new User({
     _id: "624f249ed07fa608ca7e8a6b",
@@ -20,6 +21,7 @@ const users = [
       "624f2e515a8df8256170adca",
       "624f2e515a8df8256170adcc",
     ],
+    project:["Aloha","Blu Tor"],
     available: [
       {
         week: [
@@ -47,6 +49,7 @@ const users = [
     password: "$2b$12$PFWsE6FnhKoIg33lbtmYMuM6z3dXwQm/UfEXhCASNmgoU.gDALN6S",
     role: "Ux/UI Designer",
     skill: ["624f2e515a8df8256170adca", "624f2e515a8df8256170adcc"],
+    project:["Anjaro"],
     available: [
       {
         week: [
@@ -66,6 +69,7 @@ const users = [
     password: "$2b$12$ARaKNy3NUjOf3LuK4tBk/epgNLcqFRTcEQBTUvc3QnFarEeOw3VWW",
     role: "Fullstack Developer",
     skill: ["624f2e515a8df8256170adb7", "624f2e515a8df8256170adb8"],
+    project:["Laranja Mecânica BOT","LasTech"],
     available: [
       {
         week: [
@@ -89,6 +93,7 @@ const users = [
     password: "$2b$12$auhCSLCD93eNLi4PxZGvBu8QAqL86WUpaJyw.9B7hVWSfPGAJ5jt.",
     role: "Quality Assurance",
     skill: ["624f2e515a8df8256170adb9", "624f2e515a8df8256170adba"],
+    project:["SquadBank","Programa de formação"],
     available: [
       {
         week: [
@@ -120,6 +125,7 @@ const users = [
       "624f2e515a8df8256170adca",
       "624f2e515a8df8256170adcc",
     ],
+    project:["Laranja Mecânica BOT","SquadBank","Anjaro"],
     available: [
       {
         week: [
@@ -152,6 +158,7 @@ const users = [
       "624f2e515a8df8256170adcc",
       "624f2e515a8df8256170adcd",
     ],
+    project:[],
     available: [
       {
         week: [
@@ -179,6 +186,7 @@ const users = [
     role: "Ux/UI Designer",
     password: "$2b$12$eYJHJi5PZB767YEBPVO9g.l/YudqELMeue0wmy2EqrgZVE4ITj.2W",
     skill: ["624f2e515a8df8256170adc9"],
+    project:["SquadBank","Blu Tor","Programa de formação"],
     available: [
       {
         week: [
@@ -202,6 +210,7 @@ const users = [
     role: "Ux/UI Designer",
     password: "$2b$12$H/zBajiSFEj3zOR6/vh8hOf7./.2Vdtf/QMgBppw/78rTi9phEfz6",
     skill: ["624f2e515a8df8256170adc9"],
+    project:["Blu Tor","Águia Azul"],
     available: [
       {
         week: [
@@ -233,6 +242,7 @@ const users = [
       "624f2e515a8df8256170adb7",
       "624f2e515a8df8256170adb9",
     ],
+    project:["Laranja Mecânica BOT","Blu Tor","Águia Azul"],
     available: [
       {
         week: [
@@ -260,6 +270,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$JgC/zePF3looS/XlL22n6ekuSLF5XbDMtk1/iTzKAJIUcn3v2Oa6S",
     skill: ["624f2e515a8df8256170adb8"],
+    project:["SquadBank","Anjaro"],
     available: [
       {
         week: [
@@ -287,6 +298,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$L54t9UXNfcFiB45AjQpRRefd3MWwfDbG9tDk3OD8SvwA5huyV8JX.",
     skill: ["624f2e515a8df8256170adb7"],
+    project:["Blu Tor","Águia Azul","Aloha","Cosmosfera"],
     available: [
       {
         week: [
@@ -314,6 +326,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$iQFuxDEetopFRiwGvWK08.Yhbyrj.FZwkRKZAvZjintQ3KakGu9HS",
     skill: ["624f2e515a8df8256170adbc", "624f2e515a8df8256170adb8"],
+    project:["Laranja Mecânica BOT","Aloha","Cosmosfera"],
     available: [
       {
         week: [
@@ -341,6 +354,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$YoHtmyia.0L0Ru0v6XRZ2O7d5DLUgJ3ss2UKXr6B3tR0s5YxYuJx6",
     skill: ["624f2e515a8df8256170adbc", "624f2e515a8df8256170adb8"],
+    project:["Aloha","Cosmosfera","Programa de formação"],
     available: [
       {
         week: [
@@ -368,6 +382,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$NCTME5s6gpAKF3bpfvRwDutkD9Bm7HRcln4HNlXYpfSyKQElUjeYi",
     skill: ["624f2e515a8df8256170adb7", "624f2e515a8df8256170adb8"],
+    project:["SquadBank"],
     available: [
       {
         week: [
@@ -395,6 +410,7 @@ const users = [
     role: "Fullstack Developer",
     password: "$2b$12$fpTezvbjG676OUnEAGPUgewtgMY.bY6lrzbXZgExtNewqfXHwfAvi",
     skill: ["624f2e515a8df8256170adb7", "624f2e515a8df8256170adb8"],
+    project:["Verano"],
     available: [
       {
         week: [
@@ -426,6 +442,7 @@ const users = [
       "624f2e515a8df8256170adbb",
       "624f2e515a8df8256170adbd",
     ],
+    project:["Laranja Mecânica BOT","LasTech"],
     available: [
       {
         week: [
@@ -461,6 +478,7 @@ const users = [
       "624f2e515a8df8256170adbb",
       "624f2e515a8df8256170adbd",
     ],
+    project:["Laranja Mecânica BOT","Anjaro","Aloha"],
     available: [
       {
         week: [

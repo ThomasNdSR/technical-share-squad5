@@ -14,6 +14,7 @@ export default class UsersControllers {
         role:1,
         skill: 1,
         available: 1,
+        project:1
       })
       .populate({
         path: "img skill",
@@ -36,6 +37,7 @@ export default class UsersControllers {
         email: 1,
         favorite: 1,
         available: 1,
+        project:1
       })
       .populate({
         path: "img",
