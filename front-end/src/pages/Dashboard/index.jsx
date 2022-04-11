@@ -10,7 +10,7 @@ export const Dashboard = () => {
       <Header />
       <SearchContainer />
       {/* <Favorites /> */}
-      <MostAvailable />
+      {/* <MostAvailable /> */}
       <FindMentors />
     </div>
   );
