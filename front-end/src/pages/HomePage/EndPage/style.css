@@ -1,7 +1,34 @@
-.endPage{
+.endPage {
   display: flex;
+  color: var(--primary-01);
   flex-direction: column;
-  vertical-align: middle;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 5rem 0;
+  height: 70vh;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+.endPage h4 {
+  font-weight: var(--heading-1-weight);
+}
+.endPage__illustration {
+  margin: 5rem auto;
+  width: 50rem;
+}
+.endPage_decorative--spots,
+.endPage_decorative--waves {
+  position: absolute;
+  width: 8rem;
+  z-index: -2;
+}
+.endPage_decorative--spots {
+  right: -100px;
+  bottom: 0;
+}
+.endPage_decorative--waves {
+  left: -100px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
