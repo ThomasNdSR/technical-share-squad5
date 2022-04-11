@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header";
 import {Spotlight} from "./Spotlight"
 import {Presentation} from "./Presentation"
+import {EndPage} from "./EndPage"
 import "./style.css";
 
 export const HomePage = () => {
@@ -8,10 +9,11 @@ export const HomePage = () => {
     <>
       <Header />
       <main>
-      <div className="page-top">
+      <div className="page-color">
       <Spotlight />
-      </div>
       <Presentation />
+      <EndPage />
+      </div>
       </main>
       
     </>

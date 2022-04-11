@@ -1,0 +1,7 @@
+.endPage{
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  justify-content: center;
+  padding: 2rem 0;
+}

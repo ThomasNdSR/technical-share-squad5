@@ -1,25 +1,25 @@
-
-.movie{
-    display:none;
-    align-items: flex-end;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
+.movie {
+  display: none;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  transition-duration: 0.5s;
+  animation: moveUp 1s ease-out;
 }
-.active{
-    display: flex;
-  }
-.movie__close{
-    border: none;
-    background-color: transparent;
-    margin: 1rem;
+.movie__close {
+  align-self: flex-end;
+  border: none;
+  background-color: transparent;
+  margin: 0.5rem;
 }
-
+.active,
 .presentation_descrition,
-.presentation_list {
+.presentation_list,
+.presentation__search--container {
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: var(--heading-1-weight);
   vertical-align: middle;
 }
 
@@ -28,31 +28,67 @@
   background-color: var(--secondary-02);
   flex-direction: column;
   justify-content: space-around;
-  height: auto;
-  min-height: 35vh;
+  height: 40vh;
   padding: 3rem;
   position: relative;
   text-align: center;
 }
-.presentation_descrition--play{
-    background-color: transparent;
-    border: solid 2px var(--primary-01);
-    border-radius: 1rem;
-    color: var(--neutral-03);
-    text-transform: uppercase;
-    padding: 1rem;
-    width:12rem;
+.presentation_descrition--play {
+  background-color: transparent;
+  border: solid 2px var(--primary-01);
+  border-radius: 1rem;
+  color: var(--neutral-03);
+  text-transform: uppercase;
+  padding: 1rem;
+  width: 12rem;
 }
-.presentation_descrition--play svg{
-    margin-right:1rem;
+.presentation_descrition--play svg {
+  margin-right: 1rem;
 }
 .presentation_list {
   justify-content: space-around;
   color: var(--color-standard);
-  height: 60vh;
+  height: 80vh;
+  margin: 5rem 0;
   padding: 3rem;
 }
 
-.presentation_list img{
-    height: 200px;
+.presentation_list img {
+  height: 200px;
+}
+
+.presentation__search {
+  background-color: var(--primary-01);
+}
+.presentation__search--container {
+  justify-content: space-between;
+  height: 35vh;
+  position: relative;
+}
+.presentation__search img {
+  width: 300px;
+  align-self:flex-end;
+}
+
+.presentation__search--descrition {
+  display: flex;
+  line-height: 1.3;
+  color: var(--neutral-03);
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: end;
+  width: 70%;
+  height: 30vh;
+}
+.presentation__search--descrition p {
+  font-weight: var(--body-weight);
+}
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+  }
 }

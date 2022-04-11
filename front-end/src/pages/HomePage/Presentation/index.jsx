@@ -4,6 +4,7 @@ import dataAnalysis from "../../../assets/Data_analysis_PNG 1.png";
 import onlineEducation from "../../../assets/Online_education_PNG 1.png";
 import calendar from "../../../assets/Calendar_PNG 1.png";
 import chat from "../../../assets/Chat_PNG 1.png";
+import searchImage from "../../../assets/searchImage.png";
 import "./style.css";
 
 export const Presentation = () => {
@@ -33,7 +34,7 @@ export const Presentation = () => {
   ];
   return (
     <section>
-      <div className="presentation_descrition">
+      <article className="presentation_descrition">
         <h3>Expanda suas habilidades e obtenha insights de forma rápida</h3>
         <button
           onClick={() => {
@@ -53,28 +54,45 @@ export const Presentation = () => {
           >
             <AiOutlineCloseCircle size={25} color="var(--primary-01)" />
           </button>
-          <div>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
+      <article>
+        <ul className="presentation_list page">
+          {list.map((item, index) => (
+            <li key={index}>
+              <img src={item.image} alt={item.alt} />
+              <p>{item.text}</p>
+              {item.skill}
+            </li>
+          ))}
+        </ul>
+      </article>
+      <article className="presentation__search">
+        <div className="presentation__search--container page">
+          <img
+            src={searchImage}
+            alt="Ilustração sobre pesquisa"
+          />
+          <div className="presentation__search--descrition">
+            <h4>
+              Pessoas com diferentes níveisde experiencias se encontrando e
+              trocando experiências
+            </h4>
+            <p className="presentation__search--descrition-text">
+              Pesquisa avançadas atráves de skill, função e projeto participados
+            </p>
           </div>
         </div>
-      </div>
-      <ul className="presentation_list page">
-        {list.map((item, index) => (
-          <li key={index}>
-            <img src={item.image} alt={item.alt} />
-            <p>{item.text}</p>
-            {item.skill}
-          </li>
-        ))}
-      </ul>
+      </article>
     </section>
   );
 };
