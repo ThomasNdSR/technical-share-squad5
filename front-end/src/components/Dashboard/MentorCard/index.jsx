@@ -3,20 +3,12 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { MentorModal } from "../MentorModal";
 
-export const MentorCard = ({ name, role, image }) => {
+export const MentorCard = ({ name, role, image, skills, available }) => {
   const [favorite, setFavorite] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const addToFavorites = () => {
     setFavorite((prevState) => !prevState);
-  };
-
-  const openModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setIsModalVisible(false);
   };
 
   // useEffect(() => {
@@ -28,27 +20,37 @@ export const MentorCard = ({ name, role, image }) => {
   // }, [isModalVisible]);
 
   return (
-    <div className="mentor-box">
-      <div className="heart-icon-box">
-        <button onClick={addToFavorites} className="heart-button">
-          {favorite === false ? (
-            <AiOutlineHeart size={30} color="var(--primary-03)" />
-          ) : (
-            <AiFillHeart size={30} color="var(--primary-03)" />
-          )}
-        </button>
-      </div>
-      <div className="image-box">
-        <img className="mentor-image" src={image} alt={name} />
-      </div>
-      <h4 className="mentor-name">{name}</h4>
-      <caption className="mentor-area">{role}</caption>
-      <button className="mentor-button" onClick={openModal}>
+    <section className="card">
+      <button onClick={addToFavorites} className="card__heart--button">
+        {favorite === false ? (
+          <AiOutlineHeart size={22} color="var(--primary-03)" />
+        ) : (
+          <AiFillHeart size={22} color="var(--primary-03)" />
+        )}
+      </button>
+      <figure className="card__image">
+        <img className="card__image--src" src={image} alt={name} />
+      </figure>
+      <article className="card__descriptions">
+        <h6 className="card__descriptions--name">{name}</h6>
+        <caption className="card__descriptions--area">{role}</caption>
+      </article>
+      <button
+        onClick={() => setIsModalVisible(true)}
+        className="card__descriptions--button"
+      >
         Ver perfil
       </button>
       {isModalVisible ? (
-        <MentorModal name={name} role={role} image={image} />
+        <MentorModal
+          name={name}
+          role={role}
+          image={image}
+          skill={skills}
+          available={available}
+          closeModal={() => setIsModalVisible(false)}
+        />
       ) : null}
-    </div>
+    </section>
   );
 };

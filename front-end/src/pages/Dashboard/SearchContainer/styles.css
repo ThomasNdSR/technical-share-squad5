@@ -1,6 +1,15 @@
+.search,
+.search-component,
+.options,
+.options__list {
+  display: flex;
+  align-items: center;
+}
+
 .search-component {
   display: flex;
   flex-direction: column;
+  height: 55vh;
   justify-content: center;
   align-items: center;
   height: 563px;
@@ -20,6 +29,23 @@
   margin-bottom: 50px;
 }
 
+.options {
+  margin: 1rem;
+}
+
+.options__name {
+  color: var(--primary-03);
+  font-weight: var(--heading-4-weight);
+}
+
+.options__item {
+  text-align: center;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-02);
+  border-radius: 2rem;
+  width: 5rem;
+}
 .search {
   display: flex;
   width: 33%;

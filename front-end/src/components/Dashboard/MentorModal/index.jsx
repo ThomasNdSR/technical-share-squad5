@@ -1,33 +1,38 @@
+import { ModalProfileCard } from "./ModalProfileCard";
 import "./styles.css";
+import { VscChromeClose } from "react-icons/vsc";
 
-export const MentorModal = ({ name, role, image }) => {
+export const MentorModal = ({
+  id = "modal",
+  name,
+  role,
+  image,
+  skill,
+  available,
+  closeModal = () => {},
+}) => {
+  const handleOutsideClick = (e) => {
+    if (e.target.id === id) closeModal();
+  };
+
   return (
-    <div className="mentor-modal-bg">
+    <div id={id} className="mentor-modal-bg" onClick={handleOutsideClick}>
       <div className="mentor-modal-box">
-        <div className="mentor-modal-box-info">
-          {/* modal profile card */}
-          <div className="modal-profile-card">
-            <div className="modal-img-box">
-              <img className="modal-img" src={image} alt={name} />
-            </div>
-            <div className="modal-profile-card-wrapper">
-              <h3>{name}</h3>
-              <h6>{role}</h6>
-            </div>
+        <ModalProfileCard name={name} role={role} image={image} skill={skill} />
+
+        <div className="mentor-modal-box-scheduling">
+          <div className="close-button">
+            <button id="modal-close-button" onClick={closeModal}>
+              <VscChromeClose size={30} color="var(--primary-01)" />
+            </button>
           </div>
-          <div className="modal-profile-exp-skills">
-            <h5 className="mentor-exp-skills-heading">Projetos</h5>
-            <p>Orange Juice, Programa de Formação</p>
-            <h5 className="mentor-exp-skills-heading">Skills</h5>
-            <p>Javascript, React JS</p>
-            <h5 className="mentor-exp-skills-heading">Acessível para</h5>
-            <p>Deficientes auditivos</p>
-            <h5 className="mentor-exp-skills-heading">Redes</h5>
-            <p>GitHub, LinkedIn</p>
+          <div className="scheduling-button-wrapper">
+            <div className="scheduling-card">
+              {available.length > 0 ? "disponível" : "não disponível"}
+            </div>
+            <button id="go-ahead-button">Prosseguir</button>
           </div>
-          {/* end modal profile card */}
         </div>
-        <div className="mentor-modal-box-scheduling"></div>
       </div>
     </div>
   );

@@ -1,0 +1,78 @@
+.modal-profile-card {
+  display: flex;
+  min-width: 300px;
+}
+
+.modal-img-box {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-01);
+}
+
+.modal-img {
+  width: 100%;
+}
+
+.modal-profile-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.modal-profile-card-wrapper h3 {
+  color: var(--primary-01);
+  font-size: var(--heading-4-size);
+}
+
+.modal-profile-card-wrapper h6 {
+  margin-top: 10px;
+  color: var(--neutral-02);
+  font-size: var(--subtitle-font-size);
+}
+
+.modal-profile-exp-skills {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.mentor-exp-skills-heading {
+  margin-top: 40px;
+}
+
+.modal-profile-exp-skills ul {
+  width: 300px;
+}
+
+.modal-profile-exp-skills li {
+  color: var(--neutral-02);
+  font-weight: bold;
+  float: left;
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: var(--primary-02);
+  border: 2px solid var(--primary-03);
+  border-radius: 2rem;
+}
+
+.mentor-social-media-list {
+  display: flex;
+  margin-top: 10px;
+}
+
+#github {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .mentor-modal-box {
+    width: 70%;
+  }
+}

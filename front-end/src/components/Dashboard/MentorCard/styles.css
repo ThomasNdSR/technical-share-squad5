@@ -1,34 +1,42 @@
-.mentor-box {
-  width: 334px;
-  height: 371px;
-  border: 2px solid var(--primary-03);
-  border-radius: 30px;
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  margin-top: 40px;
+  justify-content: center;
+  background-color: none;
+  border: 2px solid var(--primary-03);
+  border-radius: 1rem;
+  color: var(--color-standard);
+  height: 270px;
+  margin: 0.875rem 0;
+  width: 220px;
 }
-
-.heart-icon-box {
-  margin-top: 13px;
-  margin-right: 13px;
-  margin-left: auto;
-}
-
-.heart-button {
+.card__heart--button {
+  width: 100%;
+  text-align: right;
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
+  transform: translate(0, -8px);
+  padding-right: 10px;
 }
 
-.image-box {
-  border-radius: 50%;
-  height: 152px;
-  width: 152px;
+.card__image {
+  border-radius: 100%;
+  height: 110px;
+  margin-bottom: 0.5rem;
   overflow: hidden;
+  width: 110px;
 }
 
-.mentor-image {
+.card__image--src {
+  width: 100%;
+}
+.card__descriptions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5rem;
   width: 100%;
   height: auto;
 }
@@ -38,8 +46,8 @@
   font-weight: bold;
 }
 
-.mentor-area {
-  margin-top: 10px;
+.card__descriptions--area {
+  font-size: 0.8rem;
   opacity: 50%;
 }
 
@@ -48,8 +56,23 @@
   width: 70%;
   height: 50px;
   border: none;
-  text-transform: uppercase;
+  border-radius: 0.625rem;
   color: var(--neutral-03);
-  border-radius: 10px;
-  background-color: var(--secondary-02);
+  font-size: 0.8rem;
+  height: 2.3rem;
+  text-transform: uppercase;
+  width: 75%;
+  margin-top: 10px;
 }
+
+@media screen and (max-width: 1136px) {
+  .card {
+    width: 180px;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  .card {
+    width: 120px;
+  }
+} */
