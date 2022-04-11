@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  width: 65%;
 }
 
 .discover-professionals-heading {
@@ -11,10 +12,11 @@
 }
 
 .discover-professionals-list {
-  display: grid;
-  gap: 0.5rem;
-  justify-content: center;
-  grid-template-columns: repeat(4, minmax(156px, 1fr))
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  margin-top: 0.875rem;
 }
 
 .slider {
@@ -25,24 +27,24 @@
   padding-right: 10px;
 }
 
-.slider__sort{
+.slider__sort {
   display: none;
   align-self: flex-end;
   color: var(--primary-03);
 }
 
-.active{
+.active {
   display: initial;
 }
 
-@media screen and (max-width:1136px) {
-  .discover-professionals-list{
+/* @media screen and (max-width: 1136px) {
+  .discover-professionals-list {
     grid-template-columns: repeat(3, minmax(164px, 1fr));
   }
 }
 
 @media screen and (max-width: 768px) {
-  .discover-professionals-list{
+  .discover-professionals-list {
     grid-template-columns: repeat(2, minmax(164px, 1fr));
   }
-}
+} */

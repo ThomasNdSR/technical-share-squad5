@@ -1,38 +1,36 @@
 .card {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: none;
   border: 2px solid var(--primary-03);
   border-radius: 1rem;
-  color:var(--color-standard);
-  flex-direction: column;
-  height: 230px;
-  margin: 2rem 0;
-  padding: 0.8rem;
-  position: relative;
-  justify-content: center;
-  width: 193px;
+  color: var(--color-standard);
+  height: 270px;
+  margin: 0.875rem 0;
+  width: 220px;
 }
 .card__heart--button {
+  width: 100%;
+  text-align: right;
   border: none;
   background-color: transparent;
-  position: absolute;
-  top:0.3rem;
-  right: 0.3rem;
+  transform: translate(0, -8px);
+  padding-right: 10px;
 }
 
 .card__image {
   border-radius: 100%;
   height: 110px;
-  margin-bottom: .5rem;
-  overflow:hidden;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
   width: 110px;
 }
 
 .card__image--src {
-  width: 100%;;
+  width: 100%;
 }
-.card__descriptions{
+.card__descriptions {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -45,7 +43,8 @@
 }
 
 .card__descriptions--area {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  opacity: 50%;
 }
 
 .card__descriptions--button {
@@ -53,20 +52,21 @@
   border: none;
   border-radius: 0.625rem;
   color: var(--neutral-03);
-  font-size: 0.8rem;;
-  height: 2rem;
+  font-size: 0.8rem;
+  height: 2.3rem;
   text-transform: uppercase;
-  width: 90%;
+  width: 75%;
+  margin-top: 10px;
 }
 
-@media screen and (max-width:1136px) {
+@media screen and (max-width: 1136px) {
   .card {
-    width: 150px;
+    width: 180px;
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .card {
     width: 120px;
   }
-}
+} */

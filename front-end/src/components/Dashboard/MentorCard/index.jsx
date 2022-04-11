@@ -3,20 +3,12 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { MentorModal } from "../MentorModal";
 
-export const MentorCard = ({ name, role, image }) => {
+export const MentorCard = ({ name, role, image, skills, available }) => {
   const [favorite, setFavorite] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const addToFavorites = () => {
     setFavorite((prevState) => !prevState);
-  };
-
-  const openModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setIsModalVisible(false);
   };
 
   // useEffect(() => {
@@ -31,9 +23,9 @@ export const MentorCard = ({ name, role, image }) => {
     <section className="card">
       <button onClick={addToFavorites} className="card__heart--button">
         {favorite === false ? (
-          <AiOutlineHeart size={30} color="var(--primary-03)" />
+          <AiOutlineHeart size={22} color="var(--primary-03)" />
         ) : (
-          <AiFillHeart size={30} color="var(--primary-03)" />
+          <AiFillHeart size={22} color="var(--primary-03)" />
         )}
       </button>
       <figure className="card__image">
@@ -42,11 +34,23 @@ export const MentorCard = ({ name, role, image }) => {
       <article className="card__descriptions">
         <h6 className="card__descriptions--name">{name}</h6>
         <caption className="card__descriptions--area">{role}</caption>
-        <button className="card__descriptions--button">Ver perfil</button>
-        {isModalVisible ? (
-        <MentorModal name={name} role={role} image={image} />
-      ) : null}
       </article>
+      <button
+        onClick={() => setIsModalVisible(true)}
+        className="card__descriptions--button"
+      >
+        Ver perfil
+      </button>
+      {isModalVisible ? (
+        <MentorModal
+          name={name}
+          role={role}
+          image={image}
+          skill={skills}
+          available={available}
+          closeModal={() => setIsModalVisible(false)}
+        />
+      ) : null}
     </section>
   );
 };
