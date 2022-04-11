@@ -1,4 +1,9 @@
-import { AiOutlineCalendar,AiOutlineContacts,AiOutlineSortAscending,AiOutlineSortDescending,MdEventAvailable } from "react-icons/ai";
+import {
+  AiOutlineCalendar,
+  AiOutlineContacts,
+  AiOutlineSortAscending,
+  AiOutlineSortDescending,
+} from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { BiSlider } from "react-icons/bi";
 import { MentorCard } from "../../../components/Dashboard/MentorCard";
@@ -38,10 +43,39 @@ export const FindMentors = () => {
         </button>
       </div>
       <ul className={`slider__sort ${sliderActive ? "active" : ""}`}>
-        <li><AiOutlineSortAscending size={16}color="var(--primary-03)"/> Ordem ascendente</li>
-        <li><AiOutlineSortDescending size={16}color="var(--primary-03)"/> Ordem descendente</li>
-        <li><AiOutlineCalendar size={16}color="var(--primary-03)"/> Disponibilidade</li>
-        <li><AiOutlineContacts size={16}color="var(--primary-03)"/> Da sua área</li>
+        <li
+          onClick={() => {
+            setUsers(
+              users.sort((a, b) => {
+                return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+              })
+            );
+            console.log(users);
+          }}
+        >
+          <AiOutlineSortAscending size={16} color="var(--primary-03)" /> Ordem
+          ascendente
+        </li>
+        <li
+          onClick={() => {
+            setUsers(
+              users.sort((a, b) => {
+                return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+              })
+            );
+            console.log(users);
+          }}
+        >
+          <AiOutlineSortDescending size={16} color="var(--primary-03)" /> Ordem
+          descendente
+        </li>
+        <li>
+          <AiOutlineCalendar size={16} color="var(--primary-03)" />{" "}
+          Disponibilidade
+        </li>
+        <li>
+          <AiOutlineContacts size={16} color="var(--primary-03)" /> Da sua área
+        </li>
       </ul>
       <div className="discover-professionals-list">
         {users.map((user) => (
