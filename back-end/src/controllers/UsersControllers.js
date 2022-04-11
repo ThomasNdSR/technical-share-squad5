@@ -7,8 +7,6 @@ import ValidateUser from "../class/ValidateUser.js";
 export default class UsersControllers {
   static userRegistered = (req, res) => {
     const skip = req.query.skip? req.query.skip:0
-    console.log(skip)
-
     User.find()
       .select({
         name: 1,

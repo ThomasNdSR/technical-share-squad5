@@ -11,15 +11,28 @@
 }
 
 .discover-professionals-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 0.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(4, minmax(156px, 1fr))
 }
 
 .slider {
   display: flex;
+  background-color: transparent;
+  border: none;
   margin-left: auto;
   padding-right: 10px;
+}
+
+@media screen and (max-width:1136px) {
+  .discover-professionals-list{
+    grid-template-columns: repeat(3, minmax(164px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .discover-professionals-list{
+    grid-template-columns: repeat(2, minmax(164px, 1fr));
+  }
 }

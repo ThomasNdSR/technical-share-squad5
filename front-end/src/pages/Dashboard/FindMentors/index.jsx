@@ -23,12 +23,14 @@ export const FindMentors = () => {
   };
 
   return (
-    <div className="discover-professionals-box">
+    <section className="discover-professionals-box">
+      <div className="discover-container">
       <h3 className="discover-professionals-heading">
         Descubra profissionais na sua área
       </h3>
-      <div className="slider">
+      <button className="slider">
         <BiSlider size={39} color="var(--primary-03)" />
+      </button>
       </div>
       <div className="discover-professionals-list">
         {users.map((user) => (
@@ -44,6 +46,6 @@ export const FindMentors = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };

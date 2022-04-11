@@ -58,3 +58,15 @@
   text-transform: uppercase;
   width: 90%;
 }
+
+@media screen and (max-width:1136px) {
+  .card {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 120px;
+  }
+}
