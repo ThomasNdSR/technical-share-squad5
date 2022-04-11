@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { MentorModal } from "../MentorModal";
 
-export const MentorCard = ({ name, role, image, skills, available }) => {
+export const MentorCard = ({
+  name,
+  role,
+  image,
+  skills,
+  project,
+  available,
+}) => {
   const [favorite, setFavorite] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -43,9 +50,10 @@ export const MentorCard = ({ name, role, image, skills, available }) => {
       </button>
       {isModalVisible ? (
         <MentorModal
+          image={image}
           name={name}
           role={role}
-          image={image}
+          project={project}
           skill={skills}
           available={available}
           closeModal={() => setIsModalVisible(false)}

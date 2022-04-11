@@ -8,6 +8,7 @@ export const MentorModal = ({
   role,
   image,
   skill,
+  project,
   available,
   closeModal = () => {},
 }) => {
@@ -18,7 +19,13 @@ export const MentorModal = ({
   return (
     <div id={id} className="mentor-modal-bg" onClick={handleOutsideClick}>
       <div className="mentor-modal-box">
-        <ModalProfileCard name={name} role={role} image={image} skill={skill} />
+        <ModalProfileCard
+          name={name}
+          role={role}
+          image={image}
+          skill={skill}
+          project={project}
+        />
 
         <div className="mentor-modal-box-scheduling">
           <div className="close-button">
