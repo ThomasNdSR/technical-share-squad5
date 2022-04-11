@@ -1,7 +1,7 @@
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import "./styles.css";
 
-export const ModalProfileCard = ({ name, image, role, skill }) => {
+export const ModalProfileCard = ({ name, image, role, skill, project }) => {
   return (
     <div className="mentor-modal-box-info">
       <div className="modal-profile-card">
@@ -16,12 +16,16 @@ export const ModalProfileCard = ({ name, image, role, skill }) => {
 
       <div className="modal-profile-exp-skills">
         <h5 className="mentor-exp-skills-heading">Projetos</h5>
-        <p>Orange Juice, Programa de Formação</p>
+        <ul>
+          {project.map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
 
         <h5 className="mentor-exp-skills-heading">Skills</h5>
         <ul>
           {skill.map((s) => (
-            <li id={s._id}>{s.name}</li>
+            <li key={s._id}>{s.name}</li>
           ))}
         </ul>
 

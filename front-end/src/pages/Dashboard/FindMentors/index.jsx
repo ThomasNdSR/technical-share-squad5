@@ -66,9 +66,13 @@ export const FindMentors = () => {
             key={user._id}
             name={user.name}
             role={user.role}
+            project={
+              user.project.length > 0
+                ? user.project
+                : ["Não há projetos cadastrados"]
+            }
             skills={user.skill}
             available={user.available}
-            projects={console.log(user)}
             image={
               user.img === undefined
                 ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"

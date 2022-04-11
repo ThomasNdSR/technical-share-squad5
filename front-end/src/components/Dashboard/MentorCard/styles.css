@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: none;
+  /* background-color: none; */
   border: 2px solid var(--primary-03);
   border-radius: 1rem;
   color: var(--color-standard);
