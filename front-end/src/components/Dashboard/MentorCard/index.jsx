@@ -1,13 +1,31 @@
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
+import { MentorModal } from "../MentorModal";
 
 export const MentorCard = ({ name, role, image }) => {
   const [favorite, setFavorite] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const addToFavorites = () => {
     setFavorite((prevState) => !prevState);
   };
+
+  const openModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
+  // useEffect(() => {
+  //   if (isModalVisible) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, [isModalVisible]);
 
   return (
     <section className="card">
@@ -25,6 +43,9 @@ export const MentorCard = ({ name, role, image }) => {
         <h6 className="card__descriptions--name">{name}</h6>
         <caption className="card__descriptions--area">{role}</caption>
         <button className="card__descriptions--button">Ver perfil</button>
+        {isModalVisible ? (
+        <MentorModal name={name} role={role} image={image} />
+      ) : null}
       </article>
     </section>
   );
