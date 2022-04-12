@@ -4,7 +4,7 @@ import "./style.css";
 export function PeopleCard({
   name,
   role,
-  image
+  image,
 }) {
   return (
     <article className="peopleCard">

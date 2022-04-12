@@ -24,7 +24,7 @@
   position: absolute;
   right: 10rem;
   top: 3rem;
-  z-index: 5;
+  z-index: 1;
 }
 .businessCard__photo {
   border: 5px solid var(--primary-01);

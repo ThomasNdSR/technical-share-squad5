@@ -1,0 +1,25 @@
+.tableHour{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tableHour tr{
+    color:var(--primary-03);
+   font-weight: 700;
+   margin:1rem
+}
+.tableHour_day{
+    color:var(--color-standard);
+    font-weight: 400;
+}
+.tableHour_hour{
+    border: 3px solid var(--primary-01);
+    border-radius: 0.5rem;
+    color:var(--color-standard);
+    font-weight: 700;
+    margin: 0 0.4rem;
+    padding: 0.3rem 0.4rem;
+    text-align: center;
+    width: 3rem;
+ }
