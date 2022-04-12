@@ -1,6 +1,14 @@
 import { useState } from "react";
+import {
+  AiOutlineLeft,
+  AiTwotoneCamera,
+  AiFillGithub,
+  AiFillTwitterCircle,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 import { Header } from "../../components/Header";
-import { AiOutlineLeft, AiTwotoneCamera } from "react-icons/ai";
+import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
+import { SchedulingCard } from "../../components/Profile/SchedulingCard";
 import "./styles.css";
 
 export const Profile = () => {
@@ -52,6 +60,41 @@ export const Profile = () => {
             </figure>
           </article>
         </section>
+        {menuActive === "perfil" ? (
+          <section className="businessCard__experienceCard page">
+            <UserExperienceCard title="Bio">testando 1</UserExperienceCard>
+            <UserExperienceCard title="Skills">testando 2</UserExperienceCard>
+            <UserExperienceCard title="Projetos">testando 3</UserExperienceCard>
+            <section className="businessCard__menu">
+              <article>
+                <h5>Redes Sociais</h5>
+                <div>
+                  <AiFillGithub size={32} color="var(--secondary-01)" />
+                  <AiFillTwitterCircle size={32} color="var(--secondary-01)" />
+                  <AiOutlineLinkedin size={32} color="var(--secondary-01)" />
+                </div>
+              </article>
+              <article>
+                <h5>Acessibilidade</h5>
+                <div>
+                  <p>Deficientes auditivos</p>
+                </div>
+              </article>
+            </section>
+            <section></section>
+          </section>
+        ) : (
+          ""
+        )}
+        {menuActive === "agenda" ? (
+          <section>
+            <article>
+              <SchedulingCard></SchedulingCard>
+            </article>
+          </section>
+        ) : (
+          ""
+        )}
       </main>
     </>
   );

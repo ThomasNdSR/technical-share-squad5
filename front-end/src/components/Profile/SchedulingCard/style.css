@@ -1,0 +1,21 @@
+.schedulingCard__menu{
+    display: flex;
+    justify-content: center ;
+}
+.schedulingCard__menu--option{
+    background-color: transparent;
+    border: solid 3px var(--neutral-02);
+    border-radius: 1rem;
+    height: 4rem;
+    margin: 1rem;
+    opacity: 0.5;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.4s linear;
+    width: 10rem;
+}
+.ativo{
+    text-align: center;
+    opacity: 1;
+    box-shadow: inset 0px 0px 20px #FE4400;
+}
