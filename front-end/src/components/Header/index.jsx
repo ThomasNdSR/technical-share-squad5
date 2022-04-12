@@ -5,13 +5,14 @@ import { CgProfile} from "react-icons/cg";
 import "./styles.css";
 import logo from "../../../src/assets/logo-technical-share.png";
 
-export const Header = () => {
+export const Header = ({page}) => {
   const [menuHeader, setHeader] = useState(false);
   return (
     <>
       <header className="header">
         <div className="header_container page">
           <img className="header__logo" src={logo} alt="logo" />
+          {page==='private'?(
           <div className="header__profile">
             <div className="header__profile--data">
               <h5>Olá, João</h5>
@@ -25,9 +26,9 @@ export const Header = () => {
                 <>
               <div className="header__profile--decoration"></div>
               <nav className="header__profile--nav">
-                <a href="profile"><CgProfile /> Perfil</a>
-                <a href=""><ImProfile />Agenda</a>
-                <a href="homePage">sair</a>
+                <a href="dashboard"><CgProfile /> Perfil</a>
+                <a href="profile"><ImProfile />Agenda</a>
+                <a id="header-exit" href="homePage">sair</a>
               </nav>
               </>
               ):('')}
@@ -38,7 +39,9 @@ export const Header = () => {
                 alt=""
               />
             </figure>
-          </div>
+          </div>):(
+            <button className="header__conect"><a href="dashboard">conectar</a></button>
+          )}
         </div>
       </header>
     </>

@@ -7,7 +7,7 @@ import { FindMentors } from "./FindMentors";
 export const Dashboard = () => {
   return (
     <div>
-      <Header />
+      <Header page="private" />
       <SearchContainer />
       {/* <Favorites /> */}
       {/* <MostAvailable /> */}

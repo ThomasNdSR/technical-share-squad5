@@ -7,7 +7,7 @@ import "./style.css";
 export const HomePage = () => {
   return (
     <>
-      <Header />
+      <Header page="public" />
       <main>
       <div className="page-color">
       <Spotlight />

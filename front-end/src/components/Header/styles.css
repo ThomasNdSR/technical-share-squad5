@@ -1,9 +1,10 @@
 .header {
   background: var(--neutral-03);
-  background-color: var(--neutral-01);
+  background-color: var(--neutral-03);
   border-bottom: 1px solid #c4c4c4;
   box-sizing: border-box;
   height: 5rem;
+  position: fixed;
   width: 100%;
   z-index: 2;
 }
@@ -16,6 +17,14 @@
 .header_container {
   justify-content: space-between;
   vertical-align: middle;
+}
+.header__conect{
+  background-color: transparent;
+  border: 3px solid var(--primary-01);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
 }
 .header__logo {
   align-self: center;
@@ -59,10 +68,19 @@
   width: 6rem;
   z-index: 2;
 }
+
+.header__conect a,
 .header__profile--nav a{
   color: var(--color-standard);
   text-decoration: none;
-  margin: 0.2rem 0;
+  margin: 0.3rem 0;
+}
+.header__profile--nav a svg{
+  margin: 0 0.2rem;
+}
+#header-exit{
+  border-top: 1px solid var(--neutral-02);
+  padding-top: 0.5rem;
 }
 .header__photo {
   align-self:baseline;

@@ -10,7 +10,7 @@ export const Profile = () => {
   const [menuActive, setMenu] = useState("perfil");
   return (
     <>
-      <Header />
+      <Header page="private" />
       <main className="flexbox__container">
         <div className="businessCard__cover" />
         <section className="businessCard page">
