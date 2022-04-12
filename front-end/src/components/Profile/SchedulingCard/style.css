@@ -15,6 +15,7 @@
     width: 10rem;
 }
 .ativo{
+    border: solid 3px var(--primary-01);
     text-align: center;
     opacity: 1;
     box-shadow: inset 0px 0px 20px #FE4400;
