@@ -1,0 +1,41 @@
+.peopleCard,
+.peopleCard_data,
+.peopleCard_option {
+  display: flex;
+}
+
+.peopleCard {
+  align-items: center;
+  border: 2px solid var(--primary-02);
+  border-radius: 0.5rem;
+  justify-content: space-around;
+  width: 100%;
+}
+.peopleCard_data {
+  align-items: center;
+  text-align: left;
+}
+.peopleCard_descrition {
+  margin: 0.5rem;
+}
+.peopleCard_descrition p{
+    font-size: 0.7rem;
+}
+.peopleCard_option {
+  align-items: flex-end;
+  flex-direction: column;
+}
+.peopleCard_option button {
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+}
+.peopleCard_option-item {
+  margin-bottom: 0.2rem;
+}
+.peopleCard_option-delete{
+    color: var(--primary-01);
+}
+.peopleCard_option-delete:hover{
+    color: var(--primary-03);
+}

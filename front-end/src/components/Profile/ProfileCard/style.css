@@ -1,0 +1,26 @@
+.profileCard {
+  background-color: var(--neutral-03);
+  border: 3px solid #b93200;
+  border-radius: 1.875rem;
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.3);
+  height: 450px;
+  margin:2rem;
+  width: 400px;
+}
+.profileCard_body{
+    padding: 1rem;
+}
+.profileCard_header {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-01);
+  border-radius: 1.70rem 1.7rem 0 0;
+  height: 6.25rem;
+  justify-content: center;
+  width: 100%;
+}
+.profileCard_header button{
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+}

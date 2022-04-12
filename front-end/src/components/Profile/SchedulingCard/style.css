@@ -1,4 +1,4 @@
-.schedulingCard__menu{
+.schedulingCard__menu,.schedulingCard__item,.schedulingCard__item-option{
     display: flex;
     justify-content: center ;
 }
@@ -19,4 +19,11 @@
     text-align: center;
     opacity: 1;
     box-shadow: inset 0px 0px 20px #FE4400;
+}
+.schedulingCard__item{
+    padding: 2rem;
+}
+.schedulingCard__item-option{
+    flex-direction: column;
+    align-items:center;
 }
