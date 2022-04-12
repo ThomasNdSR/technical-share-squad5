@@ -10,7 +10,7 @@
 .profileCard_body{
     padding: 1rem;
 }
-.profileCard_header {
+.profileCard_header-one,.profileCard_header-two {
   display: flex;
   align-items: center;
   background-color: var(--primary-01);
@@ -19,7 +19,10 @@
   justify-content: center;
   width: 100%;
 }
-.profileCard_header button{
+.profileCard_header-two{
+  background-color: var(--neutral-03);
+}
+.profileCard_header-one button,.profileCard_header-two button{
     background-color: transparent;
     border: none;
     margin: 1rem;

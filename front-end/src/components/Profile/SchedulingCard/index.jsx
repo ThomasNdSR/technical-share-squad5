@@ -34,7 +34,7 @@ export function SchedulingCard() {
         <div className="schedulingCard__item">
           <div className="schedulingCard__item-option">
             <h4>Agendamentos</h4>
-            <ProfileCard>
+            <ProfileCard header="one" width="400px">
               <PeopleCard
                 name="Fulana"
                 role="teste role"
@@ -44,7 +44,7 @@ export function SchedulingCard() {
           </div>
           <div className="schedulingCard__item-option">
             <h4>Minha agenda</h4>
-            <ProfileCard>
+            <ProfileCard header="two" width="30vw">
               <TableHour />
             </ProfileCard>
           </div>
@@ -56,7 +56,7 @@ export function SchedulingCard() {
         <div className="schedulingCard__item">
           <div className="schedulingCard__item-option">
             <h4>Agendamentos</h4>
-            <ProfileCard >
+            <ProfileCard header="one" width="80vw">
               <PeopleCard
                 name="Fulana"
                 role="teste role"
