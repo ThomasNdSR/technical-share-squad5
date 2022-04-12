@@ -1,29 +1,86 @@
 .header {
-  display: flex;
-  align-content: center;
-  background-color: var(--neutral-01);
-  height: 4rem;
-  padding: 2rem 6rem;
-  vertical-align: center;
   background: var(--neutral-03);
+  background-color: var(--neutral-01);
   border-bottom: 1px solid #c4c4c4;
   box-sizing: border-box;
+  height: 5rem;
   width: 100%;
   z-index: 2;
 }
-
-.header__box {
+.header_container,
+.header__profile,
+.header__profile--data,
+.header__profile--nav {
   display: flex;
 }
-
+.header_container {
+  justify-content: space-between;
+  vertical-align: middle;
+}
 .header__logo {
   align-self: center;
-  position: absolute;
   height: 2rem;
 }
-
-@media screen and (max-width: 425px) {
-  .header {
-    padding: 0 2rem;
-  }
+.header__profile--data {
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  margin: 1rem 0.5rem;
+}
+.header__profile--data button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-03);
+  font-weight: var(--heading-5-weight);
+  text-align: center;
+}
+.header__profile--decoration{
+  background: var(--neutral-01);
+  box-shadow: 5px -11px 15px 0px #000000;
+  clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+  height: 2rem;
+  right: 65px;
+  top: 35px;
+  position: absolute;
+  width: 4.5rem;
+  z-index: 3;
+}
+.header__profile--nav {
+  background: var(--neutral-01);
+  box-shadow: 5px 5px 15px 5px #000000;
+  border-radius: 10px;
+  flex-direction: column;
+  height: auto;
+  padding: 1rem;
+  position: absolute;
+  right: 60px;
+  top: 50px;
+  vertical-align: middle;
+  width: 6rem;
+  z-index: 2;
+}
+.header__profile--nav a{
+  color: var(--color-standard);
+  text-decoration: none;
+  margin: 0.2rem 0;
+}
+.header__photo {
+  align-self:baseline;
+  border: 2px solid var(--primary-03);
+  border-radius: 100%;
+  height: 3.5rem;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  position: relative;
+  width: 3.5rem;
+}
+.header__photo img {
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3.5rem;
 }

@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  AiOutlineLeft,
-  AiTwotoneCamera,
-  AiFillGithub,
-  AiFillTwitterCircle,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { AiOutlineLeft, AiTwotoneCamera } from "react-icons/ai";
 import { Header } from "../../components/Header";
 import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
 import { SchedulingCard } from "../../components/Profile/SchedulingCard";
@@ -69,9 +64,8 @@ export const Profile = () => {
               <article>
                 <h5>Redes Sociais</h5>
                 <div>
-                  <AiFillGithub size={32} color="var(--secondary-01)" />
-                  <AiFillTwitterCircle size={32} color="var(--secondary-01)" />
-                  <AiOutlineLinkedin size={32} color="var(--secondary-01)" />
+                  <FiGithub size={30} color="var(--primary-02)" />
+                  <FiLinkedin size={30} color="var(--primary-02)" />
                 </div>
               </article>
               <article>
