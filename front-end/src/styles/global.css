@@ -129,4 +129,8 @@ button {
   h6 {
     font-size: var(--heading-6-size-mobile);
   }
+  .page {
+    margin: 0;
+    padding: 2rem;
+  }
 }

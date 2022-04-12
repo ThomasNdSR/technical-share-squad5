@@ -67,7 +67,7 @@
 }
 .presentation__search img {
   width: 300px;
-  align-self:flex-end;
+  align-self: flex-end;
 }
 
 .presentation__search--descrition {
@@ -90,5 +90,31 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie {
+    width: 100%;
+  }
+  .presentation_list {
+    flex-direction: column;
+    height: auto;
+  }
+  .presentation_list li {
+    margin: 1rem 0;
+    height: auto;
+  }
+  .presentation__search img {
+    position: absolute;
+    opacity: 0.5;
+  }
+  .presentation__search--descrition {
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 0.1em 0.1em #000;
+    width: 100%;
+  }
+  .presentation__search--descrition h4 {
+    font-size: 2rem;
   }
 }

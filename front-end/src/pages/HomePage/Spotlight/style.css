@@ -68,3 +68,18 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .spotlight__description{
+    width: 100%;
+  }
+  .spotlight__description--singIn{
+    width: 250px;
+    z-index: 2;
+  }
+  .spotlight__image{
+    position: absolute;
+    z-index: -2;
+    opacity: 0.6;
+  }
+}
