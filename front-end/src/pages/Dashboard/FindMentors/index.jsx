@@ -3,9 +3,11 @@ import {
   AiOutlineContacts,
   AiOutlineSortAscending,
   AiOutlineSortDescending,
+  MdEventAvailable,
 } from "react-icons/ai";
-import { useEffect, useState } from "react";
 import { BiSlider } from "react-icons/bi";
+
+import { useEffect, useState } from "react";
 import { MentorCard } from "../../../components/Dashboard/MentorCard";
 import { api } from "../../../services/api";
 import "./styles.css";
@@ -13,9 +15,11 @@ import "./styles.css";
 export const FindMentors = () => {
   const [users, setUsers] = useState([]);
   const [sliderActive, setSlider] = useState(false);
+
   useEffect(() => {
     getAllUsers();
   }, []);
+
   const getAllUsers = async () => {
     try {
       const response = await api.get("/user");
@@ -39,33 +43,15 @@ export const FindMentors = () => {
           }}
           className="slider"
         >
-          <BiSlider size={39} color="var(--primary-03)" />
+          <BiSlider size={30} color="var(--primary-03)" />
         </button>
       </div>
       <ul className={`slider__sort ${sliderActive ? "active" : ""}`}>
-        <li
-          onClick={() => {
-            setUsers(
-              users.sort((a, b) => {
-                return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-              })
-            );
-            console.log(users);
-          }}
-        >
+        <li>
           <AiOutlineSortAscending size={16} color="var(--primary-03)" /> Ordem
           ascendente
         </li>
-        <li
-          onClick={() => {
-            setUsers(
-              users.sort((a, b) => {
-                return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
-              })
-            );
-            console.log(users);
-          }}
-        >
+        <li>
           <AiOutlineSortDescending size={16} color="var(--primary-03)" /> Ordem
           descendente
         </li>
@@ -83,6 +69,17 @@ export const FindMentors = () => {
             key={user._id}
             name={user.name}
             role={user.role}
+            project={
+              user.project.length > 0
+                ? user.project
+                : ["Não há projetos cadastrados"]
+            }
+            skills={user.skill}
+            available={
+              user.available.length > 0
+                ? user.available
+                : ["Não há horários disponíveis no momento"]
+            }
             image={
               user.img === undefined
                 ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"

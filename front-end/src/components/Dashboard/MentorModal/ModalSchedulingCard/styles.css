@@ -1,0 +1,74 @@
+.mentor-modal-box-scheduling {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  display: flex;
+}
+
+#modal-close-button {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+}
+
+.scheduling-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scheduling-card {
+  margin-top: 25px;
+  width: 280px;
+  height: 350px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 11px 26px -7px rgba(0, 0, 0, 0.69);
+  box-shadow: 1px 11px 26px -7px rgba(0, 0, 0, 0.69);
+}
+
+.scheduling-card h4 {
+  color: var(--neutral-02);
+}
+
+.scheduling-card hr {
+  color: var(--neutral-02);
+  opacity: 30%;
+}
+
+#go-ahead-button {
+  background-color: var(--primary-01);
+  color: #fff;
+  border: none;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  margin-top: 30px;
+  -webkit-box-shadow: 1px 11px 26px -7px rgba(0, 0, 0, 0.69);
+  box-shadow: 1px 11px 26px -7px rgba(0, 0, 0, 0.69);
+}
+
+@media screen and (max-width: 768px) {
+  .close-button {
+    display: none;
+  }
+
+  .mentor-modal-box {
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .mentor-modal-box-scheduling {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .scheduling-card {
+    width: 90%;
+    height: 250px;
+  }
+}

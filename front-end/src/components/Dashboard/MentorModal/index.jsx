@@ -1,33 +1,40 @@
+import { useState } from "react";
+import { ModalProfileCard } from "./ModalProfileCard";
+import { ModalSchedulingCard } from "./ModalSchedulingCard";
 import "./styles.css";
 
-export const MentorModal = ({ name, role, image }) => {
+export const MentorModal = ({
+  id = "modal",
+  name,
+  role,
+  image,
+  skill,
+  project,
+  available,
+  closeModal = () => {},
+}) => {
+  const handleOutsideClick = (e) => {
+    if (e.target.id === id) closeModal();
+  };
+
+  const [schedule, setSchedule] = useState(false);
+
   return (
-    <div className="mentor-modal-bg">
+    <div id={id} className="mentor-modal-bg" onClick={handleOutsideClick}>
       <div className="mentor-modal-box">
-        <div className="mentor-modal-box-info">
-          {/* modal profile card */}
-          <div className="modal-profile-card">
-            <div className="modal-img-box">
-              <img className="modal-img" src={image} alt={name} />
-            </div>
-            <div className="modal-profile-card-wrapper">
-              <h3>{name}</h3>
-              <h6>{role}</h6>
-            </div>
-          </div>
-          <div className="modal-profile-exp-skills">
-            <h5 className="mentor-exp-skills-heading">Projetos</h5>
-            <p>Orange Juice, Programa de Formação</p>
-            <h5 className="mentor-exp-skills-heading">Skills</h5>
-            <p>Javascript, React JS</p>
-            <h5 className="mentor-exp-skills-heading">Acessível para</h5>
-            <p>Deficientes auditivos</p>
-            <h5 className="mentor-exp-skills-heading">Redes</h5>
-            <p>GitHub, LinkedIn</p>
-          </div>
-          {/* end modal profile card */}
-        </div>
-        <div className="mentor-modal-box-scheduling"></div>
+        <ModalProfileCard
+          name={name}
+          role={role}
+          image={image}
+          skill={skill}
+          project={project}
+        />
+        <ModalSchedulingCard
+          schedule={schedule}
+          setSchedule={setSchedule}
+          available={available}
+          closeModal={closeModal}
+        />
       </div>
     </div>
   );

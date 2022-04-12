@@ -6,7 +6,7 @@ import { FindMentors } from "./FindMentors";
 
 export const Dashboard = () => {
   return (
-    <div className="page">
+    <div>
       <Header />
       <SearchContainer />
       {/* <Favorites /> */}

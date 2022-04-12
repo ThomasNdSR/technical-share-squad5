@@ -7,8 +7,8 @@ export const SearchContainer = () => {
   const list = [
     { skill: "Front-end" },
     { skill: "Scrum" },
-    { skill: "FullStack" },
-    { skill: "Ux design" },
+    { skill: "Full Stack" },
+    { skill: "UX Design" },
   ];
   return (
     <section className="search-component">
@@ -22,12 +22,13 @@ export const SearchContainer = () => {
           type="search"
           placeholder="Pesquise por projeto, skill ou função"
         />
-        <label for="search-input" id="search-icon" className="search__label">
-          <a href="">
-            <RiSearch2Line size={30} />
-          </a>
-        </label>
+        {/* <label for="search-input" id="search-icon" className="search__label"> */}
+          {/* <a href=""> */}
+            <RiSearch2Line size={25} color="var(--primary-02)"/>
+          {/* </a> */}
+        {/* </label> */}
       </fieldset>
+
       <div className="options">
         <p className="options__name">Mais buscados:</p>
         <ul className="options__list">

@@ -8,8 +8,6 @@
   background: var(--neutral-03);
   border-bottom: 1px solid #c4c4c4;
   box-sizing: border-box;
-  position: fixed;
-  left: 0;
   width: 100%;
   z-index: 2;
 }
@@ -24,8 +22,8 @@
   height: 2rem;
 }
 
-@media screen and (max-width: 480px) {
-  .header__logo {
-    display: none;
+@media screen and (max-width: 425px) {
+  .header {
+    padding: 0 2rem;
   }
 }

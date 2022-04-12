@@ -1,32 +1,26 @@
-.search,
 .search-component,
+.search,
 .options,
-.options__list{
+.options__list {
   display: flex;
   align-items: center;
 }
 
 .search-component {
   flex-direction: column;
-  height: 60vh;
+  /* height: 300px; */
   justify-content: center;
-  position: relative;
+  padding: 40px 0;
 }
 
 #img1 {
   width: 100px;
-  position: absolute;
-  left: -100px;
-  top: 6rem;
-  z-index: -1;
+  align-self: flex-start;
 }
 
 #img2 {
   width: 150px;
-  position: absolute;
-  right: -100px;
-  bottom: 4rem;
-  z-index: -1;
+  align-self: flex-end;
 }
 
 #find-mentors-heading {
@@ -44,22 +38,30 @@
   font-weight: var(--heading-4-weight);
 }
 
-.options__item{
+.options {
+  margin-top: 1rem;
+}
+
+.options__name {
+  color: var(--primary-03);
+  font-weight: var(--heading-4-weight);
+}
+
+.options__item {
   text-align: center;
   margin: 0 0.5rem;
   padding: 0.5rem;
   background-color: var(--primary-02);
   border-radius: 2rem;
   width: 5rem;
+  font-size: small;
 }
+
 .search {
   border: 2px solid var(--primary-02);
   border-radius: 2.5rem;
-  height: 43px;
   justify-content: space-between;
-  min-width: 32.5rem;
   padding: 0 1rem;
-  width: 50%;
 }
 
 .search:focus-within {
@@ -68,9 +70,9 @@
 
 .search__input {
   border: none;
-  margin-left: 15px;
   font-size: 1rem;
   width: 90%;
+  height: 43px;
 }
 
 .search__input:focus {
@@ -78,10 +80,58 @@
   outline: none;
 }
 
-.search__label a {
-  color: var(--primary-02);
-  cursor: pointer;
-  transform: translate(10px, 6px);
+#search-icon {
+  color: var(--primary-01);
+}
+
+@media screen and (max-width: 425px) {
+  .search {
+    width: 80%;
+  }
+
+  #find-mentors-heading {
+    font-size: 1.8rem;
+  }
+
+  .options__name {
+    display: none;
+  }
+
+  .options__list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    width: 80%;
+  }
+
+  #find-mentors-heading {
+    font-size: 1.8rem;
+  }
+
+  #img1 {
+    width: 90px;
+    margin-bottom: 20px;
+  }
+
+  #img2 {
+    margin-top: 20px;
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .search {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .search {
+    width: 45%;
+  }
 }
 .search__label a:hover {
   color: var(--primary-01);
