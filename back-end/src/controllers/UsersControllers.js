@@ -5,7 +5,8 @@ import User from "../models/User.js";
 import ValidateUser from "../class/ValidateUser.js";
 
 export default class UsersControllers {
-  static userRegistered = (__, res) => {
+  static userRegistered = (req, res) => {
+    const skip = req.query.skip? req.query.skip:0
     User.find()
       .select({
         name: 1,
@@ -13,11 +14,12 @@ export default class UsersControllers {
         role:1,
         skill: 1,
         available: 1,
+        project:1
       })
       .populate({
         path: "img skill",
         options: { _recursed: true },
-      })
+      }).skip(skip).limit(8)
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
@@ -35,6 +37,7 @@ export default class UsersControllers {
         email: 1,
         favorite: 1,
         available: 1,
+        project:1
       })
       .populate({
         path: "img",

@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
       ref: "skills",
     },
   ],
+  project:[{type: String}],
   available: [availables.schema],
   favorite: [
     {

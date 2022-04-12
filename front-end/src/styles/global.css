@@ -12,13 +12,16 @@
   --secondary-02: #2a2962;
   --secondary-03: #6263ab;
 
+  /* font-color */
+  --color-standard: #01001d;
+
   /* font-sizes */
-  --heading-1-size: 3.5rem;
-  --heading-2-size: 3rem;
-  --heading-3-size: 2.5rem;
-  --heading-4-size: 2rem;
-  --heading-5-size: 1.5rem;
-  --heading-6-size: 1.25rem;
+  --heading-1-size: 3rem;
+  --heading-2-size: 2.5rem;
+  --heading-3-size: 2rem;
+  --heading-4-size: 1.5rem;
+  --heading-5-size: 1.25rem;
+  --heading-6-size: 1rem;
 
   --body-font-size: 1rem;
 
@@ -27,6 +30,15 @@
   --button-font-size: 1rem;
 
   --caption-font-size: 0.875rem;
+
+  /* font-sizes - mobile*/
+
+  --heading-1-size-mobile: 2rem;
+  --heading-2-size-mobile: 1.5rem;
+  --heading-3-size-mobile: 1.25rem;
+  --heading-4-size-mobile: 1rem;
+  --heading-5-size-mobile: 0.875rem;
+  --heading-6-size-mobile: 0.875rem;
 
   /* font-weights */
   --heading-1-weight: 700;
@@ -50,6 +62,11 @@ body {
   font-weight: var(--body-weight);
   font-size: var(--body-font-size);
   background-color: #ffffff;
+}
+
+.page {
+  margin: 0px 100px;
+  padding: 0px;
 }
 
 h1 {
@@ -86,4 +103,30 @@ button {
   font-size: var(--button-font-size);
   font-weight: var(--button-weight);
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: var(--heading-1-size-mobile);
+  }
+
+  h2 {
+    font-size: var(--heading-2-size-mobile);
+  }
+
+  h3 {
+    font-size: var(--heading-3-size-mobile);
+  }
+
+  h4 {
+    font-size: var(--heading-4-size-mobile);
+  }
+
+  h5 {
+    font-size: var(--heading-5-size-mobile);
+  }
+
+  h6 {
+    font-size: var(--heading-6-size-mobile);
+  }
 }

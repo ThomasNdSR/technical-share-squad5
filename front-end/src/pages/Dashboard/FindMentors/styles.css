@@ -1,9 +1,9 @@
 .discover-professionals-box {
-  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  width: 65%;
 }
 
 .discover-professionals-heading {
@@ -13,14 +13,16 @@
 
 .discover-professionals-list {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  margin-top: 0.875rem;
 }
 
 .slider {
   display: flex;
+  background-color: transparent;
+  border: none;
   margin-left: auto;
   padding-right: 10px;
 }

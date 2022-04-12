@@ -12,15 +12,14 @@
   z-index: 2;
 }
 
-.header__box{
-    display: flex;
+.header__box {
+  display: flex;
 }
 
 .header__logo {
-    align-self: center;
-    position: absolute;
-    width: 453px;
-    height: 63px;
+  align-self: center;
+  position: absolute;
+  height: 2rem;
 }
 
 @media screen and (max-width: 425px) {

@@ -13,12 +13,12 @@ export const SearchContainer = () => {
   return (
     <section className="search-component">
       <img id="img1" src={img1} alt="decoração da pagina com pontos" />
-
       <h2 id="find-mentors-heading">Encontre um profissional</h2>
 
-      <div className="search">
+      <fieldset className="search">
         <input
           id="search-input"
+          className="search__input"
           type="search"
           placeholder="Pesquise por projeto, skill ou função"
         />
@@ -40,7 +40,7 @@ export const SearchContainer = () => {
         </ul>
       </div>
 
-      <img id="img2" src={img2} alt="" />
-    </div>
+      <img id="img2" src={img2} alt="decoração da pagina com ondas" />
+    </section>
   );
 };

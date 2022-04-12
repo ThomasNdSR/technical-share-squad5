@@ -8,6 +8,7 @@
 
 .search-component {
   flex-direction: column;
+  height: 55vh;
   justify-content: center;
   padding: 40px 0;
 }
@@ -24,8 +25,17 @@
 
 #find-mentors-heading {
   color: var(--neutral-02);
-  text-align: center;
   margin-bottom: 50px;
+  text-align: center;
+}
+
+.options{
+  margin:1rem;
+}
+
+.options__name{
+  color:var(--primary-03);
+  font-weight: var(--heading-4-weight);
 }
 
 .options {
@@ -56,17 +66,17 @@
 
 .search:focus-within {
   border: 2px solid var(--primary-03);
-  border-radius: 0.875rem;
 }
 
-#search-input {
+.search__input {
   border: none;
   font-size: 1rem;
   width: 90%;
   height: 43px;
 }
 
-#search-input:focus {
+.search__input:focus {
+  background: transparent;
   outline: none;
 }
 
@@ -121,5 +131,17 @@
 @media screen and (min-width: 1440px) {
   .search {
     width: 45%;
+  }
+}
+.search__label a:hover {
+  color: var(--primary-01);
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    min-width: 21.875rem;
+  }
+  .search__input {
+    width: 75%;
   }
 }
