@@ -24,3 +24,40 @@
   margin-left: auto;
   padding-right: 10px;
 }
+
+.slider__sort {
+  display: none;
+  align-self: flex-end;
+  color: var(--primary-03);
+}
+
+.active {
+  display: initial;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .slider {
+    display: none;
+  }
+
+  .discover-professionals-heading {
+    font-size: 1.5rem;
+  }
+
+  .discover-professionals-box {
+    width: 100%;
+  }
+
+  .discover-professionals-list {
+    flex-wrap: nowrap;
+    overflow:scroll;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .discover-professionals-box {
+    width: 90%;
+  }
+}

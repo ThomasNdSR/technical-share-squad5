@@ -4,9 +4,16 @@ import { RiSearch2Line } from "react-icons/ri";
 import "./styles.css";
 
 export const SearchContainer = () => {
+  const list = [
+    { skill: "Front-end" },
+    { skill: "Scrum" },
+    { skill: "Full Stack" },
+    { skill: "UX Design" },
+  ];
   return (
-    <div className="search-component">
-      <img id="img1" src={img1} alt="" />
+    <section className="search-component">
+      <img id="img1" src={img1} alt="decoração da pagina com pontos" />
+
       <h2 id="find-mentors-heading">Encontre um profissional</h2>
 
       <div className="search">
@@ -15,9 +22,22 @@ export const SearchContainer = () => {
           type="search"
           placeholder="Pesquise por projeto, skill ou função"
         />
-        <div id="search-icon">
-          <RiSearch2Line size={30} />
-        </div>
+        <label for="search-input" id="search-icon" className="search__label">
+          <a href="">
+            <RiSearch2Line size={25} />
+          </a>
+        </label>
+      </fieldset>
+
+      <div className="options">
+        <p className="options__name">Mais buscados:</p>
+        <ul className="options__list">
+          {list.map((item, index) => (
+            <li key={index} className="options__item">
+              {item.skill}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <img id="img2" src={img2} alt="" />

@@ -6,8 +6,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  margin-top: 40px;
+  justify-content: center;
+  /* background-color: none; */
+  border: 2px solid var(--primary-03);
+  border-radius: 1rem;
+  color: var(--color-standard);
+  height: 270px;
+  margin: 0.875rem 0;
+  min-width: 220px;
 }
 
 .heart-icon-box {
@@ -50,7 +56,12 @@
   height: 50px;
   border: none;
   text-transform: uppercase;
-  color: var(--neutral-03);
-  border-radius: 10px;
-  background-color: var(--secondary-02);
+  width: 75%;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin-right: 30px;
+  }
 }

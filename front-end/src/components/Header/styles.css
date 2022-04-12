@@ -1,12 +1,15 @@
 .header {
-    display: flex;
-    align-content: center;
-    padding: 0 142px;
-    height: 120px;
-    vertical-align: center;
-    background: var(--neutral-03);
-    border: 1px solid #C4C4C4;
-    box-sizing: border-box;
+  display: flex;
+  align-content: center;
+  background-color: var(--neutral-01);
+  height: 4rem;
+  padding: 2rem 6rem;
+  vertical-align: center;
+  background: var(--neutral-03);
+  border-bottom: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 2;
 }
 
 .header__box{
@@ -20,9 +23,8 @@
     height: 63px;
 }
 
-
-@media screen and (max-width: 480px) {
-    .header__logo {
-        display: none;
-    }
+@media screen and (max-width: 425px) {
+  .header {
+    padding: 0 2rem;
+  }
 }

@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
-import { BiSlider } from "react-icons/bi";
 import { MentorCard } from "../../../components/Dashboard/MentorCard";
 import { api } from "../../../services/api";
 import "./styles.css";
 
+import {
+  AiOutlineCalendar,
+  AiOutlineContacts,
+  AiOutlineSortAscending,
+  AiOutlineSortDescending,
+  MdEventAvailable,
+} from "react-icons/ai";
+import { BiSlider } from "react-icons/bi";
+
 export const FindMentors = () => {
   const [users, setUsers] = useState([]);
+  const [sliderActive, setSlider] = useState(false);
 
   useEffect(() => {
     getAllUsers();
@@ -36,6 +45,17 @@ export const FindMentors = () => {
             key={user._id}
             name={user.name}
             role={user.role}
+            project={
+              user.project.length > 0
+                ? user.project
+                : ["Não há projetos cadastrados"]
+            }
+            skills={user.skill}
+            available={
+              user.available.length > 0
+                ? user.available
+                : ["Não há horários disponíveis no momento"]
+            }
             image={
               user.img === undefined
                 ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
