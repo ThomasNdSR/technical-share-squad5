@@ -7,17 +7,10 @@ export const ModalSchedulingCard = ({
   closeModal,
   available,
 }) => {
-
   const handleSchedule = () => {
     setSchedule((prevState) => !prevState);
     console.log(schedule);
   };
-
-  const nextPage = () => {
-    if (schedule) {
-
-    }
-  }
 
   return (
     <div className="mentor-modal-box-scheduling">

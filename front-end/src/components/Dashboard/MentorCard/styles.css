@@ -60,6 +60,10 @@
   text-transform: uppercase;
   width: 75%;
   margin-top: 10px;
+  padding: 10px;
+  color: var(--neutral-03);
+  font-size: 0.9rem;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {

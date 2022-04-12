@@ -2,7 +2,6 @@
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .close-button {
@@ -38,7 +37,7 @@
 
 .scheduling-card hr {
   color: var(--neutral-02);
-  opacity: 20%;
+  opacity: 30%;
 }
 
 #go-ahead-button {
@@ -54,16 +53,22 @@
 }
 
 @media screen and (max-width: 768px) {
-  .mentor-modal-box-scheduling {
-    margin-left: 0px;
-  }
-
   .close-button {
     display: none;
   }
 
+  .mentor-modal-box {
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .mentor-modal-box-scheduling {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .scheduling-card {
-    width: 80%;
-    height: 200px;
+    width: 90%;
+    height: 250px;
   }
 }

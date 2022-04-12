@@ -18,13 +18,13 @@ export const MentorCard = ({
     setFavorite((prevState) => !prevState);
   };
 
-  // useEffect(() => {
-  //   if (isModalVisible) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'unset';
-  //   }
-  // }, [isModalVisible]);
+  useEffect(() => {
+    if (isModalVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isModalVisible]);
 
   return (
     <section className="card">

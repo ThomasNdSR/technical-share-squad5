@@ -8,7 +8,7 @@
 
 .search-component {
   flex-direction: column;
-  height: 55vh;
+  /* height: 300px; */
   justify-content: center;
   padding: 40px 0;
 }

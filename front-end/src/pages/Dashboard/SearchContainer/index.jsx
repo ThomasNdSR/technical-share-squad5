@@ -22,11 +22,11 @@ export const SearchContainer = () => {
           type="search"
           placeholder="Pesquise por projeto, skill ou função"
         />
-        <label for="search-input" id="search-icon" className="search__label">
-          <a href="">
-            <RiSearch2Line size={25} />
-          </a>
-        </label>
+        {/* <label for="search-input" id="search-icon" className="search__label"> */}
+          {/* <a href=""> */}
+            <RiSearch2Line size={25} color="var(--primary-02)"/>
+          {/* </a> */}
+        {/* </label> */}
       </fieldset>
 
       <div className="options">
