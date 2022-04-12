@@ -78,10 +78,7 @@ export const Presentation = () => {
       </article>
       <article className="presentation__search">
         <div className="presentation__search--container page">
-          <img
-            src={searchImage}
-            alt="Ilustração sobre pesquisa"
-          />
+          <img src={searchImage} alt="Ilustração sobre pesquisa" />
           <div className="presentation__search--descrition">
             <h4>
               Pessoas com diferentes níveisde experiencias se encontrando e

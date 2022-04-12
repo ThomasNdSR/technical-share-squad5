@@ -1,0 +1,7 @@
+.businessCard__cover {
+  width: 100%;
+  height: 250px;
+  background-image: url(../../../assets/profile-cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
