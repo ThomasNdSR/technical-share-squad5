@@ -134,3 +134,22 @@ button {
     padding: 0 2rem;
   }
 }
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--primary-01);
+}
+*::-webkit-scrollbar-track {
+  background: var(--neutral-03);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-01);
+  border-radius: 20px;
+  border: 1px solid var(--primary-01);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-01) var(--neutral-03);
+}

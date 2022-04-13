@@ -1,25 +1,32 @@
-.experienceCard{
-    display: inline-block;
-    position: relative;
+.experienceCard {
+  display: inline-block;
+  position: relative;
 }
-.experienceCard__list{
-    background-color: var(--neutral-03);
-    border:solid 2px #808080;
-    border-radius: 30px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-    height: 200px;
-    padding: 2rem;
-    width: 500px;
+.experienceCard__scroll,.experienceCard__list{
+  height: 9rem;
+  width: 30rem;
+} 
+.experienceCard__scroll {
+  overflow: auto;
+  border-radius: 10px;
 }
-.experienceCard__title{
-    margin: 1rem 2rem;
+.experienceCard__list {
+  background-color: var(--neutral-03);
+  border: solid 2px #808080;
+  border-radius: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  padding: 1rem 0.2rem;
 }
-.experienceCard button{
-    border:none;
-    background-color: transparent;
+.experienceCard__title {
+  margin: 1rem 2rem;
 }
-.experienceCard svg{
-    position: absolute;
-    top: 4rem;
-    right: 1rem;
+.experienceCard button {
+  border: none;
+  background-color: transparent;
 }
+.experienceCard svg {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+}
+

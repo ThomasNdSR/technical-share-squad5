@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import "./styles.css";
 import logo from "../../../src/assets/logo-technical-share.png";
 
-export const Header = ({ page }) => {
+export const Header = ({ page,name,image }) => {
   const [menuHeader, setHeader] = useState(false);
   return (
     <>
@@ -15,7 +15,7 @@ export const Header = ({ page }) => {
           {page === "private" ? (
             <div className="header__profile">
               <div className="header__profile--data">
-                <h5>Olá, João</h5>
+                <h5>{`Olá, ${name}`}</h5>
                 <button
                   onClick={() => {
                     setHeader(!menuHeader);
@@ -46,7 +46,7 @@ export const Header = ({ page }) => {
               </div>
               <figure className="header__photo">
                 <img
-                  src="https://images.pexels.com/photos/2328141/pexels-photo-2328141.jpeg?cs=srgb&dl=pexels-lucas-pezeta-2328141.jpg&fm=jpg"
+                  src={image}
                   alt=""
                 />
               </figure>

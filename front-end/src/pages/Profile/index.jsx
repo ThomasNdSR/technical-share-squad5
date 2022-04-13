@@ -1,26 +1,61 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { AiOutlineLeft, AiTwotoneCamera } from "react-icons/ai";
+import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
 import { SchedulingCard } from "../../components/Profile/SchedulingCard";
+import { SkillsEdit } from "../../components/Profile/SkillsEdit";
 import "./styles.css";
 
 export const Profile = () => {
+  const [userProfile, setUserProfile] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [skillsEdit, setSkillsEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
-  const skills = ["skill 1", "skill 2", "skill 3"];
-  const skillsEdit = () => {
-    console.log("campo 1");
-  };
+  useEffect(() => {
+    getUserProfile();
+    getAllSkills();
+  }, []);
   const bioEdit = () => {
     console.log("campo 2");
   };
   const projectEdit = () => {
     console.log("campo 3");
   };
+
+  const getAllSkills = async () => {
+    await api
+      .get("/skill")
+      .then((res) => {
+        setSkills(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const getUserProfile = async () => {
+    await api
+      .get("/user/624f249ed07fa608ca7e8a6b")
+      .then((res) => {
+        setUserProfile(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
-      <Header page="private" />
+      <Header
+        page="private"
+        name={userProfile.name}
+        image={
+          userProfile.img === undefined
+            ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
+            : `http://localhost:8000/img/${userProfile.img.path.slice(11)}`
+        }
+      />
       <main className="flexbox__container">
         <div className="businessCard__cover" />
         <section className="businessCard page">
@@ -29,6 +64,7 @@ export const Profile = () => {
               <AiOutlineLeft size={24} color="var(--neutral-02)" />
             </a>
             <a
+              href="#showProfie"
               className={`businessCard__menu--item ${
                 menuActive === "perfil" ? "active" : ""
               }`}
@@ -39,6 +75,7 @@ export const Profile = () => {
               Perfil
             </a>
             <a
+              href="#showScheduling"
               className={`businessCard__menu--item ${
                 menuActive === "agenda" ? "active" : ""
               }`}
@@ -51,30 +88,77 @@ export const Profile = () => {
           </nav>
           <article className="businessCard__descrition">
             <div className="businessCard__descrition--data">
-              <h3>João Paulo</h3>
-              <p>Senior User Interface Design</p>
+              <h3>{userProfile.name}</h3>
+              <p>{userProfile.role}</p>
             </div>
             <button>
               <AiTwotoneCamera size={24} color="var(--primary-01)" />
             </button>
             <figure className="businessCard__photo">
               <img
-                src="https://images.pexels.com/photos/2328141/pexels-photo-2328141.jpeg?cs=srgb&dl=pexels-lucas-pezeta-2328141.jpg&fm=jpg"
-                alt=""
+                src={
+                  userProfile.img === undefined
+                    ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
+                    : `http://localhost:8000/img/${userProfile.img.path.slice(
+                        11
+                      )}`
+                }
+                alt={`foto do usuario ${userProfile.name}`}
               />
             </figure>
           </article>
         </section>
         {menuActive === "perfil" ? (
-          <section className="businessCard__experienceCard page">
+          <section
+            id="showProfie"
+            className="businessCard__experienceCard page"
+          >
             <UserExperienceCard title="Bio" clickEdit={bioEdit}>
-              testando 1
+              <p className="businessCard__load">
+                Loading <span>.</span>
+                <span>.</span>
+                <span>.</span>
+              </p>
             </UserExperienceCard>
-            <UserExperienceCard title="Skills" clickEdit={skillsEdit}>
-              testando 2
+            <UserExperienceCard
+              title="Skills"
+              clickEdit={() => {
+                setSkillsEdit(!skillsEdit);
+              }}
+            >
+              {skillsEdit ? (
+                <SkillsEdit skills={skills} id={userProfile._id} />
+              ) : (
+                ""
+              )}
+              {userProfile.skill ? (
+                userProfile.skill.map((data, i) => (
+                  <p className="skill_list--item" key={i}>
+                    {data.name}
+                  </p>
+                ))
+              ) : (
+                <p className="businessCard__load">
+                  Loading <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </p>
+              )}
             </UserExperienceCard>
             <UserExperienceCard title="Projetos" clickEdit={projectEdit}>
-              testando 3
+              {userProfile.project ? (
+                userProfile.project.map((data, i) => (
+                  <p className="skill_list--item" key={i}>
+                    {data}
+                  </p>
+                ))
+              ) : (
+                <p className="businessCard__load">
+                  Loading <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </p>
+              )}
             </UserExperienceCard>
             <section className="businessCard__menu">
               <article>
@@ -97,9 +181,11 @@ export const Profile = () => {
           ""
         )}
         {menuActive === "agenda" ? (
-          <section>
+          <section id="showScheduling">
             <article>
-              <SchedulingCard></SchedulingCard>
+              <SchedulingCard
+                available={userProfile}
+              ></SchedulingCard>
             </article>
           </section>
         ) : (

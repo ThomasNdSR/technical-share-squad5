@@ -12,7 +12,7 @@ export function TableHour(props) {
   return (
     <table>
       <tbody className="tableHour">
-        {week.map((item) => (
+        {props.week.week.map((item) => (          
           <tr key={item.weekday}>
             <th>{weeks[item.weekday]}</th>
             <td className="tableHour_day">

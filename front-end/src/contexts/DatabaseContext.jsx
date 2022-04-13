@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useState } from "react";
-import { api } from "../services/api";
+import {api}  from "../services/api";
 
 export const DatabaseContext = createContext();
 

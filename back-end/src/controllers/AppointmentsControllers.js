@@ -4,7 +4,11 @@ export default class AppointmentsControllers {
   static listRegister = (req, res) => {
     const id = req.params.id
     Appointment.find({user:id})
-      .populate("mentor", "name email")
+      .populate("mentor", "name img role").populate({
+        path:     'mentor',			
+        populate: { path:  'img',
+              model: 'images' }
+        })
       .exec((err, item) => {
         if (err) {
           res.status(500).json(err.message);
