@@ -30,7 +30,6 @@ export function SkillsEdit({ skills, id }) {
         <button
           onClick={() => {
             UpdateSkill();
-            console.log(JSON.stringify(checkedSkill))
           }}
         >
           Salvar alterações

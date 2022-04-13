@@ -169,7 +169,7 @@ export const Profile = () => {
                 </p>
               )}
               {projectEdit ? (
-                <InputUpload name="projetos" />
+                <InputUpload name="projetos" id={userProfile._id} />
               ) : (
                 ""
               )}
