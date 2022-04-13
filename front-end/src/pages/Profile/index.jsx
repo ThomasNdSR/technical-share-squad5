@@ -8,6 +8,16 @@ import "./styles.css";
 
 export const Profile = () => {
   const [menuActive, setMenu] = useState("perfil");
+  const skills = ["skill 1", "skill 2", "skill 3"];
+  const skillsEdit = () => {
+    console.log("campo 1");
+  };
+  const bioEdit = () => {
+    console.log("campo 2");
+  };
+  const projectEdit = () => {
+    console.log("campo 3");
+  };
   return (
     <>
       <Header page="private" />
@@ -57,9 +67,15 @@ export const Profile = () => {
         </section>
         {menuActive === "perfil" ? (
           <section className="businessCard__experienceCard page">
-            <UserExperienceCard title="Bio">testando 1</UserExperienceCard>
-            <UserExperienceCard title="Skills">testando 2</UserExperienceCard>
-            <UserExperienceCard title="Projetos">testando 3</UserExperienceCard>
+            <UserExperienceCard title="Bio" clickEdit={bioEdit}>
+              testando 1
+            </UserExperienceCard>
+            <UserExperienceCard title="Skills" clickEdit={skillsEdit}>
+              testando 2
+            </UserExperienceCard>
+            <UserExperienceCard title="Projetos" clickEdit={projectEdit}>
+              testando 3
+            </UserExperienceCard>
             <section className="businessCard__menu">
               <article>
                 <h5>Redes Sociais</h5>

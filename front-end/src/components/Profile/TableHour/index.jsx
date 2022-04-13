@@ -11,23 +11,23 @@ export function TableHour(props) {
   const month = new Date().getMonth() + 1;
   return (
     <table>
-      <body className="tableHour">
+      <tbody className="tableHour">
         {week.map((item) => (
-          <tr>
+          <tr key={item.weekday}>
             <th>{weeks[item.weekday]}</th>
-            <p className="tableHour_day">
+            <td className="tableHour_day">
               {dayKey > item.weekday
                 ? `${day - dayKey}/${month}`
                 : `${day + (item.weekday - dayKey)}/${month}`}
-            </p>
+            </td>
             {item.timeHour.map((hour) => (
-              <td>
+              <td key={hour}>
                 <p className="tableHour_hour">{`${hour}:00`}</p>
               </td>
             ))}
           </tr>
         ))}
-      </body>
+      </tbody>
     </table>
   );
 }

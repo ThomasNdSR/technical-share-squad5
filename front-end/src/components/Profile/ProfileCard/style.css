@@ -9,6 +9,8 @@
 }
 .profileCard_body{
     padding: 1rem;
+    height: auto;
+    overflow:auto
 }
 .profileCard_header-one,.profileCard_header-two {
   display: flex;
