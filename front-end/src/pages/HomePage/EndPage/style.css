@@ -37,13 +37,13 @@
     width: 100%;
   }
   .endPage_decorative--spots,
-.endPage_decorative--waves {
-  width: 5rem;
-}
+  .endPage_decorative--waves {
+    width: 5rem;
+  }
   .endPage_decorative--spots {
     right: -2rem;
   }
-  
+
   .endPage_decorative--waves {
     left: -2rem;
   }

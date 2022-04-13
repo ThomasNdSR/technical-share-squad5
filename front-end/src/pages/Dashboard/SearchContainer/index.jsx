@@ -1,15 +1,33 @@
+import { useEffect, useState } from "react";
 import img1 from "../../../assets/01.svg";
 import img2 from "../../../assets/02.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import "./styles.css";
 
-export const SearchContainer = () => {
-  const list = [
-    { skill: "Front-end" },
-    { skill: "Scrum" },
-    { skill: "Full Stack" },
-    { skill: "UX Design" },
-  ];
+export const SearchContainer = ({
+  users,
+  setUsers,
+  filteredUsers,
+  setFilteredUsers,
+}) => {
+  const skills = ["Front-end", "Scrum", "Full Stack", "UX Design"];
+
+  const handleSearch = (query) => {
+    const filterUsers = users.filter(
+      (user) => user.role.includes(query) || user.project.includes(query)
+    );
+
+    const filterUsersBySkill = users.filter((user) =>
+      user.skill.forEach((skill) =>
+        console.log(Object.values(skill)[1].includes(query))
+      )
+    );
+
+    setFilteredUsers(filterUsers);
+
+    console.log(filterUsersBySkill);
+  };
+
   return (
     <section className="search-component">
       <img id="img1" src={img1} alt="decoração da pagina com pontos" />
@@ -21,20 +39,17 @@ export const SearchContainer = () => {
           className="search__input"
           type="search"
           placeholder="Pesquise por projeto, skill ou função"
+          onChange={(e) => handleSearch(e.target.value)}
         />
-        {/* <label for="search-input" id="search-icon" className="search__label"> */}
-          {/* <a href=""> */}
-            <RiSearch2Line size={25} color="var(--primary-02)"/>
-          {/* </a> */}
-        {/* </label> */}
+        <RiSearch2Line size={25} color="var(--primary-02)" />
       </fieldset>
 
       <div className="options">
         <p className="options__name">Mais buscados:</p>
         <ul className="options__list">
-          {list.map((item, index) => (
+          {skills.map((skill, index) => (
             <li key={index} className="options__item">
-              {item.skill}
+              {skill}
             </li>
           ))}
         </ul>
