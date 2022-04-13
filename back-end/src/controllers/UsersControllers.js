@@ -91,6 +91,20 @@ export default class UsersControllers {
       }
     });
   };
+  static updateProjectlUser = async (req, res) => {
+    const id = req.params.id;
+    const projectUpdate = req.body;
+
+    const user = await User.findOne({ _id: id });
+    user.project.push(projectUpdate.name);
+    await user.save((err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(200).send({ message: "Atualizado com sucesso" });
+      }
+    });
+  };
   static authenticateUser = async (req, res) => {
     try {
       const data = req.body;

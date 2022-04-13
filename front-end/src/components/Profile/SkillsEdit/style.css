@@ -18,6 +18,16 @@
   padding: 0.2rem 1rem;
   text-align: center;
 }
+.skillEdit_feedback{
+  color:var(--secondary-03);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+.skillEdit_list--input{
+  border-radius: 1rem;
+  color:var(--secondary-01);
+  margin-bottom: 0.5rem;
+}
 .skillEdit,.skillEdit_list--group {
   display: flex;
   flex-wrap: wrap;

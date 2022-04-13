@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  vertical-align: middle;
 }
 .businessCard {
   position: relative;
@@ -22,8 +21,8 @@
   background-color: transparent;
   border: none;
   position: absolute;
-  right: 10rem;
-  top: 3rem;
+  right: 1rem;
+  bottom: 1rem;
   z-index: 1;
 }
 .businessCard__photo {
@@ -72,6 +71,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 .skill_list--item {
   background: rgba(98, 99, 171, 0.4);

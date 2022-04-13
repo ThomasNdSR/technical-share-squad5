@@ -10,6 +10,7 @@ router
   .post("/user/create", UsersControllers.createUser)
   .post("/user/:id/favorite/:idFavorite", UsersControllers.includeFavorite)
   .put("/user/skill/:id",UsersControllers.updateSkillUser)
+  .put("/user/project/:id",UsersControllers.updateProjectlUser)
   .delete("/user/:id/favorite/:idFavorite", UsersControllers.removeFavorite)
 
 export default router;

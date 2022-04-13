@@ -4,6 +4,7 @@ import "./style.css";
 
 export function SkillsEdit({ skills, id }) {
   const [checkedSkill, setCheckedSkill] = useState([]);
+  const [feedbackSkill, setFeedbackSkill] = useState('');
 
   const handleCheck = (event) => {
     var updatedList = [...checkedSkill];
@@ -16,8 +17,8 @@ export function SkillsEdit({ skills, id }) {
   };
 
   const UpdateSkill = async () => {
-    await api.put(`/user/skill/${id}`, checkedSkill).then((res)=>{
-      console.log(res)
+    await api.put(`/user/skill/${id}`, checkedSkill).then(()=>{
+      setFeedbackSkill('Skills atualizadas com sucesso')
     }).catch((err) => {
       console.log(err);
     });
@@ -25,6 +26,7 @@ export function SkillsEdit({ skills, id }) {
   return (
     <>
       <article className="skillEdit">
+        <p className="skillEdit_feedback">{feedbackSkill}</p>
         <button
           onClick={() => {
             UpdateSkill();
