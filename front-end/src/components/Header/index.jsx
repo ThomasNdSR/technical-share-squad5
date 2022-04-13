@@ -15,14 +15,17 @@ export const Header = ({ page }) => {
           {page === "private" ? (
             <div className="header__profile">
               <div className="header__profile--data">
-                <h5>Olá, João</h5>
+                <h5 id="hello-user">Olá, João</h5>
                 <button
+                  id="drop-down-button"
                   onClick={() => {
                     setHeader(!menuHeader);
                   }}
                 >
-                  <AiOutlineDown />
-                  minha conta
+                  <div id="drop-down-icon">
+                    <AiOutlineDown />
+                  </div>
+                  Minha conta
                 </button>
                 {menuHeader ? (
                   <>
