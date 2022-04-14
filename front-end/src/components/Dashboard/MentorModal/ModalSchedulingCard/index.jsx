@@ -43,7 +43,6 @@ export const ModalSchedulingCard = ({
   };
   const postAppointment = async () => {
     const data = dateSelect()
-    console.log(data)
     await api
       .post(`/user/appointment/${useId}`, data)
       .then(() => {

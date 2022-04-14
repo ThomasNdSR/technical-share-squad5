@@ -83,13 +83,16 @@ export default class UsersControllers {
 
     const user = await User.findOne({ _id: id });
     user.skill = skillUpdate;
-    await user.save((err) => {
-      if (err) {
-        res.status(500).json(err.message);
-      } else {
-        res.status(200).send({ message: "Atualizado com sucesso" });
-      }
-    });
+    await user.save();
+    User.findOne({ _id: id })
+      .populate("skill")
+      .select({ skill: 1 })
+      .exec((err, item) => {
+        if (err) {
+          res.status(500).json(err.message);
+        }
+        res.status(200).json(item);
+      });
   };
   static updateProjectlUser = async (req, res) => {
     const id = req.params.id;

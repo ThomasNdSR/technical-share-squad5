@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { api } from "../../../services/api";
 import "./style.css";
 
-export function SkillsEdit({ skills, id }) {
+export function SkillsEdit({ skills, id,setUserProfile,userProfile }) {
   const [checkedSkill, setCheckedSkill] = useState([]);
   const [feedbackSkill, setFeedbackSkill] = useState('');
 
@@ -17,7 +17,9 @@ export function SkillsEdit({ skills, id }) {
   };
 
   const UpdateSkill = async () => {
-    await api.put(`/user/skill/${id}`, checkedSkill).then(()=>{
+    await api.put(`/user/skill/${id}`, checkedSkill).then((res)=>{
+      userProfile.skill=res.data.skill
+      setUserProfile(userProfile)
       setFeedbackSkill('Skills atualizadas com sucesso')
     }).catch((err) => {
       console.log(err);

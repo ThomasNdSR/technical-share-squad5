@@ -3,7 +3,7 @@ import { FiGithub, FiLinkedin, FiCamera } from "react-icons/fi";
 import { AiOutlineLeft } from "react-icons/ai";
 import { api } from "../../services/api";
 import { Header } from "../../components/Header";
-import {InputUpload} from "../../components/Profile/InputUpload"
+import { InputUpload } from "../../components/Profile/InputUpload";
 import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
 import { SchedulingCard } from "../../components/Profile/SchedulingCard";
 import { SkillsEdit } from "../../components/Profile/SkillsEdit";
@@ -16,10 +16,12 @@ export const Profile = () => {
   const [projectEdit, setProjectEdit] = useState(false);
   const [bioEdit, setBioEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
+  
   useEffect(() => {
     getUserProfile();
     getAllSkills();
-  }, []);;
+    document.title = 'Skills'
+  }, []);
   const getAllSkills = async () => {
     await api
       .get("/skill")
@@ -110,19 +112,18 @@ export const Profile = () => {
             id="showProfie"
             className="businessCard__experienceCard page"
           >
-            <UserExperienceCard title="Bio" clickEdit={()=>{
-              setBioEdit(!bioEdit)
-            }}>
+            <UserExperienceCard
+              title="Bio"
+              clickEdit={() => {
+                setBioEdit(!bioEdit);
+              }}
+            >
               <p className="businessCard__load">
                 Loading <span>.</span>
                 <span>.</span>
                 <span>.</span>
               </p>
-              {bioEdit ? (
-                <InputUpload name="Bio" />
-              ) : (
-                ""
-              )}
+              {bioEdit ? <InputUpload name="Bio" /> : ""}
             </UserExperienceCard>
             <UserExperienceCard
               title="Skills"
@@ -131,7 +132,12 @@ export const Profile = () => {
               }}
             >
               {skillsEdit ? (
-                <SkillsEdit skills={skills} id={userProfile._id} />
+                <SkillsEdit
+                  skills={skills}
+                  id={userProfile._id}
+                  userProfile={userProfile}
+                  setUserProfile={setUserProfile}
+                />
               ) : (
                 ""
               )}

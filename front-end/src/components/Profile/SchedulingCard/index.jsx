@@ -21,6 +21,7 @@ export function SchedulingCard({ available }) {
         console.log(err);
       });
   };
+
   const getMentorScheduling = async () => {
     await api
       .get(`user/appointment/mentor/${available._id}`)
@@ -31,7 +32,7 @@ export function SchedulingCard({ available }) {
         console.log(err);
       });
   };
-  useEffect(() => {
+   useEffect(() => {
     getScheduling();
     getMentorScheduling();
   }, []);
@@ -68,8 +69,12 @@ export function SchedulingCard({ available }) {
                 mentorScheduling.map((item) => (
                   <PeopleCard
                     key={item._id}
+                    id={item._id}
                     name={item.user.name}
                     role={item.user.role}
+                    date={item.date}
+                    place={item.place}
+                    time={item.time}
                     image={
                       item.user.img === undefined
                         ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
@@ -117,8 +122,12 @@ export function SchedulingCard({ available }) {
                 scheduling.map((item) => (
                   <PeopleCard
                     key={item._id}
+                    id={item._id}
                     name={item.mentor.name}
                     role={item.mentor.role}
+                    date={item.date}
+                    place={item.place}
+                    time={item.time}
                     image={
                       item.mentor.img === undefined
                         ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"

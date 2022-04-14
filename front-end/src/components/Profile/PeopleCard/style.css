@@ -38,3 +38,9 @@
 .peopleCard_option-delete:hover{
     color: var(--primary-03);
 }
+.peopleCard_descrition--detail{
+  font-size: 1rem;
+}
+.peopleCard_descrition svg{
+  cursor: pointer;
+}
