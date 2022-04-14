@@ -9,7 +9,6 @@ export const ModalSchedulingCard = ({
 }) => {
   const handleSchedule = () => {
     setSchedule((prevState) => !prevState);
-    console.log(schedule);
   };
 
   return (

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { api } from "../../../services/api";
 import "./style.css";
 export function TableHourEdit({ id }) {
-  const [checkedHour, setCheckedHour] = useState([])
-  const [feedbackHour, setFeedbackHour] = useState('');;
+  const init = [];
+  const [checkedHour, setCheckedHour] = useState(init);
+  const [feedbackHour, setFeedbackHour] = useState("");
+
   const weekday = [0, 1, 2, 3, 4, 5, 6];
   const timeHour = [
     5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
@@ -14,17 +16,16 @@ export function TableHourEdit({ id }) {
   const month = new Date().getMonth() + 1;
 
   const postHour = async () => {
-    groupHour()
+    const order = groupHour();
     await api
-      .post(`user/available/${id}`,{week:checkedHour})
-      .then((res) => {
-        setFeedbackHour('Disponibilidade atualizada com sucesso')
+      .post(`user/available/${id}`, { week: order })
+      .then(() => {
+        setFeedbackHour("Disponibilidade atualizada com sucesso");
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
   const handleCheck = (event) => {
     var updatedList = [...checkedHour];
     if (event.target.checked) {
@@ -62,12 +63,13 @@ export function TableHourEdit({ id }) {
     //ordernar semanas
     week.sort((a, b) => (a.weekday > b.weekday ? 1 : 0));
     //atualizar state
-    setCheckedHour(week);
+    return week;
   };
   return (
     <>
       <p className="skillEdit_feedback">{feedbackHour}</p>
       <button
+        className="tableHour__upload"
         onClick={() => {
           postHour();
         }}
@@ -85,7 +87,10 @@ export function TableHourEdit({ id }) {
                   : `${day + (item - dayKey)}/${month}`}
               </td>
               {timeHour.map((hour, i) => (
-                <div key={`${weeks[item]}/${hour}`}>
+                <div
+                  key={`${weeks[item]}/${hour}`}
+                  className="tableHour_day--key"
+                >
                   <input
                     id={`${weeks[item]}/${hour}`}
                     value={`${weeks[item]}/${hour}`}
@@ -94,7 +99,7 @@ export function TableHourEdit({ id }) {
                   />
                   <label
                     htmlFor={`${weeks[item]}/${hour}`}
-                    className="tableHour_hour"
+                    className="tableHour_hour--edit"
                   >
                     {`${hour}:00`}
                   </label>

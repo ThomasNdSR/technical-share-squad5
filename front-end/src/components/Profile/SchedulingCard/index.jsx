@@ -37,7 +37,6 @@ export function SchedulingCard({ available }) {
   }, []);
   return (
     <article className="schedulingCard">
-      {console.log(scheduling)}
       <div className="schedulingCard__menu">
         <button
           onClick={() => {
@@ -99,7 +98,7 @@ export function SchedulingCard({ available }) {
               }}
             >
               {editHour ? (
-                <TableHourEdit />
+                <TableHourEdit id={available._id} />
               ) : (
                 <TableHour week={available.available[0]} />
               )}

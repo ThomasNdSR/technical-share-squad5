@@ -1,0 +1,32 @@
+.tableHour_hour--edit {
+  border: 1px solid var(--primary-01);
+  border-radius: 0.5rem;
+  color: var(--color-standard);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  text-align: center;
+}
+
+.tableHour__upload {
+  background-color: var(--primary-01);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 30px rgba(185, 50, 0, 0.4),
+    0px 10px 30px rgba(0, 0, 0, 0.25);
+  color: var(--neutral-02);
+  font-weight: var(--heading-5-weight);
+  margin: 0 1rem;
+  padding: 0.2rem 1rem;
+  text-align: center;
+}
+.tableHour_day--key [type="checkbox"] {
+  display: none;
+}
+.tableHour_day--key [type="checkbox"]:checked + .tableHour_hour--edit {
+  background-color: var(--secondary-03);
+  border: 3px solid var(--primary-01);
+  color: var(--neutral-03);
+}
