@@ -10,10 +10,10 @@ export default class UsersControllers {
       .select({
         name: 1,
         img: 1,
-        role:1,
+        role: 1,
         skill: 1,
         available: 1,
-        project:1
+        project: 1,
       })
       .populate({
         path: "img skill",

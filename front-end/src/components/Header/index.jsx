@@ -35,7 +35,7 @@ export const Header = ({ page,name,image }) => {
                         <ImProfile />
                         Agenda
                       </a>
-                      <a id="header-exit" href="homePage">
+                      <a id="header-exit" href="/">
                         sair
                       </a>
                     </nav>

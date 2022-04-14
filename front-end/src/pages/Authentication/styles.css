@@ -1,0 +1,61 @@
+.flexbox__container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 60px;
+}
+
+.login__page__headline {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 545px;
+  line-height: 56px;
+  font-size: 40px;
+}
+
+.headline {
+  color: var(--secondary-02);
+  margin-top: 50px;
+}
+
+.headline p {
+  color: var(--primary-01);
+}
+
+.login__ilustration {
+  align-self: flex-end;
+  padding-top: 120px;
+}
+
+@media screen and (max-width: 425px) {
+  .login__page__headline {
+    display: none;
+  }
+
+  .login__component {
+    max-width: 290px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login__page__headline {
+    display: none;
+  }
+
+  .login__component {
+    max-width: 290px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .login__component {
+    max-width: 290px;
+    height: auto;
+  }
+
+  .login__ilustration {
+    padding-top: 50px;
+  }
+}

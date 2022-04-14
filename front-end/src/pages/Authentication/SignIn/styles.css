@@ -1,0 +1,80 @@
+.login__component__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__component {
+  color: var(--neutral-02);
+  width: 330px;
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  text-align: center;
+}
+
+.greeting {
+  margin-bottom: 90px;
+}
+.greeting h2 {
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.input__name,
+.input__email,
+.input__senha {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #535050;
+  border-radius: 5px;
+  font-size: large;
+  margin-top: 1rem;
+}
+
+.input__error {
+  color: red;
+  font-size: small;
+  margin-bottom: 1rem;
+}
+
+.naosei {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.forgot__password {
+  color: var(--primary-03);
+}
+.click__here {
+  text-decoration: none;
+  color: var(--primary-03);
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.submit {
+  border: none;
+  width: 100%;
+  height: 50px;
+  background: var(--primary-01);
+  box-shadow: 0px 4px 30px rgba(185, 50, 0, 0.4),
+    0px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: var(--neutral-03);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 70px 0;
+}
+
+.first__access {
+  color: #616161;
+}

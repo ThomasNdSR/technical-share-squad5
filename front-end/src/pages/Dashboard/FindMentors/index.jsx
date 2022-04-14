@@ -1,35 +1,16 @@
+import { useState } from "react";
 import {
   AiOutlineCalendar,
   AiOutlineContacts,
   AiOutlineSortAscending,
   AiOutlineSortDescending,
-  MdEventAvailable,
 } from "react-icons/ai";
 import { BiSlider } from "react-icons/bi";
-
-import { useEffect, useState } from "react";
 import { MentorCard } from "../../../components/Dashboard/MentorCard";
-import { api } from "../../../services/api";
 import "./styles.css";
 
-export const FindMentors = () => {
-  const [users, setUsers] = useState([]);
+export const FindMentors = ({ users, filteredUsers }) => {
   const [sliderActive, setSlider] = useState(false);
-
-  useEffect(() => {
-    getAllUsers();
-  }, []);
-
-  const getAllUsers = async () => {
-    try {
-      const response = await api.get("/user");
-      const data = response.data;
-
-      setUsers(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <section className="discover-professionals-box">
@@ -64,29 +45,53 @@ export const FindMentors = () => {
         </li>
       </ul>
       <div className="discover-professionals-list">
-        {users.map((user) => (
-          <MentorCard
-            key={user._id}
-            name={user.name}
-            role={user.role}
-            project={
-              user.project.length > 0
-                ? user.project
-                : ["Não há projetos cadastrados"]
-            }
-            skills={user.skill}
-            available={
-              user.available.length > 0
-                ? user.available
-                : ["Não há horários disponíveis no momento"]
-            }
-            image={
-              user.img === undefined
-                ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
-                : `http://localhost:8000/img/${user.img.path.slice(11)}`
-            }
-          />
-        ))}
+        {filteredUsers.length > 0
+          ? filteredUsers.map((user) => (
+              <MentorCard
+                key={user._id}
+                name={user.name}
+                role={user.role}
+                project={
+                  user.project.length > 0
+                    ? user.project
+                    : ["Não há projetos cadastrados"]
+                }
+                skills={user.skill}
+                available={
+                  user.available.length > 0
+                    ? user.available
+                    : ["Não há horários disponíveis no momento"]
+                }
+                image={
+                  user.img === undefined
+                    ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
+                    : `http://localhost:8000/img/${user.img.path.slice(11)}`
+                }
+              />
+            ))
+          : users.map((user) => (
+              <MentorCard
+                key={user._id}
+                name={user.name}
+                role={user.role}
+                project={
+                  user.project.length > 0
+                    ? user.project
+                    : ["Não há projetos cadastrados"]
+                }
+                skills={user.skill}
+                available={
+                  user.available.length > 0
+                    ? user.available
+                    : ["Não há horários disponíveis no momento"]
+                }
+                image={
+                  user.img === undefined
+                    ? "https://aui.atlassian.com/aui/8.8/docs/images/avatar-person.svg"
+                    : `http://localhost:8000/img/${user.img.path.slice(11)}`
+                }
+              />
+            ))}
       </div>
     </section>
   );

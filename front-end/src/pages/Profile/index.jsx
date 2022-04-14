@@ -52,7 +52,7 @@ export const Profile = () => {
             : `http://localhost:8000/img/${userProfile.img.path.slice(11)}`
         }
       />
-      <main className="flexbox__container">
+      <main className="businessCard__container">
         <div className="businessCard__cover" />
         <section className="businessCard page">
           <nav className="businessCard__menu">

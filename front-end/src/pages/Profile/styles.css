@@ -1,5 +1,7 @@
 .businessCard,
+.businessCard__container,
 .businessCard__descrition,
+.businessCard page,
 .businessCard__descrition--data,
 .businessCard__menu {
   display: flex;
@@ -9,12 +11,16 @@
 .businessCard {
   position: relative;
   top: -30px;
+  width: 90%;
+}
+.businessCard__container{
+  flex-direction: column;
 }
 .businessCard__cover {
   background-image: url(../../assets/profile-cover.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250px;
+  height: 200px;
   width: 100%;
 }
 .businessCard__descrition button {
@@ -24,6 +30,9 @@
   right: 1rem;
   bottom: 1rem;
   z-index: 1;
+}
+.businessCard__descrition{
+  position: relative;
 }
 .businessCard__photo {
   border: 5px solid var(--primary-01);
@@ -62,6 +71,9 @@
   opacity: 0.6;
   text-decoration: none;
   transition: all 0.4s linear;
+}
+.businessCard page{
+  width: 100vw;
 }
 .active {
   opacity: 1;
