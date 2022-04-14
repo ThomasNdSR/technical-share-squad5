@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 import { ImProfile } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
@@ -28,17 +29,17 @@ export const Header = ({ page, name, image }) => {
                   <>
                     <div className="header__profile--decoration"></div>
                     <nav className="header__profile--nav">
-                      <a href="dashboard">
+                      <Link to="/profile">
                         <CgProfile />
                         Perfil
-                      </a>
-                      <a href="profile">
+                      </Link>
+                      <Link to="/dashboard">
                         <ImProfile />
                         Dashboard
-                      </a>
-                      <a id="header-exit" href="/">
+                      </Link>
+                      <Link id="header-exit" to="/">
                         Sair
-                      </a>
+                      </Link>
                     </nav>
                   </>
                 ) : (
