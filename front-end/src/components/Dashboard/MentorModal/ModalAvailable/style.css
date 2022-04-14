@@ -1,0 +1,60 @@
+.modalAvailable,
+.modalAvailable--item,
+.modalAvailable--item,
+.modalAvailable__lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modalAvailable {
+  justify-content: center;
+}
+.modalAvailable__lists div [type="radio"],
+.modalAvailable div [type="radio"] {
+  display: none;
+}
+.modalAvailable--item {
+  flex-direction: column;
+  border: 3px solid var(--secondary-01);
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 3.4rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 4.7rem;
+  transition: 0.3s ease-in-out;
+}
+.modalAvailable--date {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.modalAvailable--list-hours {
+  color: var(--primary-01);
+  font-size: 0.875rem;
+}
+.modalAvailable__lists div [type="radio"]:checked + .modalAvailable--hour,
+.modalAvailable div [type="radio"]:checked + .modalAvailable--item {
+  background-color: var(--primary-02);
+  border-color: var(--primary-01);
+}
+.modalAvailable--hour{
+    display: inline-block;
+    border: 3px solid var(--primary-01);
+    border-radius:.6rem;
+    cursor: pointer;
+    font-weight: 700;
+    height:1.1rem;
+    margin: .2rem;
+    padding: .3rem .3rem;
+    text-align: center;
+    width: 3.5rem;
+}
+.modalAvailable__lists{
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--neutral-02);
+    margin-top: 3rem;
+    padding-top: 1rem;
+}

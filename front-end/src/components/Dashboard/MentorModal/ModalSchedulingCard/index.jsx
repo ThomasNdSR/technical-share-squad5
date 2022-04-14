@@ -1,4 +1,5 @@
 import { VscChromeClose } from "react-icons/vsc";
+import { ModalAvailable } from "../ModalAvailable";
 import "./styles.css";
 
 export const ModalSchedulingCard = ({
@@ -21,8 +22,7 @@ export const ModalSchedulingCard = ({
       <div className="scheduling-button-wrapper">
         <div className="scheduling-card">
           <h4>Agenda semanal</h4>
-          <hr />
-          <button onClick={handleSchedule}>18h</button>
+          <ModalAvailable />
         </div>
         <button id="go-ahead-button">Agendar</button>
       </div>
