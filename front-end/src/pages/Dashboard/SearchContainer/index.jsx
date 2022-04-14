@@ -4,28 +4,22 @@ import img2 from "../../../assets/02.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import "./styles.css";
 
-export const SearchContainer = ({
-  users,
-  setUsers,
-  filteredUsers,
-  setFilteredUsers,
-}) => {
+export const SearchContainer = ({ users, setFilteredUsers }) => {
   const skills = ["Front-end", "Scrum", "Full Stack", "UX Design"];
 
   const handleSearch = (query) => {
+    console.log(query);
     const filterUsers = users.filter(
       (user) => user.role.includes(query) || user.project.includes(query)
     );
 
-    const filterUsersBySkill = users.filter((user) =>
-      user.skill.forEach((skill) =>
-        console.log(Object.values(skill)[1].includes(query))
-      )
-    );
+    // const filterUsersBySkill = users.filter((user) =>
+    //   user.skill.forEach((skill) =>
+    //     console.log(Object.values(skill)[1].includes(query))
+    //   )
+    // );
 
     setFilteredUsers(filterUsers);
-
-    console.log(filterUsersBySkill);
   };
 
   return (
