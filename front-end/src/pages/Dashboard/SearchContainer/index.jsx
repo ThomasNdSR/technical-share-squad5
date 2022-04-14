@@ -11,12 +11,6 @@ export const SearchContainer = ({ users, setFilteredUsers }) => {
       (user) => user.role.includes(query) || user.project.includes(query)
     );
 
-    // const filterUsersBySkill = users.filter((user) =>
-    //   user.skill.forEach((skill) =>
-    //     console.log(Object.values(skill)[1].includes(query))
-    //   )
-    // );
-
     setFilteredUsers(filterUsers);
   };
 

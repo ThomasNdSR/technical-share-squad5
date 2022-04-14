@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "react-toastify";
 import * as yup from "yup";
 import { api } from "../../../services/api";
-// import "./styles.css";
 
-export const SignUp = () => {
+export const SignUp = ({ toggleComponents }) => {
   const schema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
@@ -26,8 +26,13 @@ export const SignUp = () => {
   const signUp = async (data) => {
     try {
       const response = await api.post("/user/create", data);
-      console.log(response);
+
+      toast.success("Cadastro realizado com sucesso!");
+
+      toggleComponents();
     } catch (error) {
+      toast.error("Ops... Algo deu errado!");
+
       console.log(error);
     }
   };
