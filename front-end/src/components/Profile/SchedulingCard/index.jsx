@@ -3,12 +3,14 @@ import { api } from "../../../services/api";
 import { ProfileCard } from "../ProfileCard";
 import { PeopleCard } from "../PeopleCard";
 import { TableHour } from "../TableHour";
+import { TableHourEdit } from "../TableHourEdit";
 import "./style.css";
 
 export function SchedulingCard({ available }) {
   const [menuScheduling, setMenuScheduling] = useState("mentor");
   const [scheduling, setScheduling] = useState([]);
   const [mentorScheduling, setMentorScheduling] = useState([]);
+  const [editHour, setEditHour] = useState(false);
   const getScheduling = async () => {
     await api
       .get(`user/appointment/${available._id}`)
@@ -31,7 +33,7 @@ export function SchedulingCard({ available }) {
   };
   useEffect(() => {
     getScheduling();
-    getMentorScheduling()
+    getMentorScheduling();
   }, []);
   return (
     <article className="schedulingCard">
@@ -89,8 +91,18 @@ export function SchedulingCard({ available }) {
           </div>
           <div className="schedulingCard__item-option">
             <h4>Minha agenda</h4>
-            <ProfileCard header="two" width="30vw">
-              <TableHour week={available.available[0]} />
+            <ProfileCard
+              header="two"
+              width="30vw"
+              clickEdit={() => {
+                setEditHour(!editHour);
+              }}
+            >
+              {editHour ? (
+                <TableHourEdit />
+              ) : (
+                <TableHour week={available.available[0]} />
+              )}
             </ProfileCard>
           </div>
         </div>

@@ -3,29 +3,32 @@
   border: 3px solid #b93200;
   border-radius: 1.875rem;
   box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.3);
-  height: 450px;
-  margin:2rem;
-  width: 400px;
+  height: 28.125rem;
+  margin: 2rem;
+  overflow: hidden;
+  width: 25rem;
 }
-.profileCard_body{
-    padding: 1rem;
-    height: auto;
-    overflow:auto
+.profileCard__scroll {
+  height: 23.5rem;
+  overflow: scroll;
+  width: 100%;
 }
-.profileCard_header-one,.profileCard_header-two {
+.profileCard_header-one,
+.profileCard_header-two {
   display: flex;
   align-items: center;
   background-color: var(--primary-01);
-  border-radius: 1.70rem 1.7rem 0 0;
+  border-radius: 1.7rem 1.7rem 0 0;
   height: 4.25rem;
   justify-content: center;
   width: 100%;
 }
-.profileCard_header-two{
+.profileCard_header-two {
   background-color: var(--neutral-03);
 }
-.profileCard_header-one button,.profileCard_header-two button{
-    background-color: transparent;
-    border: none;
-    margin: 1rem;
+.profileCard_header-one button,
+.profileCard_header-two button {
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
 }

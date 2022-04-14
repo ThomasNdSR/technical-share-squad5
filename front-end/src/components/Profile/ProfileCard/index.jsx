@@ -14,10 +14,12 @@ export function ProfileCard(props) {
       {props.header==="two" ?(
       <div className="profileCard_header-two">
         <h4>Meus dias disponíveis</h4>
-        <button><AiFillEdit size={24} color="var(--primary-01)" /></button> 
+        <button onClick={props.clickEdit}><AiFillEdit size={24} color="var(--primary-01)" /></button> 
       </div>
       ):('')}
-      <article className="profileCard_body">{props.children}</article>
+      <div className="profileCard__scroll">
+      <article>{props.children}</article>
+      </div>
     </section>
   );
 }
