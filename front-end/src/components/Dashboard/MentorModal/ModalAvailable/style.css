@@ -58,3 +58,7 @@
     margin-top: 3rem;
     padding-top: 1rem;
 }
+.modalAvailable__notAvailable{
+  color:var(--primary-03);
+  margin:1rem;
+}

@@ -49,6 +49,7 @@ export const FindMentors = ({ users, filteredUsers }) => {
           ? filteredUsers.map((user) => (
               <MentorCard
                 key={user._id}
+                id={user._id}
                 name={user.name}
                 role={user.role}
                 project={
@@ -72,6 +73,7 @@ export const FindMentors = ({ users, filteredUsers }) => {
           : users.map((user) => (
               <MentorCard
                 key={user._id}
+                id={user._id}
                 name={user.name}
                 role={user.role}
                 project={
