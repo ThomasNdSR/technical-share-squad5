@@ -12,25 +12,10 @@ export function ModalAvailable({ weekData,day,setDay,hour,setHour,}) {
   const hourSelect = (value) => {
     setHour(value);
   };
-  const dateSelect = () => {
-    const data = new Date();
-    let dayweek
-    if (day) {
-      dayweek = weekData[0].week[day].weekday;
-      if (dayKey > dayweek) {
-        data.setDate(data.getDate() - (dayKey - dayweek));
-      } else {
-        data.setDate(data.getDate() + (dayweek - dayKey));
-      }
-    }
-    return data.toLocaleString();
-  };
   return (
     <>
       {weekData[0].week ? (
         <>
-          {console.log(dateSelect())}
-          <p>{hour}</p>
           <div className="modalAvailable">
             {weekData[0].week.map((item, indexInput) => (
               <div key={indexInput}>
@@ -63,14 +48,14 @@ export function ModalAvailable({ weekData,day,setDay,hour,setHour,}) {
               ? weekData[0].week[day].timeHour.map((item, indexHour) => (
                   <div key={indexHour}>
                     <input
-                      id={item}
+                      id={`hour/${item}`}
                       name="hours"
                       value={item}
                       type="radio"
                       onChange={(e) => hourSelect(e.target.value)}
                     />
                     <label
-                      htmlFor={item}
+                      htmlFor={`hour/${item}`}
                       className="modalAvailable--hour"
                     >{`${item}:00`}</label>
                   </div>

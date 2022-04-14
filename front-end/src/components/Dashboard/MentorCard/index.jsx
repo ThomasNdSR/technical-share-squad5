@@ -7,6 +7,7 @@ export const MentorCard = ({
   name,
   role,
   image,
+  id,
   skills,
   project,
   available,
@@ -50,6 +51,7 @@ export const MentorCard = ({
       </button>
       {isModalVisible ? (
         <MentorModal
+          idMentor={id}
           image={image}
           name={name}
           role={role}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
+import { api } from "../../../../services/api";
 import { ModalAvailable } from "../ModalAvailable";
 import "./styles.css";
 
@@ -8,21 +9,49 @@ export const ModalSchedulingCard = ({
   setSchedule,
   closeModal,
   available,
+  idMentor,
 }) => {
   const handleSchedule = () => {
     setSchedule((prevState) => !prevState);
   };
-  const selectInit = {
-    user: "",
-    date: "",
-    time: "",
-    place: "",
-    mentor: "",
-    status: 1,
-  };
-  const [selectAppointment, setSelectAppointment] = useState(selectInit);
+  const useId = "624f249ed07fa608ca7e8a6b";
   const [selectDay, setSelectDay] = useState();
   const [selectHour, setSelectHour] = useState();
+
+  const dateSelect = () => {
+    const data = new Date();
+    const dayKey = new Date().getDay();
+    let dayweek;
+    if (selectDay) {
+      dayweek = available[0].week[selectDay].weekday;
+      if (dayKey > dayweek) {
+        data.setDate(data.getDate() - (dayKey - dayweek));
+      } else {
+        data.setDate(data.getDate() + (dayweek - dayKey));
+      }
+    }
+    const selectDate = {
+      user: useId,
+      date: new Date(data),
+      time: `${selectHour}:00`,
+      place: "Team",
+      mentor: idMentor,
+      status: 1,
+    }
+    return selectDate
+  };
+  const postAppointment = async () => {
+    const data = dateSelect()
+    console.log(data)
+    await api
+      .post(`/user/appointment/${useId}`, data)
+      .then(() => {
+        console.log("agendado com sucesso");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="mentor-modal-box-scheduling">
@@ -42,7 +71,15 @@ export const ModalSchedulingCard = ({
             setHour={setSelectHour}
           />
         </div>
-        <button id="go-ahead-button">Agendar</button>
+        <button
+          id="go-ahead-button"
+          onClick={() => {
+            
+            postAppointment();
+          }}
+        >
+          Agendar
+        </button>
       </div>
     </div>
   );

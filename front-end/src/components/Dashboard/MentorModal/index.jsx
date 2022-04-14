@@ -5,6 +5,7 @@ import "./styles.css";
 
 export const MentorModal = ({
   id = "modal",
+  idMentor,
   name,
   role,
   image,
@@ -34,6 +35,7 @@ export const MentorModal = ({
           setSchedule={setSchedule}
           available={available}
           closeModal={closeModal}
+          idMentor={idMentor}
         />
       </div>
     </div>
