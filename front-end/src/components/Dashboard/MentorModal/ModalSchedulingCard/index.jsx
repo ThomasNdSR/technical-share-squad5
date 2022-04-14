@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import { ModalAvailable } from "../ModalAvailable";
 import "./styles.css";
@@ -11,6 +12,17 @@ export const ModalSchedulingCard = ({
   const handleSchedule = () => {
     setSchedule((prevState) => !prevState);
   };
+  const selectInit = {
+    user: "",
+    date: "",
+    time: "",
+    place: "",
+    mentor: "",
+    status: 1,
+  };
+  const [selectAppointment, setSelectAppointment] = useState(selectInit);
+  const [selectDay, setSelectDay] = useState();
+  const [selectHour, setSelectHour] = useState();
 
   return (
     <div className="mentor-modal-box-scheduling">
@@ -22,7 +34,13 @@ export const ModalSchedulingCard = ({
       <div className="scheduling-button-wrapper">
         <div className="scheduling-card">
           <h4>Agenda semanal</h4>
-          <ModalAvailable />
+          <ModalAvailable
+            weekData={available}
+            day={selectDay}
+            setDay={setSelectDay}
+            hour={selectHour}
+            setHour={setSelectHour}
+          />
         </div>
         <button id="go-ahead-button">Agendar</button>
       </div>
