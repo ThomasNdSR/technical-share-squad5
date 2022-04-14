@@ -32,11 +32,11 @@ export default class UsersControllers {
       .select({
         name: 1,
         img: 1,
-        role:1,
+        role: 1,
         skill: 1,
         email: 1,
         available: 1,
-        project:1,
+        project: 1,
         favorite: 1,
       })
       .populate({
@@ -119,7 +119,7 @@ export default class UsersControllers {
           res
             .status(200)
             .set("Authorization", token)
-            .json({ name: user.name, email: user.email });
+            .json({ id: user._id, name: user.name, email: user.email });
         } else {
           throw new Err.InvalidArgument("senha invalida");
         }
@@ -134,6 +134,7 @@ export default class UsersControllers {
       }
     }
   };
+
   static includeFavorite = async (req, res) => {
     const newFavorite = req.params.idFavorite;
     const user = await User.findOne({ _id: req.params.id });
