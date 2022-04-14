@@ -12,20 +12,22 @@ export const Dashboard = () => {
   const [filteredUsers, setFilteredUsers] = useState("");
 
   useEffect(() => {
-    getAllUsers();
+    getMentors();
     getUserProfile();
   }, []);
 
-  const getAllUsers = async () => {
+  const getMentors = async () => {
     try {
       const response = await api.get("/user");
       const data = response.data;
+      const mentors = data.filter((user) => user.role !== undefined);
 
-      setUsers(data);
+      setUsers(mentors);
     } catch (error) {
       console.log(error);
     }
   };
+
   const getUserProfile = async () => {
     await api
       .get("/user/624f249ed07fa608ca7e8a6b")

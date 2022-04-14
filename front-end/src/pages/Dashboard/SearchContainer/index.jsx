@@ -7,7 +7,6 @@ export const SearchContainer = ({ users, setFilteredUsers }) => {
   const skills = ["Front-end", "Scrum", "Full Stack", "UX Design"];
 
   const handleSearch = (query) => {
-    console.log(query);
     const filterUsers = users.filter(
       (user) => user.role.includes(query) || user.project.includes(query)
     );
@@ -25,7 +24,6 @@ export const SearchContainer = ({ users, setFilteredUsers }) => {
     <section className="search-component">
       <img id="img1" src={img1} alt="decoração da pagina com pontos" />
       <h2 id="find-mentors-heading">Encontre um profissional</h2>
-
       <fieldset className="search">
         <input
           id="search-input"
