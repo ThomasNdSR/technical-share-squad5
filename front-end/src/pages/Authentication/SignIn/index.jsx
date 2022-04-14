@@ -1,9 +1,14 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import * as yup from "yup";
+import { api } from "../../../services/api";
 import "./styles.css";
 
 export const SignIn = ({ toggleComponents }) => {
+  const navigate = useNavigate();
+
   const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().required(),
@@ -17,7 +22,27 @@ export const SignIn = ({ toggleComponents }) => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    signIn(data);
+  };
+
+  const signIn = async (data) => {
+    try {
+      const response = await api.post("/user", data);
+      const userData = response.data;
+
+      toast.success("Login realizado com sucesso!");
+
+      localStorage.setItem(
+        "@TechnicalShare:userData",
+        JSON.stringify(userData)
+      );
+
+      navigate("/dashboard");
+    } catch (error) {
+      toast.error("Ops... Algo deu errado!");
+
+      console.log(error);
+    }
   };
 
   return (

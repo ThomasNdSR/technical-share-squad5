@@ -64,11 +64,6 @@ body {
   background-color: #ffffff;
 }
 
-.page {
-  margin: 0px 100px;
-  padding: 0px;
-}
-
 h1 {
   font-size: var(--heading-1-size);
   font-weight: var(--heading-1-weight);
@@ -128,10 +123,6 @@ button {
 
   h6 {
     font-size: var(--heading-6-size-mobile);
-  }
-  .page {
-    margin: 0;
-    padding: 0 2rem;
   }
 }
 *::-webkit-scrollbar {

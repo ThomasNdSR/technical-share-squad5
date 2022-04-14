@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react";
 import img1 from "../../../assets/01.svg";
 import img2 from "../../../assets/02.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import "./styles.css";
 
-export const SearchContainer = ({
-  users,
-  setUsers,
-  filteredUsers,
-  setFilteredUsers,
-}) => {
+export const SearchContainer = ({ users, setFilteredUsers }) => {
   const skills = ["Front-end", "Scrum", "Full Stack", "UX Design"];
 
   const handleSearch = (query) => {
@@ -17,22 +11,13 @@ export const SearchContainer = ({
       (user) => user.role.includes(query) || user.project.includes(query)
     );
 
-    const filterUsersBySkill = users.filter((user) =>
-      user.skill.forEach((skill) =>
-        console.log(Object.values(skill)[1].includes(query))
-      )
-    );
-
     setFilteredUsers(filterUsers);
-
-    console.log(filterUsersBySkill);
   };
 
   return (
     <section className="search-component">
       <img id="img1" src={img1} alt="decoração da pagina com pontos" />
       <h2 id="find-mentors-heading">Encontre um profissional</h2>
-
       <fieldset className="search">
         <input
           id="search-input"

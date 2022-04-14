@@ -1,12 +1,23 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AiOutlineDown } from "react-icons/ai";
 import { ImProfile } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
-import "./styles.css";
 import logo from "../../../src/assets/logo-technical-share.png";
+import "./styles.css";
 
-export const Header = ({ page,name,image }) => {
+export const Header = ({ page, name, image }) => {
+  const navigate = useNavigate();
+
   const [menuHeader, setHeader] = useState(false);
+
+  const logout = () => {
+    localStorage.removeItem("@TechnicalShare:userData");
+    toast.success("Usuário deslogado com sucesso!");
+    navigate("/");
+  };
+
   return (
     <>
       <header className="header">
@@ -22,22 +33,23 @@ export const Header = ({ page,name,image }) => {
                   }}
                 >
                   <AiOutlineDown />
-                  minha conta
+                  Minha conta
                 </button>
                 {menuHeader ? (
                   <>
                     <div className="header__profile--decoration"></div>
                     <nav className="header__profile--nav">
-                      <a href="dashboard">
-                        <CgProfile /> Perfil
-                      </a>
-                      <a href="profile">
+                      <Link to="/profile">
+                        <CgProfile />
+                        Perfil
+                      </Link>
+                      <Link to="/dashboard">
                         <ImProfile />
-                        Agenda
-                      </a>
-                      <a id="header-exit" href="/">
-                        sair
-                      </a>
+                        Dashboard
+                      </Link>
+                      <Link id="header-exit" to="/" onClick={logout}>
+                        Sair
+                      </Link>
                     </nav>
                   </>
                 ) : (
@@ -45,15 +57,12 @@ export const Header = ({ page,name,image }) => {
                 )}
               </div>
               <figure className="header__photo">
-                <img
-                  src={image}
-                  alt=""
-                />
+                <img src={image} alt="" />
               </figure>
             </div>
           ) : (
             <button className="header__conect">
-              <a href="dashboard">conectar</a>
+              <Link to="/dashboard">conectar</Link>
             </button>
           )}
         </div>

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { api } from "../../services/api";
+
 import { FiGithub, FiLinkedin, FiCamera } from "react-icons/fi";
 import { AiOutlineLeft } from "react-icons/ai";
-import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 import { InputUpload } from "../../components/Profile/InputUpload";
 import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
@@ -10,6 +13,8 @@ import { SkillsEdit } from "../../components/Profile/SkillsEdit";
 import "./styles.css";
 
 export const Profile = () => {
+  const navigate = useNavigate();
+
   const [userProfile, setUserProfile] = useState([]);
   const [skills, setSkills] = useState([]);
   const [skillsEdit, setSkillsEdit] = useState(false);
@@ -17,11 +22,26 @@ export const Profile = () => {
   const [bioEdit, setBioEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
 
+  const [localData, setLocalData] = useState(() => {
+    const userData = localStorage.getItem("@TechnicalShare:userData");
+
+    if (userData) {
+      return JSON.parse(userData);
+    }
+
+    return false;
+  });
+
   useEffect(() => {
     getUserProfile();
     getAllSkills();
-    document.title = "Skills";
+
+    if (localData === false) {
+      navigate("/auth");
+      toast.error("Ops... Acesso restrito");
+    }
   }, []);
+
   const getAllSkills = async () => {
     await api
       .get("/skill")
@@ -32,6 +52,7 @@ export const Profile = () => {
         console.log(err);
       });
   };
+
   const getUserProfile = async () => {
     await api
       .get("/user/624f249ed07fa608ca7e8a6b")
