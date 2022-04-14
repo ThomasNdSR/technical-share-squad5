@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 import { SearchContainer } from "./SearchContainer";
@@ -7,6 +9,8 @@ import { MostAvailable } from "./MostAvailable";
 import { FindMentors } from "./FindMentors";
 
 export const Dashboard = () => {
+  const navigate = useNavigate();
+
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState("");
 
@@ -17,11 +21,18 @@ export const Dashboard = () => {
     if (userData) {
       return JSON.parse(userData);
     }
+
+    return false;
   });
 
   useEffect(() => {
     getMentors();
     getUserProfile();
+
+    if (localData === false) {
+      navigate("/auth");
+      toast.error("Ops... Acesso restrito");
+    }
   }, []);
 
   const getMentors = async () => {
