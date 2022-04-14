@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import "./styles.css";
 import logo from "../../../src/assets/logo-technical-share.png";
 
-export const Header = ({ page,name,image }) => {
+export const Header = ({ page, name, image }) => {
   const [menuHeader, setHeader] = useState(false);
   return (
     <>
@@ -22,21 +22,22 @@ export const Header = ({ page,name,image }) => {
                   }}
                 >
                   <AiOutlineDown />
-                  minha conta
+                  Minha conta
                 </button>
                 {menuHeader ? (
                   <>
                     <div className="header__profile--decoration"></div>
                     <nav className="header__profile--nav">
                       <a href="dashboard">
-                        <CgProfile /> Perfil
+                        <CgProfile />
+                        Perfil
                       </a>
                       <a href="profile">
                         <ImProfile />
-                        Agenda
+                        Dashboard
                       </a>
                       <a id="header-exit" href="/">
-                        sair
+                        Sair
                       </a>
                     </nav>
                   </>
@@ -45,10 +46,7 @@ export const Header = ({ page,name,image }) => {
                 )}
               </div>
               <figure className="header__photo">
-                <img
-                  src={image}
-                  alt=""
-                />
+                <img src={image} alt="" />
               </figure>
             </div>
           ) : (
