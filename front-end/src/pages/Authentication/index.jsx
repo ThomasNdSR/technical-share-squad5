@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
@@ -8,7 +9,25 @@ import login__ilustration from "../../assets/work.png";
 import "./styles.css";
 
 export const Authentication = () => {
+  const navigate = useNavigate();
+
   const [isRegistered, setIsRegistered] = useState(true);
+
+  const [localData, setLocalData] = useState(() => {
+    const userData = localStorage.getItem("@TechnicalShare:userData");
+
+    if (userData) {
+      return JSON.parse(userData);
+    }
+
+    return false;
+  });
+
+  useEffect(() => {
+    if (localData !== false) {
+      navigate("/dashboard");
+    }
+  }, []);
 
   const toggleComponents = () => {
     setIsRegistered((prevState) => !prevState);
