@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import img1 from "../../../assets/01.svg";
 import img2 from "../../../assets/02.svg";
 import { RiSearch2Line } from "react-icons/ri";
