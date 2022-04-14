@@ -7,9 +7,17 @@ import { MostAvailable } from "./MostAvailable";
 import { FindMentors } from "./FindMentors";
 
 export const Dashboard = () => {
-  const [userProfile, setUserProfile] = useState([]);
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState("");
+
+  const [userProfile, setUserProfile] = useState([]);
+  const [localData, setLocalData] = useState(() => {
+    const userData = localStorage.getItem("@TechnicalShare:userData");
+
+    if (userData) {
+      return JSON.parse(userData);
+    }
+  });
 
   useEffect(() => {
     getMentors();
@@ -30,7 +38,7 @@ export const Dashboard = () => {
 
   const getUserProfile = async () => {
     await api
-      .get("/user/624f249ed07fa608ca7e8a6b")
+      .get(`/user/${localData.id}`)
       .then((res) => {
         setUserProfile(res.data);
       })

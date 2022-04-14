@@ -1,13 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AiOutlineDown } from "react-icons/ai";
 import { ImProfile } from "react-icons/im";
 import { CgProfile } from "react-icons/cg";
-import "./styles.css";
 import logo from "../../../src/assets/logo-technical-share.png";
+import "./styles.css";
 
 export const Header = ({ page, name, image }) => {
+  const navigate = useNavigate();
+
   const [menuHeader, setHeader] = useState(false);
+
+  const logout = () => {
+    localStorage.removeItem("@TechnicalShare:userData");
+    toast.success("Usuário deslogado com sucesso!");
+    navigate("/");
+  };
+
   return (
     <>
       <header className="header">
@@ -37,7 +47,7 @@ export const Header = ({ page, name, image }) => {
                         <ImProfile />
                         Dashboard
                       </Link>
-                      <Link id="header-exit" to="/">
+                      <Link id="header-exit" to="/" onClick={logout}>
                         Sair
                       </Link>
                     </nav>
