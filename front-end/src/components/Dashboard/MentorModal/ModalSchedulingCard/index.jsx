@@ -6,6 +6,7 @@ import "./styles.css";
 
 export const ModalSchedulingCard = ({
   schedule,
+  setFeedBack,
   setSchedule,
   closeModal,
   available,
@@ -46,7 +47,7 @@ export const ModalSchedulingCard = ({
     await api
       .post(`/user/appointment/${useId}`, data)
       .then(() => {
-        console.log("agendado com sucesso");
+        setFeedBack(true);
       })
       .catch((err) => {
         console.log(err);

@@ -19,3 +19,16 @@
   box-shadow: 1px 11px 26px -7px rgba(0, 0, 0, 0.69);
   padding: 25px;
 }
+.mentor-modal-feedback{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+.mentor-modal-feedback h3,
+.mentor-modal-feedback p{
+  margin: 0.5rem 0;
+}
+.mentor-modal-feedback img{
+  width: 20rem;
+}
