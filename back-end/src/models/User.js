@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  bio: {
+    type: String,
+  },
   role: {
     type: String,
   },
@@ -30,7 +33,7 @@ const userSchema = new mongoose.Schema({
       ref: "skills",
     },
   ],
-  project:[{type: String}],
+  project: [{ type: String }],
   available: [availables.schema],
   favorite: [
     {

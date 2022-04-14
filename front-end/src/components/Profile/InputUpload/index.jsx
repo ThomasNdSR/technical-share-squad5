@@ -1,23 +1,34 @@
 import { useState } from "react";
-import { api } from "../../../services/api"
+import { api } from "../../../services/api";
 
-export function InputUpload({ name,id }) {
-const [inputEdit, setInputEdit] = useState('');
-const [feedbackInput, setFeedbackInput] = useState('');
+export function InputUpload({ name, id, userProfile, setUserProfile }) {
+  const [inputEdit, setInputEdit] = useState("");
+  const [feedbackInput, setFeedbackInput] = useState("");
 
-const putInputEdit = async () => {
-    if(name==="projetos"){
-    await api
-      .put(`/user/project/${id}`,{name:inputEdit})
-      .then(() => {
-        setFeedbackInput('Skills atualizadas com sucesso');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const putInputEdit = async () => {
+    if (name === "projetos") {
+      await api
+        .put(`/user/project/${id}`, { name: inputEdit })
+        .then(() => {
+          userProfile.project.push(inputEdit);
+          setUserProfile(userProfile);
+          setFeedbackInput("Skills atualizadas com sucesso");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-    if(name==="Bio"){
-        console.log(inputEdit)
+    if (name === "Bio") {
+      await api
+        .put(`/user/bio/${id}`, { bio: inputEdit })
+        .then(() => {
+          userProfile.bio = inputEdit;
+          setUserProfile(userProfile);
+          setFeedbackInput("Skills atualizadas com sucesso");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
   return (
@@ -26,11 +37,20 @@ const putInputEdit = async () => {
         htmlFor="uploadProject"
         className="skillEdit_list--title"
       >{`Atualizar ${name}`}</label>
-      <input id="uploadProject" onChange={(e)=>setInputEdit(e.target.value)} type="text" className="skillEdit_list--input" />
+      <input
+        id="uploadProject"
+        onChange={(e) => setInputEdit(e.target.value)}
+        type="text"
+        className="skillEdit_list--input"
+      />
 
-      <button onClick={()=>{
-          putInputEdit ()
-      }}>Salvar alterações</button>
+      <button
+        onClick={() => {
+          putInputEdit();
+        }}
+      >
+        Salvar alterações
+      </button>
       <p className="skillEdit_feedback">{feedbackInput}</p>
     </div>
   );

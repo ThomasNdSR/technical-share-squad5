@@ -16,11 +16,11 @@ export const Profile = () => {
   const [projectEdit, setProjectEdit] = useState(false);
   const [bioEdit, setBioEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
-  
+
   useEffect(() => {
     getUserProfile();
     getAllSkills();
-    document.title = 'Skills'
+    document.title = "Skills";
   }, []);
   const getAllSkills = async () => {
     await api
@@ -118,12 +118,25 @@ export const Profile = () => {
                 setBioEdit(!bioEdit);
               }}
             >
-              <p className="businessCard__load">
-                Loading <span>.</span>
-                <span>.</span>
-                <span>.</span>
-              </p>
-              {bioEdit ? <InputUpload name="Bio" /> : ""}
+              {userProfile.bio ? (
+                <p className="businessCard__load">{userProfile.bio}</p>
+              ) : (
+                <p className="businessCard__load">
+                  Loading <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </p>
+              )}
+              {bioEdit ? (
+                <InputUpload
+                  name="Bio"
+                  id={userProfile._id}
+                  userProfile={userProfile}
+                  setUserProfile={setUserProfile}
+                />
+              ) : (
+                ""
+              )}
             </UserExperienceCard>
             <UserExperienceCard
               title="Skills"
@@ -175,7 +188,12 @@ export const Profile = () => {
                 </p>
               )}
               {projectEdit ? (
-                <InputUpload name="projetos" id={userProfile._id} />
+                <InputUpload
+                  name="projetos"
+                  id={userProfile._id}
+                  userProfile={userProfile}
+                  setUserProfile={setUserProfile}
+                />
               ) : (
                 ""
               )}

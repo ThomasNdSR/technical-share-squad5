@@ -38,6 +38,7 @@ export default class UsersControllers {
         available: 1,
         project: 1,
         favorite: 1,
+        bio:1,
       })
       .populate({
         path: "img skill",
@@ -100,6 +101,21 @@ export default class UsersControllers {
 
     const user = await User.findOne({ _id: id });
     user.project.push(projectUpdate.name);
+    await user.save((err) => {
+      if (err) {
+        res.status(500).json(err.message);
+      } else {
+        res.status(200).send({ message: "Atualizado com sucesso" });
+      }
+    });
+  };
+  static updateBiolUser = async (req, res) => {
+    const id = req.params.id;
+    const bioUpdate = req.body;
+
+    const user = await User.findOne({ _id: id });
+    console.log(bioUpdate)
+    user.bio=bioUpdate.bio
     await user.save((err) => {
       if (err) {
         res.status(500).json(err.message);

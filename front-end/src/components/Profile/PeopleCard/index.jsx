@@ -29,7 +29,7 @@ export function PeopleCard({ name, role, image, time, date, place, id }) {
           <p>{role}</p>
           {detail ? (
             <ul className="peopleCard_descrition">
-              <li className="peopleCard_descrition--detail">{`Dia:${date}`}</li>
+              <li className="peopleCard_descrition--detail">{`Dia:${new Date(date)}`}</li>
               <li className="peopleCard_descrition--detail">{`Horario:${time}`}</li>
               <li className="peopleCard_descrition--detail">{`Local:${place}`}</li>
               <SiMicrosoftteams size={24} color="var(--secondary-01)" />
