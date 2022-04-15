@@ -7,11 +7,25 @@ export const SearchContainer = ({ users, setFilteredUsers }) => {
   const skills = ["Front-end", "Scrum", "Full Stack", "UX Design"];
 
   const handleSearch = (query) => {
-    const filterUsers = users.filter(
-      (user) => user.role.includes(query) || user.project.includes(query)
-    );
+    function grupSkill (filter,array){
+    for (var i = 0;i<array.length;i++){
+      return filter.test(array[i].name)
+    }}
 
-    setFilteredUsers(filterUsers);
+    if (query) {;
+      let filterUsers = new RegExp(query.trim(), "i");
+      let filter = users.filter(
+        (item) =>
+          filterUsers.test(item.name) ||
+          filterUsers.test(item.project) ||
+          filterUsers.test(item.role) ||
+          filterUsers.test(item.skill[0].name) ||
+          grupSkill(filterUsers,item.skill)
+      );
+      setFilteredUsers(filter);
+    } else {
+      setFilteredUsers(users);
+    }
   };
 
   return (
