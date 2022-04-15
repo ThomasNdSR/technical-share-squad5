@@ -6,6 +6,8 @@ export function TableHour(props) {
   const month = new Date().getMonth() + 1;
 
   return (
+    <>
+    {props.week ? (
     <table>
       <tbody className="tableHour">
         {props.week.week.map((item) => (
@@ -24,6 +26,7 @@ export function TableHour(props) {
           </tr>
         ))}
       </tbody>
-    </table>
+    </table>):(<p>Adicione seus hoarios disponiveis</p>)}
+    </>
   );
 }

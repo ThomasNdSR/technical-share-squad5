@@ -23,7 +23,7 @@
   height: 200px;
   width: 100%;
 }
-.businessCard__descrition button {
+.businessCard__descrition--button {
   background-color: transparent;
   border: none;
   position: absolute;
@@ -58,6 +58,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
+
 .businessCard__menu {
   justify-content: flex-start;
 }

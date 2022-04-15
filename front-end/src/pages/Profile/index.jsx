@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 
-import { FiGithub, FiLinkedin, FiCamera } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiCamera, FiEdit3 } from "react-icons/fi";
 import { AiOutlineLeft } from "react-icons/ai";
 import { Header } from "../../components/Header";
 import { InputUpload } from "../../components/Profile/InputUpload";
@@ -19,6 +19,7 @@ export const Profile = () => {
   const [skills, setSkills] = useState([]);
   const [skillsEdit, setSkillsEdit] = useState(false);
   const [projectEdit, setProjectEdit] = useState(false);
+  const [roleEdit, setRoleEdit] = useState(false);
   const [bioEdit, setBioEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
 
@@ -55,7 +56,7 @@ export const Profile = () => {
 
   const getUserProfile = async () => {
     await api
-      .get("/user/624f249ed07fa608ca7e8a6b")
+      .get(`/user/${localData.id}`)
       .then((res) => {
         setUserProfile(res.data);
       })
@@ -105,14 +106,33 @@ export const Profile = () => {
               Agenda
             </a>
           </nav>
+
           <article className="businessCard__descrition">
+            <button
+              className="businessCard__descrition--button"
+              onClick={() => {
+                setRoleEdit(!roleEdit);
+              }}
+            >
+              <FiEdit3 size={30} color="var(--primary-02)" />
+            </button>
             <div className="businessCard__descrition--data">
               <h3>{userProfile.name}</h3>
               <p>{userProfile.role}</p>
+              {roleEdit ? (
+                <InputUpload
+                  name="Role"
+                  id={userProfile._id}
+                  userProfile={userProfile}
+                  setUserProfile={setUserProfile}
+                />
+              ) : (
+                ""
+              )}
             </div>
 
             <figure className="businessCard__photo">
-              <button>
+              <button className="businessCard__descrition--button">
                 <FiCamera size={24} color="var(--primary-01)" />
               </button>
               <img

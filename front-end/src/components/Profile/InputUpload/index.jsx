@@ -12,7 +12,7 @@ export function InputUpload({ name, id, userProfile, setUserProfile }) {
         .then(() => {
           userProfile.project.push(inputEdit);
           setUserProfile(userProfile);
-          setFeedbackInput("Skills atualizadas com sucesso");
+          setFeedbackInput("Projetos atualizadas com sucesso");
         })
         .catch((err) => {
           console.log(err);
@@ -24,7 +24,19 @@ export function InputUpload({ name, id, userProfile, setUserProfile }) {
         .then(() => {
           userProfile.bio = inputEdit;
           setUserProfile(userProfile);
-          setFeedbackInput("Skills atualizadas com sucesso");
+          setFeedbackInput("Bio atualizadas com sucesso");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    if (name === "Role") {
+      await api
+        .put(`/user/role/${id}`, { role: inputEdit })
+        .then(() => {
+          userProfile.role = inputEdit;
+          setUserProfile(userProfile);
+          setFeedbackInput("Role atualizadas com sucesso");
         })
         .catch((err) => {
           console.log(err);
@@ -43,7 +55,7 @@ export function InputUpload({ name, id, userProfile, setUserProfile }) {
         type="text"
         className="skillEdit_list--input"
       />
-
+      <p className="skillEdit_feedback">{feedbackInput}</p>
       <button
         onClick={() => {
           putInputEdit();
@@ -51,7 +63,6 @@ export function InputUpload({ name, id, userProfile, setUserProfile }) {
       >
         Salvar alterações
       </button>
-      <p className="skillEdit_feedback">{feedbackInput}</p>
     </div>
   );
 }
