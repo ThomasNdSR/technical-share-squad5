@@ -112,7 +112,11 @@ export function SchedulingCard({ userProfile, setUserProfile }) {
               }}
             >
               {editHour ? (
-                <TableHourEdit id={userProfile._id} userProfile={userProfile} setUserProfile={setUserProfile} />
+                <TableHourEdit
+                  id={userProfile._id}
+                  userProfile={userProfile}
+                  setUserProfile={setUserProfile}
+                />
               ) : (
                 <TableHour week={userProfile.available[0]} />
               )}
