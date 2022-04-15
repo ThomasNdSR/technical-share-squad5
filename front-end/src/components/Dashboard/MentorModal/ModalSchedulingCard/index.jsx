@@ -27,7 +27,7 @@ export const ModalSchedulingCard = ({
     if (selectDay) {
       dayweek = available[0].week[selectDay].weekday;
       if (dayKey > dayweek) {
-        data.setDate(data.getDate() - (dayKey - dayweek));
+        data.setDate(data.getDate() - (dayKey - dayweek)+7);
       } else {
         data.setDate(data.getDate() + (dayweek - dayKey));
       }

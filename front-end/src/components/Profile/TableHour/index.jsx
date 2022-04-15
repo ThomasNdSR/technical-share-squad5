@@ -15,7 +15,7 @@ export function TableHour(props) {
             <th>{weeks[item.weekday]}</th>
             <td className="tableHour_day">
               {dayKey > item.weekday
-                ? `${day - (dayKey - item.weekday)}/${month}`
+                ? `${day - (dayKey - item.weekday)+7}/${month}`
                 : `${day + (item.weekday - dayKey)}/${month}`}
             </td>
             {item.timeHour.map((hour) => (

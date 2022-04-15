@@ -32,7 +32,7 @@ export function ModalAvailable({ weekData,day,setDay,hour,setHour,}) {
                   </p>
                   <h5 className="modalAvailable--date">
                     {dayKey > item.weekday
-                      ? `${dayNow - (dayKey - item.weekday)}/${month}`
+                      ? `${dayNow - (dayKey - item.weekday)+7}/${month}`
                       : `${dayNow + (item.weekday - dayKey)}/${month}`}
                   </h5>
                   <p

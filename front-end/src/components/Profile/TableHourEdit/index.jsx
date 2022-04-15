@@ -85,7 +85,7 @@ export function TableHourEdit({ id, userProfile, setUserProfile }) {
               <th>{weeks[item]}</th>
               <td className="tableHour_day">
                 {dayKey > item
-                  ? `${day - (dayKey - item)}/${month}`
+                  ? `${day - (dayKey - item)+7}/${month}`
                   : `${day + (item - dayKey)}/${month}`}
               </td>
               {timeHour.map((hour, i) => (
