@@ -2,16 +2,15 @@
   display: flex;
   align-items: center;
   height: 100vh;
-  justify-content: space-between;
-  position: relative;
+  justify-content: space-evenly;
   width: 100%;
 }
 .spotlight svg {
   animation: pageDown 2s infinite;
   bottom: 2.5rem;
-  left: 0; 
+  left: 0;
   margin: 0 auto;
-  right: 0; 
+  right: 0;
   position: absolute;
 }
 .spotlight__description {
@@ -20,14 +19,17 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  width: 50%;
+  width: 620px;
 }
 .spotlight__description--title {
+  font-size: 2.5rem;
   color: var(--primary-01);
+  line-height: 1.5;
 }
 .spotlight__description--text {
   font-weight: 500;
   width: 60%;
+  font-size: 1.1rem;
 }
 .spotlight__description--singIn {
   background-color: var(--primary-01);
@@ -36,15 +38,15 @@
   box-shadow: 0px 4px 30px rgba(185, 50, 0, 0.4),
     0px 10px 30px rgba(0, 0, 0, 0.25);
   color: var(--neutral-01);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   height: 2rem;
   justify-self: flex-end;
   margin-top: 3rem;
   text-transform: uppercase;
   width: 25rem;
 }
-.spotlight__description--singIn:hover{
-    opacity: 0.8;
+.spotlight__description--singIn:hover {
+  opacity: 0.8;
 }
 .spotlight__description--title,
 .spotlight__description--text {
@@ -70,16 +72,38 @@
 }
 
 @media screen and (max-width: 768px) {
-  .spotlight__description{
+  .spotlight__description {
+    width: 300px;
+  }
+
+  .spotlight__description--title {
+    font-size: 2rem;
+  }
+
+  .spotlight__description--text {
     width: 100%;
   }
-  .spotlight__description--singIn{
-    width: 250px;
-    z-index: 2;
+
+  .spotlight__image {
+    width: 320px;
   }
-  .spotlight__image{
-    position: absolute;
-    z-index: -2;
-    opacity: 0.6;
+
+  .spotlight__description--singIn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .spotlight {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .spotlight__description {
+    height: 40%;
+  }
+
+  .spotlight__image {
+    width: 280px;
   }
 }
