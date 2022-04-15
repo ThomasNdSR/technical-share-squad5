@@ -34,6 +34,9 @@ input[type="file"] {
   bottom: 1rem;
   z-index: 1;
 }
+.businessCard__descrition--button svg{
+  cursor: pointer;
+}
 .businessCard__descrition{
   position: relative;
 }

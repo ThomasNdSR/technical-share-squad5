@@ -175,7 +175,7 @@ export const Profile = () => {
                 type="file"
                 id="profile-image"
                 name="loadImage"
-                accept="image/png"
+                accept="image/png, image/jpg, image/jpeg"
               />
               {photoEdit ? (
                 <button

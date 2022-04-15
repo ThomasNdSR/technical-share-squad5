@@ -77,7 +77,12 @@ export const Dashboard = () => {
       />
       {/* <Favorites /> */}
       {/* <MostAvailable /> */}
-      <FindMentors users={users} filteredUsers={filteredUsers} />
+      <FindMentors
+        users={users}
+        filteredUsers={filteredUsers}
+        userProfile={userProfile}
+        setUserProfile={setUserProfile}
+      />
     </div>
   );
 };

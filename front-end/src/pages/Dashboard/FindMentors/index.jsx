@@ -9,8 +9,14 @@ import { BiSlider } from "react-icons/bi";
 import { MentorCard } from "../../../components/Dashboard/MentorCard";
 import "./styles.css";
 
-export const FindMentors = ({ users, filteredUsers }) => {
+export const FindMentors = ({
+  users,
+  filteredUsers,
+  setUserProfile,
+  userProfile,
+}) => {
   const [sliderActive, setSlider] = useState(false);
+
 
   return (
     <section className="discover-professionals-box">
@@ -28,7 +34,8 @@ export const FindMentors = ({ users, filteredUsers }) => {
         </button>
       </div>
       <ul className={`slider__sort ${sliderActive ? "active" : ""}`}>
-        <li>
+        <li
+        >
           <AiOutlineSortAscending size={16} color="var(--primary-03)" /> Ordem
           ascendente
         </li>

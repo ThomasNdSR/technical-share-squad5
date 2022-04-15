@@ -92,7 +92,7 @@ export default class UsersControllers {
         if (err) {
           res.status(500).json(err.message);
         }
-        res.status(200).json(item);
+        res.status(201).json(item);
       });
   };
   static updateProjectlUser = async (req, res) => {
@@ -105,7 +105,7 @@ export default class UsersControllers {
       if (err) {
         res.status(500).json(err.message);
       } else {
-        res.status(200).send({ message: "Atualizado com sucesso" });
+        res.status(201).send({ message: "Atualizado com sucesso" });
       }
     });
   };
@@ -120,7 +120,7 @@ export default class UsersControllers {
       if (err) {
         res.status(500).json(err.message);
       } else {
-        res.status(200).send({ message: "Atualizado com sucesso" });
+        res.status(201).send({ message: "Atualizado com sucesso" });
       }
     });
   };
@@ -134,7 +134,7 @@ export default class UsersControllers {
       if (err) {
         res.status(500).json(err.message);
       } else {
-        res.status(200).send({ message: "Atualizado com sucesso" });
+        res.status(201).send({ message: "Atualizado com sucesso" });
       }
     });
   };

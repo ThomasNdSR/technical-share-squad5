@@ -32,7 +32,10 @@
   align-self: flex-end;
   color: var(--primary-03);
 }
-
+.slider__sort li{
+  cursor: pointer;
+  margin: 0 0.3rem;
+}
 .active {
   display: initial;
 }
