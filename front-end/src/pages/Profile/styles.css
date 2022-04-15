@@ -1,3 +1,6 @@
+input[type="file"] {
+  display: none;
+}
 .businessCard,
 .businessCard__container,
 .businessCard__descrition,
@@ -109,6 +112,7 @@
   font-size: 3rem;
   
 }
+
 .businessCard__load span:nth-last-child(1) {
   animation: loading 0.6s 0.1s linear infinite;
 }

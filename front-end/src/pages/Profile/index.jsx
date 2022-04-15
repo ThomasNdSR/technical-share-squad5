@@ -20,6 +20,7 @@ export const Profile = () => {
   const [skillsEdit, setSkillsEdit] = useState(false);
   const [projectEdit, setProjectEdit] = useState(false);
   const [roleEdit, setRoleEdit] = useState(false);
+  const [photoEdit, setPhotoEdit] = useState(false);
   const [bioEdit, setBioEdit] = useState(false);
   const [menuActive, setMenu] = useState("perfil");
 
@@ -65,6 +66,20 @@ export const Profile = () => {
       });
   };
 
+  const updatePhoto = async (event) => {
+    event.preventDefault();
+    let formData = new FormData();
+    formData.append("profile-image", event.target[0].files[0]);
+    await api
+      .post(`/image/${localData.id}`, formData)
+      .then((res) => {
+        setBioEdit(!bioEdit);
+        window.location.reload(false)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <Header
@@ -106,7 +121,6 @@ export const Profile = () => {
               Agenda
             </a>
           </nav>
-
           <article className="businessCard__descrition">
             <button
               className="businessCard__descrition--button"
@@ -130,11 +144,16 @@ export const Profile = () => {
                 ""
               )}
             </div>
-
             <figure className="businessCard__photo">
-              <button className="businessCard__descrition--button">
+              <label
+                htmlFor="profile-image"
+                className="businessCard__descrition--button"
+                onClick={() => {
+                  setPhotoEdit(!photoEdit);
+                }}
+              >
                 <FiCamera size={24} color="var(--primary-01)" />
-              </button>
+              </label>
               <img
                 src={
                   userProfile.img === undefined
@@ -146,6 +165,29 @@ export const Profile = () => {
                 alt={`foto do usuario ${userProfile.name}`}
               />
             </figure>
+            <form
+              id="form"
+              enctype="multipart/form-data"
+              onSubmit={updatePhoto}
+            >
+              <input
+                onChange={updatePhoto}
+                type="file"
+                id="profile-image"
+                name="loadImage"
+                accept="image/png"
+              />
+              {photoEdit ? (
+                <button
+                  type="submit"
+                  className="businessCard__descrition--button"
+                >
+                  Atualizar foto
+                </button>
+              ) : (
+                ""
+              )}
+            </form>
           </article>
         </section>
         {menuActive === "perfil" ? (
