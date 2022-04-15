@@ -4,8 +4,6 @@ import { Header } from "../../components/Header";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
 import login__ilustration from "../../assets/work.png";
-// import imagem__01 from "../../assets/01.svg";
-// import imagem__02 from "../../assets/02.svg";
 import "./styles.css";
 
 export const Authentication = () => {

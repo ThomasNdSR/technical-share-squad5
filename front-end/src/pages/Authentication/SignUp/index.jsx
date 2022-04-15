@@ -2,15 +2,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
 
 import { BiUserCircle, BiLockOpenAlt } from "react-icons/bi";
 import { FiMail } from "react-icons/fi";
 
 export const SignUp = ({ toggleComponents }) => {
-  const navigate = useNavigate();
-
   const schema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
