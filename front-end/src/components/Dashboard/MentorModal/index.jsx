@@ -21,6 +21,15 @@ export const MentorModal = ({
 
   const [schedule, setSchedule] = useState(false);
   const [feedback, setFeedBack] = useState(false);
+  const [localData, setLocalData] = useState(() => {
+    const userData = localStorage.getItem("@TechnicalShare:userData");
+
+    if (userData) {
+      return JSON.parse(userData);
+    }
+
+    return false;
+  });
 
   return (
     <div id={id} className="mentor-modal-bg" onClick={handleOutsideClick}>
@@ -52,6 +61,7 @@ export const MentorModal = ({
               available={available}
               closeModal={closeModal}
               idMentor={idMentor}
+              useId ={localData.id}
             />
           </>
         )}

@@ -10,10 +10,19 @@ export function SchedulingCard({ available }) {
   const [menuScheduling, setMenuScheduling] = useState("mentor");
   const [scheduling, setScheduling] = useState([]);
   const [mentorScheduling, setMentorScheduling] = useState([]);
+    const [localData, setLocalData] = useState(() => {
+    const userData = localStorage.getItem("@TechnicalShare:userData");
+
+    if (userData) {
+      return JSON.parse(userData);
+    }
+
+    return false;
+  });
   const [editHour, setEditHour] = useState(false);
   const getScheduling = async () => {
     await api
-      .get(`user/appointment/${available._id}`)
+      .get(`user/appointment/${localData.id}`)
       .then((res) => {
         setScheduling(res.data);
       })
@@ -24,7 +33,7 @@ export function SchedulingCard({ available }) {
 
   const getMentorScheduling = async () => {
     await api
-      .get(`user/appointment/mentor/${available._id}`)
+      .get(`user/appointment/mentor/${localData.id}`)
       .then((res) => {
         setMentorScheduling(res.data);
       })

@@ -11,13 +11,14 @@ export const ModalSchedulingCard = ({
   closeModal,
   available,
   idMentor,
+  useId,
 }) => {
   const handleSchedule = () => {
     setSchedule((prevState) => !prevState);
   };
-  const useId = localStorage.id;
   const [selectDay, setSelectDay] = useState();
   const [selectHour, setSelectHour] = useState();
+  const [feedBackSelect, setFeedBackSelect] = useState();
 
   const dateSelect = () => {
     const data = new Date();
@@ -31,18 +32,24 @@ export const ModalSchedulingCard = ({
         data.setDate(data.getDate() + (dayweek - dayKey));
       }
     }
-    const selectDate = {
-      user: useId,
-      date: new Date(data),
-      time: `${selectHour}:00`,
-      place: "Team",
-      mentor: idMentor,
-      status: 1,
+    if (selectHour) {
+      const selectDate = {
+        user: useId,
+        date: new Date(data),
+        time: `${selectHour}:00`,
+        place: "Team",
+        mentor: idMentor,
+        status: 1,
+      };
+      return selectDate;
+    } else {
+      setFeedBackSelect(
+        "Selecione uma data e horário para realizar o agendamento."
+      );
     }
-    return selectDate
   };
   const postAppointment = async () => {
-    const data = dateSelect()
+    const data = dateSelect();
     await api
       .post(`/user/appointment/${useId}`, data)
       .then(() => {
@@ -74,12 +81,12 @@ export const ModalSchedulingCard = ({
         <button
           id="go-ahead-button"
           onClick={() => {
-            
             postAppointment();
           }}
         >
           Agendar
         </button>
+        <p>{feedBackSelect}</p>
       </div>
     </div>
   );
