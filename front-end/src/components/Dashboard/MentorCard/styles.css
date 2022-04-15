@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: none; */
   border: 2px solid var(--primary-03);
   border-radius: 1rem;
   color: var(--color-standard);
@@ -77,9 +76,3 @@
     width: 180px;
   }
 }
-
-/* @media screen and (max-width: 768px) {
-  .card {
-    width: 120px;
-  }
-} */
