@@ -3,7 +3,7 @@
   color: var(--primary-01);
   justify-content: space-between;
   align-items: center;
-  height: 60vh;
+  height: auto;
   text-align: center;
 }
 .endPage h4 {
@@ -28,8 +28,6 @@
   padding-top: 200px;
 }
 
-.endPage_decorative--spots {
-}
 
 @media screen and (max-width: 1024px) {
   .endPage__illustration {

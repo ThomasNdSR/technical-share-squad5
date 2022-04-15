@@ -21,6 +21,7 @@
   align-items: center;
   font-weight: var(--heading-1-weight);
   vertical-align: middle;
+  height: auto;
 }
 
 .presentation_descrition {
@@ -50,6 +51,7 @@
   color: var(--color-standard);
   height: 40vh;
   padding: 3rem;
+  margin: 5rem 0;
 }
 
 .presentation_list img {
@@ -62,7 +64,8 @@
 
 .presentation__search--container {
   justify-content: space-between;
-  height: 22vh;
+  height: 30vh;
+  margin: 5rem 0;
 }
 .presentation__search img {
   width: 300px;
