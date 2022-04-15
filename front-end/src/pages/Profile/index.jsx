@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 
-import { FiGithub, FiLinkedin, FiCamera, FiEdit3 } from "react-icons/fi";
-import { AiOutlineLeft } from "react-icons/ai";
 import { Header } from "../../components/Header";
 import { InputUpload } from "../../components/Profile/InputUpload";
 import { UserExperienceCard } from "../../components/Profile/UserExperienceCard";
 import { SchedulingCard } from "../../components/Profile/SchedulingCard";
 import { SkillsEdit } from "../../components/Profile/SkillsEdit";
+
+import { FiCamera, FiEdit3 } from "react-icons/fi";
+import { AiOutlineLeft } from "react-icons/ai";
 import "./styles.css";
 
 export const Profile = () => {
@@ -74,7 +75,7 @@ export const Profile = () => {
       .post(`/image/${localData.id}`, formData)
       .then((res) => {
         setBioEdit(!bioEdit);
-        window.location.reload(false)
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log(err);
@@ -95,9 +96,9 @@ export const Profile = () => {
         <div className="businessCard__cover" />
         <section className="businessCard page">
           <nav className="businessCard__menu">
-            <a href="dashboard">
+            <Link to="dashboard">
               <AiOutlineLeft size={24} color="var(--neutral-02)" />
-            </a>
+            </Link>
             <a
               href="#showProfie"
               className={`businessCard__menu--item ${
@@ -281,7 +282,7 @@ export const Profile = () => {
                 ""
               )}
             </UserExperienceCard>
-            <section className="businessCard__menu--item">
+            {/* <section className="businessCard__menu--item">
               <article>
                 <h5>Redes Sociais</h5>
                 <div>
@@ -295,8 +296,7 @@ export const Profile = () => {
                   <p className="skill_list--item">Deficientes auditivos</p>
                 </div>
               </article>
-            </section>
-            <section></section>
+            </section> */}
           </section>
         ) : (
           ""

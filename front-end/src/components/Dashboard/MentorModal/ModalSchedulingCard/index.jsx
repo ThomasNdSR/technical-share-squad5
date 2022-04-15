@@ -70,6 +70,7 @@ export const ModalSchedulingCard = ({
       <div className="scheduling-button-wrapper">
         <div className="scheduling-card">
           <h4>Agenda semanal</h4>
+          <hr />
           <ModalAvailable
             weekData={available}
             day={selectDay}
