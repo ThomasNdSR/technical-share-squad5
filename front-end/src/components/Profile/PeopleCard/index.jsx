@@ -22,6 +22,7 @@ export function PeopleCard({
       .delete(`/user/appointment/${id}`)
       .then((res) => {
         console.log(res.data);
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log(err);
