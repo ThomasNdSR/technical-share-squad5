@@ -1,7 +1,7 @@
 # technical-share
 ## FCamara - hackaton - squad 5
 
-[![N|Solid](https://d335luupugsy2.cloudfront.net/images%2Flanding_page%2F2265963%2Fprograma-de-formacao-logo.png)
+![N|Solid](https://d335luupugsy2.cloudfront.net/images%2Flanding_page%2F2265963%2Fprograma-de-formacao-logo.png)
 
 ## Executando a aplicação em ambiente de desnevolvimento
 
