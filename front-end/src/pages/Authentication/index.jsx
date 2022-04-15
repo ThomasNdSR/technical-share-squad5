@@ -45,7 +45,7 @@ export const Authentication = () => {
             </h3>
           </div>
           <figure className="login__ilustration">
-            <img src={login__ilustration} alt="" />
+            <img id="login__svg" src={login__ilustration} alt="" />
           </figure>
         </div>
         {isRegistered ? (
