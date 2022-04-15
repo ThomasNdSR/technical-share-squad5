@@ -62,7 +62,7 @@ export const Header = ({ page, name, image }) => {
             </div>
           ) : (
             <button className="header__conect">
-              <Link to="/dashboard">conectar</Link>
+              <Link to="/auth">conectar</Link>
             </button>
           )}
         </div>

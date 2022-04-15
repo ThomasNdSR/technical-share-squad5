@@ -125,6 +125,7 @@ button {
     font-size: var(--heading-6-size-mobile);
   }
 }
+
 *::-webkit-scrollbar {
   width: 12px;
 }

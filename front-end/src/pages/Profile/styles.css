@@ -16,14 +16,14 @@ input[type="file"] {
   top: -30px;
   width: 90%;
 }
-.businessCard__container{
+.businessCard__container {
   flex-direction: column;
 }
 .businessCard__cover {
   background-image: url(../../assets/profile-cover.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 200px;
+  height: 300px;
   width: 100%;
 }
 .businessCard__descrition--button {
@@ -79,7 +79,7 @@ input[type="file"] {
   text-decoration: none;
   transition: all 0.4s linear;
 }
-.businessCard page{
+.businessCard page {
   width: 100vw;
 }
 .active {
@@ -91,7 +91,9 @@ input[type="file"] {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 75%;
 }
+
 .skill_list--item {
   background: rgba(98, 99, 171, 0.4);
   border: 1px solid var(--secondary-02);
@@ -105,15 +107,14 @@ input[type="file"] {
   text-align: center;
   width: 6rem;
 }
-.businessCard__load{
-  color:var(--primary-01);
-  font-size: 1.5rem;
+.businessCard__load {
+  color: var(--primary-01);
+  font-size: 1rem;
   font-weight: 700;
   margin: 1rem;
 }
-.businessCard__load span{
+.businessCard__load span {
   font-size: 3rem;
-  
 }
 
 .businessCard__load span:nth-last-child(1) {
@@ -133,5 +134,17 @@ input[type="file"] {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .businessCard__experienceCard {
+    width: 97%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .businessCard__experienceCard {
+    justify-content: center;
   }
 }

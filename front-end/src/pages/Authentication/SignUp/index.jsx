@@ -4,6 +4,9 @@ import { toast } from "react-toastify";
 import * as yup from "yup";
 import { api } from "../../../services/api";
 
+import { BiUserCircle, BiLockOpenAlt } from "react-icons/bi";
+import { FiMail } from "react-icons/fi";
+
 export const SignUp = ({ toggleComponents }) => {
   const schema = yup.object().shape({
     name: yup.string().required(),
@@ -46,34 +49,59 @@ export const SignUp = ({ toggleComponents }) => {
         </span>
 
         <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="input__name"
-            placeholder="Nome"
-            type="text"
-            name="name"
-            {...register("name", { required: true })}
-          />
+          <fieldset className="form__input__wrapper">
+            <BiUserCircle
+              className="form_input_svg"
+              size={30}
+              color="var(--primary-02)"
+            />
+            <input
+              className="form_input"
+              placeholder="Nome"
+              type="text"
+              name="name"
+              {...register("name", { required: true })}
+            />
+          </fieldset>
+
           {errors.email && (
             <span className="input__error">Campo obrigatório</span>
           )}
 
-          <input
-            className="input__email"
-            placeholder="Email"
-            type="email"
-            name="email"
-            {...register("email", { required: true })}
-          />
+          <fieldset className="form__input__wrapper">
+            <FiMail
+              className="form_input_svg"
+              size={30}
+              color="var(--primary-02)"
+            />
+            <input
+              className="form_input"
+              placeholder="E-mail"
+              type="email"
+              name="email"
+              {...register("email", { required: true })}
+            />
+          </fieldset>
+
           {errors.email && (
             <span className="input__error">Campo obrigatório</span>
           )}
-          <input
-            className="input__senha"
-            placeholder="Senha"
-            type="password"
-            name="password"
-            {...register("password", { required: true })}
-          />
+
+          <fieldset className="form__input__wrapper">
+            <BiLockOpenAlt
+              className="form_input_svg"
+              size={30}
+              color="var(--primary-02)"
+            />
+            <input
+              className="form_input"
+              placeholder="Senha"
+              type="password"
+              name="password"
+              {...register("password", { required: true })}
+            />
+          </fieldset>
+
           {errors.password && (
             <span className="input__error">Campo obrigatório</span>
           )}
@@ -90,9 +118,9 @@ export const SignUp = ({ toggleComponents }) => {
 
         <p className="first__access">
           Já possui uma conta?{" "}
-          <a className="click__here" href="">
+          <button className="click__here" onClick={toggleComponents}>
             Faça o login
-          </a>
+          </button>
         </p>
       </div>
     </div>

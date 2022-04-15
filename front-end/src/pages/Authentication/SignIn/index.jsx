@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as yup from "yup";
 import { api } from "../../../services/api";
+import { BiLockOpenAlt } from "react-icons/bi";
+import { FiMail } from "react-icons/fi";
 import "./styles.css";
 
 export const SignIn = ({ toggleComponents }) => {
@@ -13,6 +15,7 @@ export const SignIn = ({ toggleComponents }) => {
     email: yup.string().email().required(),
     password: yup.string().required(),
   });
+
   const {
     register,
     handleSubmit,
@@ -54,23 +57,38 @@ export const SignIn = ({ toggleComponents }) => {
         </span>
 
         <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="input__email"
-            placeholder="email@email.com"
-            type="email"
-            name="email"
-            {...register("email", { required: true })}
-          />
+          <fieldset className="form__input__wrapper">
+            <FiMail
+              className="form_input_svg"
+              size={30}
+              color="var(--primary-02)"
+            />
+            <input
+              className="form_input"
+              placeholder="E-mail"
+              type="email"
+              name="email"
+              {...register("email", { required: true })}
+            />
+          </fieldset>
           {errors.email && (
             <span className="input__error">Campo obrigatório</span>
           )}
-          <input
-            className="input__senha"
-            placeholder="******"
-            type="password"
-            name="password"
-            {...register("password", { required: true })}
-          />
+
+          <fieldset className="form__input__wrapper">
+            <BiLockOpenAlt
+              className="form_input_svg"
+              size={30}
+              color="var(--primary-02)"
+            />
+            <input
+              className="form_input"
+              placeholder="Senha"
+              type="password"
+              name="password"
+              {...register("password", { required: true })}
+            />
+          </fieldset>
           {errors.password && (
             <span className="input__error">Campo obrigatório</span>
           )}

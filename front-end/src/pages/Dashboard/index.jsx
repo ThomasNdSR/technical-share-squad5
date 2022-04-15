@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 import { SearchContainer } from "./SearchContainer";
-import { Favorites } from "./Favorites";
-import { MostAvailable } from "./MostAvailable";
 import { FindMentors } from "./FindMentors";
 
 export const Dashboard = () => {

@@ -8,6 +8,7 @@
   width: 100%;
   z-index: 2;
 }
+
 .header_container,
 .header__profile,
 .header__profile--data,
@@ -25,6 +26,7 @@
   justify-content: space-between;
   vertical-align: middle;
 }
+
 .header__conect {
   background-color: transparent;
   border: 3px solid var(--primary-01);
@@ -33,20 +35,18 @@
   text-transform: uppercase;
   padding: 0.5rem 1rem;
 }
+
 .header__logo {
   align-self: center;
   height: 2rem;
   margin-left: 100px;
 }
+
 .header__profile--data {
   flex-direction: column;
   align-items: flex-end;
   position: relative;
   margin-right: 10px;
-}
-
-.header__profile--data h5 {
-  margin-right: 5px;
 }
 
 .header__profile--data button {
@@ -73,6 +73,7 @@
   width: 4.5rem;
   z-index: 3;
 }
+
 .header__profile--nav {
   background: var(--neutral-01);
   box-shadow: -1px -6px 55px -1px rgba(196, 196, 196, 1);
@@ -94,6 +95,7 @@
   text-decoration: none;
   margin: 0.3rem 0;
 }
+
 .header__profile--nav a svg {
   margin: 0 0.2rem;
 }
@@ -138,17 +140,7 @@
 }
 
 @media screen and (max-width: 375px) {
-  /* .header__logo {
-    margin-left: 20px;
-    height: 1.5rem;
-  }
-
-  .header__profile {
-    margin-right: 20px;
-  } */
-
   .header__profile--data h5 {
-    /* font-size: small; */
     display: none;
   }
 
@@ -172,7 +164,11 @@
   }
 
   .header__profile--data button {
-    font-size: small;
+    font-size: medium;
+  }
+
+  .header__conect {
+    margin-right: 20px;
   }
 }
 
@@ -190,6 +186,10 @@
   }
 
   .header__profile--data button {
-    font-size: small;
+    font-size: medium;
+  }
+
+  .header__conect {
+    margin-right: 20px;
   }
 }

@@ -22,8 +22,8 @@
 
 .scheduling-card {
   margin-top: 25px;
-  width: 280px;
-  height: 350px;
+  min-width: 280px;
+  min-height: 350px;
   padding: 20px;
   border-radius: 30px;
   background-color: #fff;
@@ -37,7 +37,6 @@
 
 .scheduling-card hr {
   color: var(--neutral-02);
-  opacity: 30%;
 }
 
 #go-ahead-button {
