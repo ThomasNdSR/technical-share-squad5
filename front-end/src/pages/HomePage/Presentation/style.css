@@ -28,7 +28,7 @@
   background-color: var(--secondary-02);
   flex-direction: column;
   justify-content: space-around;
-  height: 40vh;
+  height: 25vh;
   padding: 3rem;
   position: relative;
   text-align: center;
@@ -48,8 +48,7 @@
 .presentation_list {
   justify-content: space-around;
   color: var(--color-standard);
-  height: 80vh;
-  margin: 5rem 0;
+  height: 40vh;
   padding: 3rem;
 }
 
@@ -60,14 +59,19 @@
 .presentation__search {
   background-color: var(--primary-01);
 }
+
 .presentation__search--container {
   justify-content: space-between;
-  height: 35vh;
-  position: relative;
+  height: 22vh;
 }
 .presentation__search img {
   width: 300px;
   align-self: flex-end;
+  padding-left: 150px;
+}
+
+.presentation_list p {
+  margin-top: 10px;
 }
 
 .presentation__search--descrition {
@@ -78,8 +82,14 @@
   justify-content: space-around;
   text-align: end;
   width: 70%;
-  height: 30vh;
+  height: 15vh;
+  padding-right: 150px;
 }
+
+.presentation__search--descrition h4 {
+  font-weight: bold;
+}
+
 .presentation__search--descrition p {
   font-weight: var(--body-weight);
 }
@@ -92,29 +102,58 @@
     opacity: 1;
   }
 }
+
 @media screen and (max-width: 768px) {
   .movie {
     width: 100%;
   }
+
   .presentation_list {
-    flex-direction: column;
-    height: auto;
+    height: 30vh;
   }
+
   .presentation_list li {
     margin: 1rem 0;
     height: auto;
   }
+
+  .presentation_list img {
+    height: 100px;
+  }
+
   .presentation__search img {
-    position: absolute;
-    opacity: 0.5;
+    padding-left: 100px;
   }
+
   .presentation__search--descrition {
-    text-align: center;
     font-size: 1.5rem;
-    text-shadow: 0.1em 0.1em #000;
-    width: 100%;
+    max-width: 300px;
+    padding-right: 100px;
   }
+
   .presentation__search--descrition h4 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+  }
+
+  .presentation__search--descrition p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .presentation__search--descrition {
+    display: none;
+  }
+
+  .presentation__search img {
+    display: none;
+  }
+
+  .presentation__search--container {
+    display: none;
+  }
+
+  .presentation_list {
+    display: none;
   }
 }

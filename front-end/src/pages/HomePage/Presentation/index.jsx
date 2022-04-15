@@ -19,22 +19,22 @@ export const Presentation = () => {
     {
       image: onlineEducation,
       alt: "Livros de estudos",
-      text: "Melhores suas habilidades",
+      text: "Melhore suas habilidades",
     },
     {
       image: calendar,
       alt: "Calendario de agendamento",
-      text: "Agenda de forma prática",
+      text: "Agende de forma prática",
     },
     {
       image: chat,
       alt: "Ilustração de uma troca de insights",
-      text: "Troque de insights",
+      text: "Troque insights",
     },
   ];
   return (
     <section>
-      <article className="presentation_descrition">
+      <div className="presentation_descrition">
         <h3>Expanda suas habilidades e obtenha insights de forma rápida</h3>
         <button
           onClick={() => {
@@ -64,8 +64,8 @@ export const Presentation = () => {
             allowfullscreen
           ></iframe>
         </div>
-      </article>
-      <article>
+      </div>
+      <div>
         <ul className="presentation_list page">
           {list.map((item, index) => (
             <li key={index}>
@@ -75,21 +75,21 @@ export const Presentation = () => {
             </li>
           ))}
         </ul>
-      </article>
-      <article className="presentation__search">
+      </div>
+      <div className="presentation__search">
         <div className="presentation__search--container page">
           <img src={searchImage} alt="Ilustração sobre pesquisa" />
           <div className="presentation__search--descrition">
             <h4>
-              Pessoas com diferentes níveisde experiencias se encontrando e
-              trocando experiências
+              Pessoas com diferentes níveis de experiencias se encontrando e
+              trocando experiências.
             </h4>
             <p className="presentation__search--descrition-text">
-              Pesquisa avançadas atráves de skill, função e projeto participados
+              Pesquisa avançada através de skill, função e projeto participados
             </p>
           </div>
         </div>
-      </article>
+      </div>
     </section>
   );
 };

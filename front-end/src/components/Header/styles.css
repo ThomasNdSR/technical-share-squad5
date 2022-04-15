@@ -29,7 +29,7 @@
   background-color: transparent;
   border: 3px solid var(--primary-01);
   border-radius: 1rem;
-  margin: 1rem 0;
+  margin: 1rem 100px 1rem 0;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
 }
