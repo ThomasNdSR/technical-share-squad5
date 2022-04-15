@@ -3,16 +3,16 @@
 </h1>
 
 <p align = "center">
-Este é o backend da aplicação   Technical Share - O objetivo dessa aplicação é ser o servidor do frontend, conectando com o banco de dados e controlando as informações. 
+Este é o backend da aplicação Technical Share. O objetivo dessa aplicação é ser o servidor do front-end, conectando com o banco de dados e controlando as informações. 
 </p>
 
 ## **Endpoints**
 
-A API tem um total de 25 endpoints, podendo cadastrar o perfil, validar o perfil, editar os dados pessoais do usuário, como skills, projetos, areá de função, imagem de perfil e disponibilidade, agendamento de mentoria entre os usuários e o cancelamento da mentoria. <br/>
+A API tem um total de 25 endpoints, podendo cadastrar o perfil, validar o perfil, editar os dados pessoais do usuário, como skills, projetos, área de função, imagem de perfil e disponibilidade, agendamento de mentoria entre os usuários e o cancelamento da mentoria. <br/>
 
 <h2 align ='center'> Populando o banco de dados (Docker) </h2>
 
-Ao utilizar o docker será necessário popular o banco do contêiner.
+Ao utilizar o docker será necessário popular o banco do contêiner:
 
 `GET /localhost:8000/seed -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -20,7 +20,7 @@ Ao utilizar o docker será necessário popular o banco do contêiner.
     "message": "Banco Populado com sucesso!"
 }
 ```
-Caso necessite limpar o banco do docker, pode realizar da seguinte maneira.
+Caso necessite limpar o banco do docker, pode realizar da seguinte maneira:
 
 `DELETE /localhost:8000/seed -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -31,7 +31,7 @@ Caso necessite limpar o banco do docker, pode realizar da seguinte maneira.
 
 <h2 align ='center'> Listando usuários </h2>
 
-Nessa aplicação o usuário após fazer login, pode ver os usuários já cadastrados na plataforma, na API podemos acessar a lista dessa forma:
+Nessa aplicação, o usuário, após fazer login, pode ver os usuários já cadastrados na plataforma. Na API podemos acessar a lista dessa forma:
 
 `GET /localhost:8000/user -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -122,7 +122,7 @@ Nessa aplicação o usuário após fazer login, pode ver os usuários já cadast
 
 <h2 align ='center'> Retornando perfil do usuário </h2>
 
-Os dados pessoais de cada perfil, serão acessados utilizando como parâmetro o id do usuário.
+Os dados pessoais de cada perfil, serão acessados utilizando como parâmetro o id do usuário:
 
 `GET localhost:8000/user/:id -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -197,7 +197,7 @@ Os dados pessoais de cada perfil, serão acessados utilizando como parâmetro o 
 
 <h2 align ='center'> Validação de acesso do usuário cadastrado </h2>
 
-Será feita uma validação de login para verificação se o usuário contem o cadastro feito na plataforma, os dados de envio no corpo da requisição serão.
+Será feita uma validação de login para verificação se o usuário contém o cadastro feito na plataforma, os dados de envio no corpo da requisição serão:
 
 `POST /user -  FORMATO DA REQUISIÇÃO`
 ```json
@@ -207,7 +207,7 @@ Será feita uma validação de login para verificação se o usuário contem o c
 }
 ```
 
-a resposta de sucesso
+Resposta de sucesso:
 
 `POST /user -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -231,7 +231,7 @@ Será necessário enviar para a criação no corpo da requisição os seguintes 
 }
 ```
 
-a resposta de sucesso
+Resposta de sucesso:
 
 `POST localhost:8000/user/create -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -243,7 +243,7 @@ a resposta de sucesso
 
 <h2 align ='center'> Listar skills cadastradas </h2>
 
-Será realizada uma requisição que retorna as skills que tem o cadastro no banco de dados, sendo acessado da seguinte forma.
+Será realizada uma requisição que retorna as skills que tem o cadastro no banco de dados, sendo acessado da seguinte forma:
 
 `GET localhost:8000/skill -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -266,9 +266,9 @@ Será realizada uma requisição que retorna as skills que tem o cadastro no ban
 ]
 ```
 
-<h2 align ='center'> Criar nova Skill </h2>
+<h2 align ='center'> Criar nova skill </h2>
 
-para a criação de novas skills, precisa enviar os seguintes dados no corpo da requisição.
+Para a criação de novas skills é preciso enviar os seguintes dados no corpo da requisição:
 
 `POST /localhost:8000/seed -  FORMATO DA REQUISIÇÃO `
 ```json
@@ -277,7 +277,7 @@ para a criação de novas skills, precisa enviar os seguintes dados no corpo da 
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `POST localhost:8000/skill -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -290,7 +290,7 @@ resposta de sucesso
 
 <h2 align ='center'> Atualizar skill registrada </h2>
 
-Envie o id do usuário que deseja vincular a skill como parâmetro da requisição, no corpo da requisição deve ser enviado um array com os id das skills.
+Envie o id do usuário que deseja vincular a skill como parâmetro da requisição. No corpo da requisição deve ser enviado um array com os id das skills:
 
 `PUT /localhost:8000/skill/:id -  FORMATO DA REQUISIÇÃO `
 ```json
@@ -299,7 +299,7 @@ Envie o id do usuário que deseja vincular a skill como parâmetro da requisiç�
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `POST /localhost:8000/skill/:id -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -310,7 +310,7 @@ resposta de sucesso
 
 <h2 align ='center'> Remover Skill registrada </h2>
 
-Envie o id da skill que deseja remover como parâmetro da requisição.
+Envie o id da skill que deseja remover como parâmetro da requisição:
 
 `DELETE /localhost:8000/skill/:id -  FORMATO DA RESPOSTA - STATUS 200` `
 ```json
@@ -319,9 +319,9 @@ Envie o id da skill que deseja remover como parâmetro da requisição.
 }
 ```
 
-<h2 align ='center'> Atualizar Skill do usuário </h2>
+<h2 align ='center'> Atualizar skill do usuário </h2>
 
-Envie o id do usuario que deseja vincular a skill comoparâmetro da requisição, no corpo da requisição deve ser enviado um array com os id das skills.
+Envie o id do usuario que deseja vincular a skill como parâmetro da requisição. No corpo da requisição deve ser enviado um array com os id das skills:
 
 `PUT /localhost:8000/user/skill/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -348,7 +348,7 @@ resposta de sucesso
 
 <h2 align ='center'> Incluir foto do perfil do usuário </h2>
 
-Envie o id do usuário que deseja atualizar a foto como parâmetro, no corpo da requisição deve ser enviado um form-data com a key profile-image.
+Envie o id do usuário que deseja atualizar a foto como parâmetro. No corpo da requisição deve ser enviado um form-data com a key profile-image:
 
 `POST /localhost:8000/image/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -356,7 +356,7 @@ key:profile-image
 value:{endereço do local da imagem}
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `POST /localhost:8000/image/:id  -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -367,7 +367,7 @@ resposta de sucesso
 
 <h2 align ='center'> Registrar disponibilidade do usuário </h2>
 
-Envie o id do usuário que esta registrando a disponibilidade, no corpo da requisição deve ser enviado os dados do dia e horários.
+Envie o id do usuário que esta registrando a disponibilidade. No corpo da requisição deve ser enviado os dados do dia e horários:
 
 `POST /localhost:8000/user/available/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -381,7 +381,7 @@ Envie o id do usuário que esta registrando a disponibilidade, no corpo da requi
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `POST /localhost:8000/user/available/:id -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -420,9 +420,9 @@ resposta de sucesso
 }
 ```
 
-<h2 align ='center'> criação do agendamentos do usuário </h2>
+<h2 align ='center'> Criação de agendamentos do usuário </h2>
 
-Envie o id do usuário que esta criando o agendamento como parâmetro da requisição, no corpo da requisição deve ser enviado os dados o user como o id que criou o agendamento, e o id do mentor que deseja realizar o agendamento.
+Envie o id do usuário que está criando o agendamento como parâmetro da requisição. No corpo da requisição deve ser enviado os dados do user com o id que criou o agendamento e o id do mentor que deseja realizar o agendamento.
 
 `POST localhost:8000/user/appointment/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -437,7 +437,7 @@ Envie o id do usuário que esta criando o agendamento como parâmetro da requisi
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `POST localhost:8000/user/appointment/:id -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -455,9 +455,9 @@ resposta de sucesso
 ```
 
 
-<h2 align ='center'> consulta dos agendamentos do usuário </h2>
+<h2 align ='center'> Consulta dos agendamentos do usuário </h2>
 
-Envie o id do usuário que esta logado como parâmetro da requisição, a resposta será de todos os agendamentos daquele usuário.
+Envie o id do usuário que esta logado como parâmetro da requisição, a resposta será de todos os agendamentos daquele usuário:
 
 `GET localhost:8000/user/appointment/:id - FORMATO DA RESPOSTA - STATUS 20` `
 ```json
@@ -563,8 +563,7 @@ Envie o id do usuário que esta logado como parâmetro da requisição, a respos
 
 <h2 align ='center'> Consulta dos agendamentos do usuário como mentor</h2>
 
-Envie o id do usuário que esta logado como parâmetro da requisição, a resposta será de todos os agendamentos daquele usuario como mentor.
-
+Envie o id do usuário que esta logado como parâmetro da requisição. A resposta será de todos os agendamentos daquele usuario como mentor:
 
 `GET /localhost:8000/user/appointment/mentor/:id -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -620,7 +619,6 @@ Envie o id do usuário que esta logado como parâmetro da requisição, a respos
 
 Envie o id do agendamento como parâmetro da requisição.
 
-
 `DELETE /localhost:8000/user/appointment/:id -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
 {
@@ -628,10 +626,9 @@ Envie o id do agendamento como parâmetro da requisição.
 }
 ```
 
-<h2 align ='center'> remvoer o agendamento</h2>
+<h2 align ='center'> Remover o agendamento</h2>
 
-Envie o id do agendamento como parametro da requisição
-
+Envie o id do agendamento como parametro da requisição:
 
 `DELETE /localhost:8000/user/appointment/:id -  FORMATO DA RESPOSTA - STATUS 200`
 ```json
@@ -642,8 +639,7 @@ Envie o id do agendamento como parametro da requisição
 
 <h2 align ='center'> Atualizar Bio do usuário</h2>
 
-Envie o id do usuário como parâmetro da requisição, e no corpo da requisição a alteração a ser realizada.
-
+Envie o id do usuário como parâmetro da requisição, e no corpo da requisição a alteração a ser realizada:
 
 `PUT /localhost:8000/user/bio/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -652,7 +648,7 @@ Envie o id do usuário como parâmetro da requisição, e no corpo da requisiç�
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `PUT /localhost:8000/user/bio/:id  -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -664,8 +660,7 @@ resposta de sucesso
 
 <h2 align ='center'> Atualizar projetos do usuário</h2>
 
-Envie o id do usuário como parâmetro da requisição, e no corpo da requisição a projetos a serem atualizados.
-
+Envie o id do usuário como parâmetro da requisição e no corpo da requisição os projetos a serem atualizados:
 
 `PUT /localhost:8000/user/project/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -674,7 +669,7 @@ Envie o id do usuário como parâmetro da requisição, e no corpo da requisiç�
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `PUT /localhost:8000/user/project/:id  -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -685,8 +680,7 @@ resposta de sucesso
 
 <h2 align ='center'> Atualizar função do usuário</h2>
 
-Envie o id do usuário como parâmetro da requisição, e no corpo da requisição a nova função do usuário.
-
+Envie o id do usuário como parâmetro da requisição e no corpo da requisição a nova função do usuário:
 
 `PUT /localhost:8000/user/role/:id -  FORMATO DA REQUISIÇÃO` `
 ```json
@@ -695,7 +689,7 @@ Envie o id do usuário como parâmetro da requisição, e no corpo da requisiç�
 }
 ```
 
-resposta de sucesso
+Resposta de sucesso:
 
 `PUT /localhost:8000/user/role/:id  -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -706,7 +700,7 @@ resposta de sucesso
 
 <h2 align ='center'> Filtrar usuário retornando os disponíveis no dia</h2>
 
-Envie após o serach o parametro skill que deseja pesquisa
+Envie após o search o parametro skill que deseja pesquisar:
 
 `GET /localhost:8000/user/search?skill=(valor a ser buscado)  -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
@@ -812,8 +806,7 @@ Envie após o serach o parametro skill que deseja pesquisa
 
 <h2 align ='center'> Adicionar favorito</h2>
 
-Envie como primeiro parâmetro o id do usuário logado, segundo parâmetro o id do usuário que será favoritado.
-
+Envie como primeiro parâmetro o id do usuário logado e como segundo parâmetro o id do usuário que será favoritado:
 
 `POST localhost:8000/user/:id/favorite/:id -  FORMATO DA RESPOSTA - STATUS 201` `
 ```json
@@ -826,7 +819,7 @@ Envie como primeiro parâmetro o id do usuário logado, segundo parâmetro o id 
 
 <h2 align ='center'> Remover favorito do usuário</h2>
 
-Envie como primeiro parâmetro o id do usuário logado, segundo parâmetro o id do usuário que deixara de ser favoritado.
+Envie como primeiro parâmetro o id do usuário logado e como segundo parâmetro o id do usuário que deixara de ser favoritado.
 
 `DELETE localhost:8000/user/:id/favorite/:id  -  FORMATO DA RESPOSTA - STATUS 201`
 ```json
