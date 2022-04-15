@@ -6,11 +6,11 @@ import { TableHour } from "../TableHour";
 import { TableHourEdit } from "../TableHourEdit";
 import "./style.css";
 
-export function SchedulingCard({ available }) {
+export function SchedulingCard({ userProfile, setUserProfile }) {
   const [menuScheduling, setMenuScheduling] = useState("mentor");
   const [scheduling, setScheduling] = useState([]);
   const [mentorScheduling, setMentorScheduling] = useState([]);
-    const [localData, setLocalData] = useState(() => {
+  const [localData, setLocalData] = useState(() => {
     const userData = localStorage.getItem("@TechnicalShare:userData");
 
     if (userData) {
@@ -41,7 +41,7 @@ export function SchedulingCard({ available }) {
         console.log(err);
       });
   };
-   useEffect(() => {
+  useEffect(() => {
     getScheduling();
     getMentorScheduling();
   }, []);
@@ -112,9 +112,9 @@ export function SchedulingCard({ available }) {
               }}
             >
               {editHour ? (
-                <TableHourEdit id={available._id} />
+                <TableHourEdit id={userProfile._id} userProfile={userProfile} setUserProfile={setUserProfile} />
               ) : (
-                <TableHour week={available.available[0]} />
+                <TableHour week={userProfile.available[0]} />
               )}
             </ProfileCard>
           </div>

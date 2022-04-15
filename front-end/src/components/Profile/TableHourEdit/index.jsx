@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { api } from "../../../services/api";
 import "./style.css";
-export function TableHourEdit({ id }) {
+export function TableHourEdit({ id, userProfile, setUserProfile }) {
   const init = [];
   const [checkedHour, setCheckedHour] = useState(init);
   const [feedbackHour, setFeedbackHour] = useState("");
@@ -20,6 +20,8 @@ export function TableHourEdit({ id }) {
     await api
       .post(`user/available/${id}`, { week: order })
       .then(() => {
+        userProfile.available=[{week: order}]
+        setUserProfile(userProfile)
         setFeedbackHour("Disponibilidade atualizada com sucesso");
       })
       .catch((err) => {

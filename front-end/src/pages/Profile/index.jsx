@@ -262,7 +262,10 @@ export const Profile = () => {
         {menuActive === "agenda" ? (
           <section id="showScheduling">
             <article>
-              <SchedulingCard available={userProfile}></SchedulingCard>
+              <SchedulingCard
+                userProfile={userProfile}
+                setUserProfile={setUserProfile}
+              ></SchedulingCard>
             </article>
           </section>
         ) : (
